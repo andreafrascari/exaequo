@@ -1,0 +1,167 @@
+@METABEGIN_TEMPLATE@
+	@BEGIN_TEMPLATE@
+		<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+		<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>		
+		<script type="text/javascript">
+			detailEdit=new Anastasis.DetailEdit('detail-edit','Attachment?q=prepare','Attachment?q=status&amp;id=');
+		</script>
+
+  <div class="detail-edit">
+<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+   <div class="inserto">
+    
+          <a tabindex="56" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+      
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+
+	  	  <a tabindex="60" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  <div id="splash">
+
+    <h2>@TITLE@</h2>
+  </div>
+ 
+  <h3>Inserimento/Modifica Scheda</h3>
+  
+<!-- 
+      <ul>
+      <li>inserire o modificare i dati proposti (asterisco = campi obbligatori)</li>
+      <li>premere il bottone <img src="@CONTEXT@/app/Template/metaAmbiente/img/icon-edit.gif" alt="bottone editor" />, se presente, per avviare l'editor ed inserire campi formattati</li>
+      <li>caricare, se presenti, gli allegati desiderati nella sezione in fondo alla pagina</li>
+      <li>premere il bottone salva</li>
+     </ul> 
+-->
+ @METABEGIN_bean@
+
+  @BEGIN_@METAtag_title@@
+      
+
+  <div class="form-container">
+
+  <form id="detail-edit" method="post" action="@ACTION@">
+
+
+   <div class="form-container">
+
+    
+
+
+  
+ 
+  
+      <!--CORPO-->
+
+        <div class="detail-body">
+
+        @METABEGIN_attributes@
+<!--<H4>Inserire/modificare i dati</H4>-->
+          @METABEGIN_item[not(heading=2) and not(heading=4) and detail_edit and not(admin_only)]@
+
+            @tag_@METAtag_name@@
+
+          @METAEND_item@
+
+        @METAEND_attributes@
+
+        </div>
+
+
+      <div class="detail-rel">
+
+        @METABEGIN_attributes@
+       <!-- <h4>Operazioni e risorse correlate</h4>-->
+
+          @METABEGIN_item[heading=4 and detail_edit]@
+
+            @tag_@METAtag_name@@
+
+          @METAEND_item@
+
+        @METAEND_attributes@
+
+        </div>  
+		
+
+      <!--FINE CORPO-->
+      
+      <!--SYSTEM -->
+      
+      <div class="detail-edit-system">
+      
+        @METABEGIN_attributes@
+        
+          @METABEGIN_item[detail_edit and admin_only]@
+          
+            @tag_@METAtag_name@@
+          
+          @METAEND_item@
+        
+        @METAEND_attributes@
+        
+        
+        
+         <input type="hidden" name="class" value="@CLASS@" />
+
+    	<input type="hidden" name="r" value="@REDIRECT@" />
+
+    	<input type="hidden" name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+
+        
+        </div>
+        
+      <!--FINE SYSTEM-->
+
+   
+  </div>
+  </form>
+   <div class="detail-attachments">
+
+        @METABEGIN_attributes@
+
+          @METABEGIN_item[heading = 2]@
+            @tag_@METAtag_name@@
+          @METAEND_item@
+
+        @METAEND_attributes@
+
+     </div>
+
+
+
+    @END_@METAtag_title@@
+
+          
+
+         
+
+  </div>
+   <div class="inserto">
+    
+          <a tabindex="50" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+      
+          <a tabindex="52" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+
+	  	  <a tabindex="54" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  </div>
+
+  @METAEND_bean@
+
+
+
+  @END_TEMPLATE@
+
+@METAEND_TEMPLATE@
+

@@ -1,0 +1,94 @@
+@BEGIN_TEMPLATE@<div id="meta-detail">
+  <div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+        
+        
+ 
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    @BLOCK_BEGIN_EDIT@     
+							<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+							<span class="NoVisibility">|</span>
+        @BLOCK_END_EDIT@
+  </div>
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+    
+
+    
+    @BEGIN_Movimenti_Libretti@<div class="object-title">
+       <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella titolo scheda">
+	<tr class="libretto"><th scope="row">libretto</th>
+			<td>
+				<a href="?q=object/detail&amp;p=Libretti/_a_ID/_v_@tag_libretto.Libretti.ID#FLAT@" title="vai al libretto">N. @tag_libretto.Libretti.codice_contratto#FLAT@ di 
+		@BEGIN_libretto@
+		@BEGIN_Libretti@
+		@BEGIN_dati_socio@
+        @BEGIN_Soci@
+	      @BEGIN_dati_consumatore@
+	       			@BEGIN_Consumatori@
+	       				@tag_nome#FLAT@&nbsp;@tag_cognome#FLAT@
+	       			@END_Consumatori@
+	       		@END_dati_consumatore@
+		      @BEGIN_dati_organizzazione@
+	       			@BEGIN_Organizzazioni@
+	       				@tag_nome#FLAT@
+	       			@END_Organizzazioni@
+	       		@END_dati_organizzazione@
+       	  @END_Soci@
+       	@END_dati_socio@
+       	@END_Libretti@
+       	@END_libretto@   
+				 
+	 		</a></td>
+	</tr>
+        
+        </table>
+      </div>
+      
+ 
+
+
+      
+    <div id="object-body">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+ 		@tag_data_movimento@
+        @tag_causale_libretto@@tag_importo@@tag_mezzo@@tag_note@@tag_numero_effetto@@tag_banca_di_riferimento_movimento@@tag_data_valuta@
+      </table>      
+      </div>
+      
+      
+     <div id="object-body-links" >
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+        @tag_allegato@
+      </table>      
+      </div>
+      
+      <br />
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+      </table>      
+      </div>@END_Movimenti_Libretti@
+  </div>
+  </div>@END_TEMPLATE@

@@ -1,0 +1,56 @@
+FILE XLS:
+1) cancellazione campi da non importare
+2) formattazione date a AAAA/MM/GG
+3) sostituzione (CON OPZIONE espressioni regolari) "\n" -> " - "
+4) esposrtazione csv ISO-8859-1 con separatore #
+
+
+
+utils db
+
+1) clear:
+
+delete FROM `_system_decode` WHERE id >=388;
+delete FROM Consumatori;
+delete FROM Soci;
+delete FROM Libretti;
+delete FROM Movimenti_Quote;
+
+2) post impo:
+
+set ragione sociale a mano
+
+update `Consumatori` set persona_fisica_giuridica = 1 where ragione_sociale <> ''
+update `Consumatori` set persona_fisica_giuridica = 0 where ragione_sociale = ''
+
+update Consumatori c set   	c.ID_Soci_dati_consumatore = c.ID where exists (select 1 from Soci where s.ID = c.ID);
+
+update `Movimenti_Quote` set `numero_quote` = `sottoscritte`, `causale_quota` = 0, `di_valore` = 25.00 where sottoscritte > 0;
+update `Movimenti_Quote` set `numero_quote` = `rimborsate`, `causale_quota` = 1, `di_valore` = 25.00 where rimborsate > 0;
+
+UPDATE `Movimenti_Quote` m SET `ID_Soci_movimenti_quote` = ( SELECT ID
+FROM Soci s
+WHERE s.numero_socio = m.ID_Soci_movimenti_quote ) ;
+
+DAPPERTUTTO: set bottega
+
+QUERY QUOTE:
+Insert into Movimenti_Quote 
+(data_movimento,creation_date,creation_user,deletion_flag,activation_flag,ID_Soci_movimenti_quote,numero_quote,causale_quota,di_valore)
+SELECT data_ammissione,data_ammissione,'afrascari', 0,1,ID ,quote_adesione, 2 ,valore_quote FROM Soci
+
+QUERY ORGANIZZAZIONI:
+insert into Organizzazioni
+(ID_Botteghe_organizzazioni,nome,ID_Soci_dati_organizzazione,email,numero,tipo_via,indirizzo,comune,cap,provincia,deletion_flag,activation_flag,creation_user)
+select ID_Botteghe_consumatori,ragione_sociale,ID_Soci_dati_consumatore,email,numero,tipo_via,indirizzo,comune,cap,provincia,0,1,'afrascari'
+FROM `Consumatori` WHERE `ragione_sociale` <> ''
+
+-- modifica a IMPORT: professione e carica come DECODEs
+
+-- PROBLEMA RESIDENZA SOCI: SE NON c'e', query per prenderla dai consumatori: questo va bene????? 
+
+
+
+
+
+

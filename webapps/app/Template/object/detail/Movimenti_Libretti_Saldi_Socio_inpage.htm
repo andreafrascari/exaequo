@@ -1,0 +1,25 @@
+@BEGIN_TEMPLATE@<div class="inpage">
+ 
+				<div class="saldi">Saldo Libretto Risparmio:
+				
+				@BEGIN_Movimenti_Libretti@
+				
+				<div style="display:none">@tag_importo#FLAT@</div>
+					<strong>@XPATH_FUN(string(context:format-currency(importo)))@@ &euro;</strong>
+					
+				@END_Movimenti_Libretti@
+
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<strong>0 &euro;</strong>
+				@BLOCK_END_RESULT_EMPTY@
+					    
+				</div>
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+		 
+</div>@END_TEMPLATE@

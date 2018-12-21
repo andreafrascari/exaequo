@@ -1,0 +1,118 @@
+@BEGIN_TEMPLATE@<div id="list">
+			<div id="trails">
+				<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - Domande ammissione
+			</div>
+			
+		  	<div class="inserto">
+				
+						<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+					    <span class="NoVisibility">|</span>
+					
+						<a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+						<span class="NoVisibility">|</span>
+					
+			</div>
+			<div id="splash">
+				<h2>@TITLE@</h2>
+			</div>
+	<!--  		<h3>Risultato Ricerca <em>&nbsp;@QUERY_DESC@</em> </h3>-->
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+			
+	    	<div id="list-soci">
+	  
+			<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+			([ [[@tag_Soci.ID#FLAT@] != []] ??
+               [ 
+				<tr>
+					<th scope="col">
+						Cognome
+					</th>
+					<th scope="col">
+						Nome
+					</th>
+					<th scope="col">
+						Ragione sociale
+					</th>
+					<th scope="col">
+						Data domanda
+					</th>
+					<th scope="col">
+						Approvare entro
+					</th>
+					<th scope="col">
+						Domanda ammissione
+					</th>
+				</tr>
+				]])
+	
+				@BEGIN_Soci@([ 
+							[[@XPATH_FUN((count(preceding-sibling::Soci)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+								<tr class="lista_linea_pari">
+							]
+							:: [
+								<tr class="lista_linea_dispari">
+							]
+						])
+		
+						<td class="libro-soci">
+							<a href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_ID#FLAT@" title="Dati libro soci">@tag_dati_consumatore.Consumatori.cognome#FLAT@</a>
+						</td>
+						<td class="libro-soci">
+							<a href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_ID#FLAT@" title="Dati libro soci">@tag_dati_consumatore.Consumatori.nome#FLAT@</a>
+						</td>	
+						<td class="libro-soci">
+							<a href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_ID#FLAT@" title="Dati libro soci">@tag_dati_organizzazione.Organizzazioni.nome#FLAT@</a>
+						</td>		
+						<td>
+							@tag_data_domanda#FLAT@
+						</td>
+						<td class="hightlight">
+							@FUN_DATES_OPERATION(date=@tag_data_domanda#FLAT@,argument=@tag_di_cooperativa.Cooperative.delibera_cda_adesione#FLAT@,operation=+,what=day)@
+						</td>	
+						<td class="operation">			
+							<a href="?q=object/detail_edit&amp;p=Soci/_a_ID/_v_@tag_ID#FLAT@&amp;&t=Wiz_Soci_Registrazione_Delibera_Ammissione" title="Dati libro soci">Registra</a>
+						</td>	
+				</tr>@END_Soci@
+	  		</table>
+	  		
+	  		</div>
+	  		
+	  		<div class="pagine">
+					
+					@BLOCK_BEGIN_INDIETRO@
+						
+							<a class="linkfirst" href="@HREF_LIST_FIRST@" title="Vai alla prima pagina">[ Prima pagina ]</a>
+							<span class="NoVisibility">|</span>
+											
+						
+							<a class="linkprev" href="@HREF_LIST_BACK@" title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">[ Indietro ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_INDIETRO@
+					
+					<strong>@NUMERO_ELEMENTI@ elementi</strong> trovati - pagina @PAGINA_CORRENTE@
+					
+					@BLOCK_BEGIN_AVANTI@        
+						
+							<a class="linknext" href="@HREF_LIST@" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">[ Avanti ]</a>
+							<span class="NoVisibility">|</span>
+						
+						
+							<a class="linkfirst" href="@HREF_LIST_LAST@" title="Vai all'ultima pagina">[ Ultima pagina ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_AVANTI@
+					
+			</div>
+		</div>@END_TEMPLATE@

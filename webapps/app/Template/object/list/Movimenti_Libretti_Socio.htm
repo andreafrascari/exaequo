@@ -1,0 +1,109 @@
+@BEGIN_TEMPLATE@<div>
+		
+		<div id="list">
+			<div id="trails">
+				<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+			</div>
+			
+		  	<div class="inserto">
+				
+						<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+					    <span class="NoVisibility">|</span>
+					
+						<a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+						<span class="NoVisibility">|</span>
+					
+			</div>
+			<div id="splash">
+				<h2>@TITLE@</h2>
+				
+				
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;libretto=@FUN_GET_URL_PARAM(param=p, pre=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_)@&amp;t=Movimenti_Libretti_Versamento" title="versamento">Versamento</a>
+			
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;libretto=@FUN_GET_URL_PARAM(param=p, pre=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_)@&amp;t=Movimenti_Libretti_Prelievo" title="Prelievo risparmio">Prelievo risparmio</a>
+				
+				<a href="?q=object/detail_edit&p=Movimenti_Libretti&amp;a=@FUN_GET_URL_PARAM(param=p, pre=Movimenti_Libretti/)@" title="Altro movimento">Altro movimento</a>
+				
+    			<h3>di @tag_Movimenti_Libretti.nome_socio_organizzazione@@tag_Movimenti_Libretti.nome_socio_consumatore@</h3>
+			</div>
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+	    
+			
+	  		([
+						[[@tag_Movimenti_Libretti.ID#FLAT@] != []]
+						?? [
+			<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+				<tr>
+				<tr>
+					<th scope="col">Socio</th>
+
+					<th scope="col">Data Movimento</a></th>
+					
+					<th scope="col">Libretto</th>
+
+					<th scope="col">Causale</a></th>
+
+					<th scope="col">Importo</th>
+				</tr>
+				</tr>
+	
+					@BEGIN_Movimenti_Libretti@([ 
+							[[@XPATH_FUN((count(preceding-sibling::Movimenti_Libretti)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+								<tr class="lista_linea_pari">
+							]
+							:: [
+								<tr class="lista_linea_dispari">
+							]
+						])
+						
+						<td class="nome_socio_consumatore">
+							@tag_nome_socio_consumatore@
+							@tag_nome_socio_organizzazione@
+						</td>
+						@tag_data_movimento@@tag_libretto@@tag_causale_libretto@@tag_importo@
+								</tr>@END_Movimenti_Libretti@
+	  		</table>
+	  		]
+			])
+	  		
+	  		<div class="pagine">
+					
+					@BLOCK_BEGIN_INDIETRO@
+						
+							<a class="linkfirst" href="@HREF_LIST_FIRST@" title="Vai alla prima pagina">[ Prima pagina ]</a>
+							<span class="NoVisibility">|</span>
+											
+						
+							<a class="linkprev" href="@HREF_LIST_BACK@" title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">[ Indietro ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_INDIETRO@
+					
+					<strong>@NUMERO_ELEMENTI@ elementi</strong> trovati - pagina @PAGINA_CORRENTE@
+					
+					@BLOCK_BEGIN_AVANTI@        
+						
+							<a class="linknext" href="@HREF_LIST@" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">[ Avanti ]</a>
+							<span class="NoVisibility">|</span>
+						
+						
+							<a class="linkfirst" href="@HREF_LIST_LAST@" title="Vai all'ultima pagina">[ Ultima pagina ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_AVANTI@
+					
+			</div>
+		</div>
+</div>@END_TEMPLATE@

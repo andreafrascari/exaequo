@@ -1,0 +1,32 @@
+@BEGIN_TEMPLATE@
+  <div class="loginbox_failed">
+  	 
+    <form method="post" action="Index">
+    <div>
+      <label for="user">Username:</label> <input class="campo" type="text" name="user" id="user" />
+      
+      <label for="pass">Password:</label> <input class="campo" type="password" name="pass" id="pass" />
+      
+      <input name="invia" type="submit" value="[ Entra ]" title="Entra nel sistema" class="bottone" />
+      
+      <input type="hidden" name="q" value="login/login" />
+      <input type="hidden" name="me" value="private" />
+      
+     </div>
+	 @CALLS@
+    </form>
+      <br />
+      Per accedere &egrave; necessaria la registrazione che pu&ograve; essere effettuata attraverso il presente
+      <a title="accesso procedura di registrazione" href="?q=login/register">modulo</a>.</p>
+       <p><a title="accesso procedura recupero password" href="?q=login/recover/FORM=step1">Ho dimenticato la password</a></p>
+   
+  </div>
+  @TARGET_BEGIN_MOD_5@
+  	<div class="system-message-error">
+	    <h2>ACCESSO NEGATO
+		<br />
+		Username e/o Password Errate.
+		</h2>
+	</div>
+  @TARGET_END_MOD_5@
+@END_TEMPLATE@

@@ -1,0 +1,150 @@
+@BEGIN_TEMPLATE@<div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+        
+        
+        
+      
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    <a href="@CONTEXT@/Index?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+    @BLOCK_BEGIN_EDIT@     
+    		([
+        			[[] != [1]]
+    				?? [
+						
+							<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+							<span class="NoVisibility">|</span>
+						
+					]
+    			])
+        @BLOCK_END_EDIT@
+  </div>
+  <br style="clear:both" />
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+    
+
+    
+    @BEGIN_Organizzazioni@<div class="object-title">
+       <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella titolo scheda">
+        @tag_nome@
+        </table>
+      </div>
+      
+
+      
+    <div id="object-body">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+		 @tag_tipo_organizzazione@
+		 @tag_legale_rappresentante@
+		 <tr>
+			<td class="sezione_dettaglio" scope="row" colspan="2">Domicilio/Recapito</td>
+		</tr>	
+		<tr>
+	        <th>
+	        Indirizzo
+	        </th>
+	        <td>
+        	@tag_tipo_via#FLAT@&nbsp;
+        	@tag_indirizzo#FLAT@&nbsp;
+        	@tag_numero#FLAT@
+			</td>
+	    </tr>   
+	    <tr>
+	        <th>
+	        &nbsp;
+	        </th>
+	        <td>
+        	@tag_cap#FLAT@&nbsp;
+        	@tag_comune#FLAT@ (@tag_provincia#FLAT@)
+			</td>
+	    </tr>
+        
+        <tr>
+			<td class="sezione_dettaglio" scope="row" colspan="2">Riferimenti</td>
+		</tr>	
+		@tag_email@
+		@tag_web@	
+		@tag_telefono@
+       <tr>
+			<th>Fax</th>
+       		<td class="no_capitalize">@tag_fax#FLAT@</td>        	 
+        </tr>        
+		@tag_note@
+        @tag_settore_attivita@
+        @tag_anno_iscrizione@ 
+        @tag_anno_rinnovo@      
+        @tag_i_tag_relativi@  
+        
+        <tr>
+			<th scope="row">Bottega</th>
+			<td>@tag_di_bottega.Botteghe.nome#FLAT@&nbsp;</td>
+		</tr>
+      </table>      
+      </div>
+      
+      
+     <div id="object-body-links" class="no_th">     
+     
+     
+     	([ [[@tag_dati_associazione.Soci.ID#FLAT@]!=[]] ?? 
+			[
+			<h2>Info collegate</h2>
+				<ul class="right-menu">
+				<li>   
+					<a href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_dati_associazione.Soci.ID#FLAT@" title="vai alla scheda socio">Scheda socio</a>
+				</li>
+				</ul>   	
+			] :: [
+			<h2>Operazioni</h2>
+				<ul class="right-menu">
+				<li>   
+					<a href="?q=object/detail_edit&amp;p=Soci&amp;t=Wiz_Soci_Registrazione_Domanda_Ammissione_Organizzazioni&amp;a=_a_dati_organizzazione/_c_Organizzazioni/_a_ID/_v_@tag_ID#FLAT@/_a_di_cooperativa/_v_@tag_di_bottega.Botteghe.appartiene_a.Cooperative.ID#FLAT@&amp;s=_a_dati_organizzazione/_v_@tag_nome#FLAT@%20@tag_cognome#FLAT@"  title="domanda adesione">Domanda adesione</a>   
+				</li>
+			]
+		])      
+      </div>
+      
+      <br />
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+             <!-- @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@ --> 
+        <tr>
+	        <th>
+	        Utente
+	        </th>
+	         <td>
+        	@tag_last_modification_user#FLAT@
+        	</td>
+        </tr>
+        <tr>
+	        <th>Aggiornamento
+	        </th>
+	         <td>
+        	@tag_last_modification_date#FLAT@
+        	</td>
+        </tr>
+        <!--  @tag_activation_flag@@tag_deletion_flag@ --> </table>      
+      </div>@END_Organizzazioni@
+  </div>@END_TEMPLATE@

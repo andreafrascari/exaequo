@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Estrattoconto</title>  
+  <title_view>Estrattoconto</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>di_libretto</name>  
+      <label>di libretto</label>  
+      <detail>di libretto</detail>  
+      <detail_edit>di libretto</detail_edit>  
+      <filter autocomplete="">di libretto</filter>  
+      <list>di libretto</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item>  
+    <item> 
+      <name>data</name>  
+      <label>data</label>  
+      <detail>data</detail>  
+      <detail_edit>data</detail_edit>  
+      <filter>data</filter>  
+      <list>data</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>importo_prestito</name>  
+      <label>importo prestito</label>  
+      <detail>importo prestito</detail>  
+      <detail_edit>importo prestito</detail_edit>  
+      <filter>importo prestito</filter>  
+      <list>importo prestito</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>importo_capitale</name>  
+      <label>importo capitale</label>  
+      <detail>importo capitale</detail>  
+      <detail_edit>importo capitale</detail_edit>  
+      <filter>importo capitale</filter>  
+      <list>importo capitale</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>interessi_lordi</name>  
+      <label>interessi lordi</label>  
+      <detail>interessi lordi</detail>  
+      <detail_edit>interessi lordi</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>55</order> 
+    </item>  
+    <item> 
+      <name>interessi_netti</name>  
+      <label>interessi netti</label>  
+      <detail>interessi netti</detail>  
+      <detail_edit>interessi netti</detail_edit>  
+      <filter>interessi netti</filter>  
+      <list>interessi netti</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>importo_altre_quote</name>  
+      <label>importo altre quote</label>  
+      <heading>1</heading>  
+      <needed>0</needed>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>interessi_indeducibili</name>  
+      <label>interessi deducibili</label>  
+      <detail>interessi deducibili</detail>  
+      <detail_edit>interessi deducibili</detail_edit>  
+      <filter>interessi deducibili</filter>  
+      <list>interessi deducibili</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>inviato_il</name>  
+      <label>inviato il</label>  
+      <detail>inviato il</detail>  
+      <detail_edit>inviato il</detail_edit>  
+      <filter>inviato il</filter>  
+      <list>inviato il</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
+    </item>  
+    <item> 
+      <name>esito_invio</name>  
+      <label>esito invio</label>  
+      <detail>esito invio</detail>  
+      <detail_edit>esito invio</detail_edit>  
+      <filter>esito invio</filter>  
+      <list>esito invio</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <detail>note</detail>  
+      <detail_edit>note</detail_edit>  
+      <filter>note</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>131</order> 
+    </item>  
+    <item> 
+      <name>pdf</name>  
+      <label>pdf</label>  
+      <detail>pdf</detail>  
+      <detail_edit>pdf</detail_edit>  
+      <heading>2</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>201</order> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>211</order> 
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <label>utente proprietario</label>  
+      <detail>utente proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <label>gruppo proprietario</label>  
+      <detail>gruppo proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

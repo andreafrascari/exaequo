@@ -1,0 +1,29 @@
+@BEGIN_TEMPLATE@
+		<div class="operation-result">
+			<div id="splash">
+				<h2>Risultato dell'operazione</h2>
+			</div>
+
+	@BLOCK_BEGIN_RESULT_SUCCESS@
+    	
+			<div class="system-message-success">
+					Operazione effettuata correttamente. @MESS@
+				</div>
+    					
+	@BLOCK_END_RESULT_SUCCESS@
+		
+	@BLOCK_BEGIN_RESULT_ERROR@
+		<div class="system-message-error">
+			Si &egrave; verificato un errore: @ERROR_MESSAGE@
+		</div>        
+		 
+	@BLOCK_END_RESULT_ERROR@
+
+  		<br />
+  		<a href="javascript:history.back();" title="indietro">Indietro</a>
+
+
+		</div>
+ 
+		
+	@END_TEMPLATE@

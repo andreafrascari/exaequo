@@ -1,0 +1,85 @@
+@BEGIN_TEMPLATE@<div id="meta-detail">
+  <div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+        
+        
+        
+      
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    <a href="@CONTEXT@/Index?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+    @BLOCK_BEGIN_EDIT@     
+    		([
+        			[[] != [1]]
+    				?? [
+						
+							<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+							<span class="NoVisibility">|</span>
+						
+					]
+    			])
+        @BLOCK_END_EDIT@
+  </div>
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+    
+
+    
+    @BEGIN_Cooperative@<div class="object-title">
+       <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella titolo scheda">
+        @tag_ragione_sociale@
+        </table>
+      </div>
+      
+
+      
+    <div id="object-body">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+
+
+        @tag_tipo_cooperativa@@tag_indirizzo@@tag_descrizione@@tag_provincia@@tag_comune@@tag_cap@@tag_telefono@@tag_fax@@tag_email@@tag_web@@tag_sez_mailing_list@
+        
+        <tr class="nome_mailing_list"><th scope="row">mailing list disponibili</th><td><ul><li>consumatori_@tag_nome_mailing_list#FLAT@@iniziativesolidali.org</li><li>soci_@tag_nome_mailing_list#FLAT@@iniziativesolidali.org</li><li>risparmio_@tag_nome_mailing_list#FLAT@@iniziativesolidali.org</li></ul>
+        <em>Le mailing list vengono mantenute aggiornate automaticamente dal sistema</em></td></tr>
+        @tag_email_admin_mailing_list@
+        
+        @tag_sez_statuto_regolamenti@@tag_data_chiusura_bilancio@@tag_valore_quota@@tag_numero_quote_associazione@@tag_delibera_cda_adesione@@tag_delibera_cda_recesso@@tag_liquidazione_quote_esercizio_giorni@@tag_regolamento_prestito@@tag_condizioni_libretti@
+      </table>      
+      </div>
+      
+      
+     <div id="object-body-links" >
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+        @tag_link@@tag_botteghe@@tag_cooperativa_iniziative@@tag_newsletter_di_coop@@tag_i_soci@@tag_tag_coop@@tag_foto@@tag_allegato@
+      </table>      
+      </div>
+      
+      <br />
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+      </table>      
+      </div>@END_Cooperative@
+  </div>
+  </div>@END_TEMPLATE@

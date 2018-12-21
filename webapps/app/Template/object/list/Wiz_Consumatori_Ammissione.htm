@@ -1,0 +1,115 @@
+@BEGIN_TEMPLATE@
+<div>
+<div id="list">
+			<div id="trails">
+				<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+			</div>
+			
+		  	<div class="inserto">
+				
+						<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+					    <span class="NoVisibility">|</span>
+					
+						<a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+						<span class="NoVisibility">|</span>
+					
+			</div>
+			<div id="splash">
+				<h2>@TITLE@</h2>
+					@BLOCK_BEGIN_EDIT@
+    					<a href="@HREF_DETAIL_EDIT@" title="nuova scheda">Nuova scheda</a>
+    				@BLOCK_END_EDIT@
+    				
+			</div>
+	  	<!--	<h3>Risultato Ricerca <em>&nbsp;@QUERY_DESC@</em> </h3>-->
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+	    
+			<div id="list-consumatori">	
+	  
+			<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+			
+			([ [[@tag_Consumatori.ID#FLAT@] != []] ??
+               [ 
+				<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Cognome</th>
+						<th scope="col">Bottega</th>
+						<th scope="col">Comune</th>
+						<th scope="col">Provincia</th>
+						<th scope="col">Domanda ammissione</th>
+				</tr>
+			]])
+				
+				@BEGIN_Consumatori@([ 
+							[[@XPATH_FUN((count(preceding-sibling::Consumatori)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+								<tr class="lista_linea_pari">
+							]
+							:: [
+								<tr class="lista_linea_dispari">
+							]
+						])
+		
+						@tag_nome@
+						@tag_cognome@						
+						<td>
+						@tag_consumatori_bottega.Botteghe.nome#FLAT@
+						</td>
+						@tag_comune@
+						@tag_provincia@						
+						<td class="operation">			
+							<a href="?q=object/detail_edit&amp;p=Soci&amp;t=Wiz_Soci_Registrazione_Domanda_Ammissione&amp;a=_a_dati_consumatore/_c_Consumatori/_a_ID/_v_@tag_ID#FLAT@/_a_di_cooperativa/_v_@tag_consumatori_bottega.Botteghe.appartiene_a.Cooperative.ID#FLAT@&amp;s=_a_dati_consumatore/_v_@tag_nome#FLAT@%20@tag_cognome#FLAT@" title="domanda di associazione">Registra</a>
+						</td>
+
+						</tr>
+								
+						@END_Consumatori@
+	  		</table>
+	  		
+	  		</div>
+	  		
+	  		<div class="pagine">
+					
+					@BLOCK_BEGIN_INDIETRO@
+						
+							<a class="linkfirst" href="@HREF_LIST_FIRST@" title="Vai alla prima pagina">[ Prima pagina ]</a>
+							<span class="NoVisibility">|</span>
+											
+						
+							<a class="linkprev" href="@HREF_LIST_BACK@" title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">[ Indietro ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_INDIETRO@
+					
+					<strong>@NUMERO_ELEMENTI@ elementi</strong> trovati - pagina @PAGINA_CORRENTE@
+					
+					@BLOCK_BEGIN_AVANTI@        
+						
+							<a class="linknext" href="@HREF_LIST@" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">[ Avanti ]</a>
+							<span class="NoVisibility">|</span>
+						
+						
+							<a class="linkfirst" href="@HREF_LIST_LAST@" title="Vai all'ultima pagina">[ Ultima pagina ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_AVANTI@
+					
+			</div>
+		</div>
+	<span id="apri-chiudi-filtro" title="apri/chiudi filtro di raffinamento">affina la ricerca</span>
+	<div @toggable="controller=apri-chiudi-filtro,init_state=closed">
+  	@FUN_MODULE(q=object/simplefilter,data_source=@FUN_GET_URL_PARAM(param=data_source)@,p=@FUN_GET_URL_PARAM(param=p)@,title=@FUN_GET_URL_PARAM(param=title)@,t=@FUN_GET_URL_PARAM(param=t)@)@   
+<!-- 	@FUN_MODULE(q=object/simplefilter)@  -->
+	</div>
+</div>
+@END_TEMPLATE@

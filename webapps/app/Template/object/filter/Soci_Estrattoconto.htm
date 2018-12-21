@@ -1,0 +1,46 @@
+@BEGIN_TEMPLATE@<script src="@CONTEXT@/app/Javascript/calendario/calendarEu.js" type="text/javascript" ></script>
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  <div class="filter">
+	
+  
+  <div id="splash">
+    <h2>Estrattoconto Libretti Soci</h2>
+    
+	<a href="?q=object/list&amp;p=Soci_Anagrafica&amp;data_source=prestatori&amp;t=Soci_Estrattoconto" title="Lista completa">Lista</a>
+	
+  </div>
+  
+  <h3>Ricerca</h3>
+  
+  @BLOCK_BEGIN_DESCRIPTION@
+  <div class="class-description">
+    @CLASS_DESCRIPTION@
+  </div>
+  @BLOCK_END_DESCRIPTION@
+
+
+  <div class="form-container">
+  <form id="filter" method="post" action="?q=object/list&amp;p=Soci_Anagrafica&amp;data_source=prestatori&amp;t=Soci_Estrattoconto">
+  
+  	
+  
+  <div>
+  
+    @BEGIN_Soci_Anagrafica@@tag_nome@@tag_numero_socio@@tag_codice_fiscale@@END_Soci_Anagrafica@
+
+    <br class="clearBoth" />
+    <input type="hidden" name="KEY_data_ammissione" value="null" />	<!-- i soci hanno data_ammissione valorizzata -->
+    <input type="hidden" name="KEY_data_delibera_recesso" value="null" />	<!-- i soci hanno data_delibera_recesso NON valorizzata -->
+    <input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+    <input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+    <div class="buttonrow">
+      <input type="submit" name="post_search" class="button" title="avvia la ricerca" value="[ Cerca ]" />
+    </div>
+    
+  </div>
+  
+  </form>
+  </div>
+  </div>@END_TEMPLATE@

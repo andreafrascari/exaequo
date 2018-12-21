@@ -1,0 +1,83 @@
+<!-- METAMBIENTE PREDEFINITO -->@BEGIN_TEMPLATE@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Iniziative Solidali</title>
+    <!--<meta name="keywords" content="@KEYWORDS@" />--> 
+    <!--<meta name="description" content="@KEYWORDS@" />-->
+    <meta name="author" content="Cooperativa Anastasis" />
+    <meta http-equiv="Content-type" content="text/xhtml; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="language" content="it" />
+    
+    <link rel="shortcut icon" href="app/Template/metaAmbiente/img/favicon.ico" type="image/x-icon" />
+	@BEGIN_IMPORTS@
+    	../javascript_base_headings.htm;
+    	../css_base_headings.htm;
+    @END_IMPORTS@
+
+	<!--[if IE 6]>
+  		<link rel="stylesheet" type="text/css" href="app/Template/metaAmbiente/fix-ie.css" />
+  		<link rel="stylesheet" type="text/css" href="app/Template/metaAmbiente/@METAENVIRONMENT@/fix-ie.css" />
+	<![endif]-->
+        
+  </head>  
+  <body id="home" class="normale">
+    <div id="totalwrap">
+	    <div id="head">
+	          @MOD_0@ 
+	        <h1>
+	          <a href="@CONTEXT@/Index" title="torna alla home page">
+	            <strong>Iniziative Solidali</strong>
+	            <span><img src="app/Template/metaAmbiente/standard/img/head-logo2.gif" alt="Iniziative solidali" />
+	            </span>
+	           </a>	            
+	        </h1>
+	        
+	    </div>
+	    <div id="sidebarwrap">
+	              <div id="sidebar">
+	              	@MOD_4@
+	              <h2>Area Riservata</h2>
+	                
+	                @MOD_2@ 
+	                <!--SEARCH BOX-->                
+	                @MOD_3@ 
+	                <!--MENU BOX-->                 
+	              </div>
+	    </div>   
+	    <div id="wrap">
+	      <div id="wrapsx">
+	        <div id="wrapdx">
+	          @MOD_1@  
+	          <!--SPLASH TITLE-->
+	          <div id="main" class="clearfix">
+	                   
+	            <div id="contentwrap">
+	              <div id="content">
+	              
+	              
+	                @MOD_5@ 
+	                <!--CONTENUTO ATTIVO-->                
+	                
+	              </div>
+	            </div>
+	          </div>
+	          <div id="footer" class="clearfix">
+	            @MOD_6@ 
+	            <!--ALTRI MENU E DI NUOVO RICERCA-->
+	            <p id="credits">
+	             	sede operativa <br />
+					Via Scipione dal Ferro - 40138 Bologna<br />
+					piva 02817201201
+				</p>
+			        <img src="app/Template/metaAmbiente/standard/img/LogoAltromercato.jpg" alt="AltroMercato" />
+			  </div>
+	        </div>
+	      </div>
+    	</div>
+    	  
+    </div>
+  </body>
+</html>@END_TEMPLATE@

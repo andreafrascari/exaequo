@@ -1,0 +1,52 @@
+@BEGIN_TEMPLATE@
+    @BLOCK_BEGIN_RESULT_ERROR@
+	    <div class="system-message-error">
+	    	Si &egrave; verificato un errore: @ERROR_MESSAGE@
+		</div>
+    @BLOCK_END_RESULT_ERROR@
+  
+    @BLOCK_BEGIN_RESULT_EMPTY@
+		<div class="system-message-error">
+	    	Nessun elemento trovato!
+	    </div>
+    @BLOCK_END_RESULT_EMPTY@ 
+  
+	<!-- Va modificato se la posizione del modulo di menu non e' 2 --> 
+	<!-- andrea: la elimino perchè ha comportamento pericoloso e inatteso
+	@TARGET_BEGIN_MOD_2@ 
+		<div class="menubox">
+			@FUN_MENU(currentId=@tag__system_cms_node.present_in_menu_as._system_menu_item.ID#FLAT@,template=menu)@
+		</div>
+	@TARGET_END_MOD_2@
+	-->
+
+    <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>	
+	
+	
+		
+	<div class="inserto">
+		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+		<span class="NoVisibility">|</span>
+		<a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+		@BLOCK_BEGIN_EDIT@
+			<span class="NoVisibility">|</span>
+			<a href="@HREF_COMPLEX_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">[ Modifica ]</a>
+		@BLOCK_END_EDIT@
+	</div>		
+	@BEGIN__system_cms_node@	
+		<div id="splash">
+		<h2>@tag_title@</h2>
+	</div>
+	
+	
+		<div class="elements">
+			<div class="col_dx">	
+				@tag_extra@
+			</div>
+		([ [ [@tag_teaser@] != [] ] ?? [<h4>@tag_teaser@</h4>] ])
+		@tag_body@
+		</div>        
+	@END__system_cms_node@ 
+@END_TEMPLATE@

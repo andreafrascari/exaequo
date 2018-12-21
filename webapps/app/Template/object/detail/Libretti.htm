@@ -1,0 +1,191 @@
+@BEGIN_TEMPLATE@<div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+        
+        
+        
+      
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+	
+	<a href="?q=object/filter&amp;p=Libretti_Anagrafica" title="Nuova ricerca">Ricerca</a>
+	
+    @BLOCK_BEGIN_EDIT@ 
+    	<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+			<span class="NoVisibility">|</span>
+      @BLOCK_END_EDIT@
+  </div>
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+ <br style="clear:both" />
+ 
+@BEGIN_Libretti@         
+    <H2>   
+	Libretto di 
+	<a title="vai alla scheda socio" href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_dati_socio.Soci.ID#FLAT@">
+	   @BEGIN_dati_socio@
+        @BEGIN_Soci@
+	      @BEGIN_dati_consumatore@
+	       			@BEGIN_Consumatori@
+	       				@tag_nome#FLAT@&nbsp;@tag_cognome#FLAT@
+	       			@END_Consumatori@
+	       		@END_dati_consumatore@
+		      @BEGIN_dati_organizzazione@
+	       			@BEGIN_Organizzazioni@
+	       				@tag_nome#FLAT@
+	       			@END_Organizzazioni@
+	       		@END_dati_organizzazione@
+       	  @END_Soci@
+       @END_dati_socio@   
+	</a>
+    </H2> 
+         
+    <div id="object-body">
+    	<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+    	@tag_codice_contratto@
+		@tag_tipo_libretto@
+		@tag_data_apertura@
+		@tag_modalita_rinnovo@
+		@tag_data_scadenza@
+		<!--
+		@tag_data_rinnovo@
+		-->
+		@tag_stato_libretto@
+		@tag_delega@
+		@tag_banca_di_riferimento@
+		@tag_conto_corrente@
+		@tag_iban@
+		@tag_note_contratto@
+		@tag_data_chiusura@
+		@tag_motivazione_chiusura@
+       
+      </table>      
+     
+     <!--
+      <div id="finance-box">
+	      <span id="aprichiudisaldi" title="apri/chiudi box saldi libretto">apri/chiudi box saldi saldi libretto</span>
+      
+      		<div @toggable="controller=aprichiudisaldi,init_state=closed">
+      				@FUN_MODULE(q=object/detail,p=Movimenti_Quote/_a_di_risparmio/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,data_source=saldi-risparmio,t=Movimenti_Quote_Saldi_Socio_inpage)@
+      				@FUN_MODULE(q=object/detail,p=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,data_source=saldi,t=Movimenti_Libretti_Saldi_Socio_inpage)@
+      		</div>
+
+	      <span id="aprichiudimovimenti" title="apri/chiudi box movimenti di quote e risparmio">apri/chiudi box movimenti di quote e risparmio</span>
+      		
+			<div @toggable="controller=aprichiudimovimenti,init_state=closed">
+      				@FUN_MODULE(q=object/list,p=Movimenti_Quote/_a_di_risparmio/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,data_source=movimenti-risparmio,t=Movimenti_Quote_Socio_inpage,lista_page_dimension=100)@
+      				@FUN_MODULE(q=object/list,p=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,t=Movimenti_Libretti_Socio_inpage,lista_page_dimension=100)@
+      				@FUN_MODULE(q=object/list,p=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,t=Movimenti_Libretti_Socio_inpage,data_source=senza-quote-o-quote-sbilanciate,lista_page_dimension=100,title=Movimenti risparmio senza corrispondente quota capitale di 1/4)@
+      		</div>
+      </div>
+	-->
+		
+      
+      </div>
+      
+      <div id="object-body-links" class="no_th">
+      
+      
+      @BLOCK_BEGIN_EDIT@
+       <h2>Operazioni</h2>     
+     <h4>Risparmio</h4>
+		<ul class="right-menu">
+			
+			<li>
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;libretto=@tag_ID#FLAT@&amp;t=Movimenti_Libretti_Versamento" title="versamento" >versamento</a>
+			</li>			
+			<li>
+			<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;libretto=@tag_ID#FLAT@&amp;t=Movimenti_Libretti_Prelievo" title="prelievo" >prelievo</a>
+			</li>
+			<li>
+			<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;libretto=@tag_ID#FLAT@&amp;t=Movimenti_Libretti_Prelievo_Interessi" title="prelievo interessi" >prelievo interessi</a>
+			</li>
+			<li>
+			<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;libretto=@tag_ID#FLAT@&amp;t=Movimenti_Libretti_Interessi_in_Quote" title="acquisto quote interessi" >acquisto quote interessi</a>
+			</li>
+			
+			<li>	
+			<a href="?q=object/detail_edit&amp;p=Movimenti_Libretti&amp;a=_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@" title="altro movimento" >altro movimento</a>
+		    </li>
+		</ul>
+			
+		    
+     <h4>Capitale</h4>
+		<ul class="right-menu">
+			<li>
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Quote&amp;a=_a_di_risparmio/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@/_a_socio/_c_Soci/_a_ID/_v_@tag_dati_socio.Soci.ID#FLAT@/_a_causale_quota/_v_@FUN_DECODE_DESCRIPTION(class=211,value=5)@&amp;t=Movimenti_Quote_V" title="vendita quote" >vendita quote</a>
+			</li>
+			<li>
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Quote&amp;a=_a_di_risparmio/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@/_a_socio/_c_Soci/_a_ID/_v_@tag_dati_socio.Soci.ID#FLAT@/_a_causale_quota/_v_@FUN_DECODE_DESCRIPTION(class=211,value=0)@&amp;t=Movimenti_Quote_A" title="acquisto quote" >acquisto quote</a>
+			</li>
+			<!-- 
+			<li>
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Quote&amp;a=_a_socio/_c_Soci/_a_ID/_v_@tag_dati_socio.Soci.ID#FLAT@/_a_causale_quota/_v_@FUN_DECODE_DESCRIPTION(class=211,value=9)@&amp;t=Movimenti_Quote_S" title="Nuovo movimento capitale" >sottoscrizione quote</a>
+			</li>
+			 -->
+		  </ul> 	
+		     	
+     @BLOCK_END_EDIT@
+     
+      <h2>Info collegate</h2>
+
+			@FUN_MODULE(q=object/detail,p=Movimenti_Quote/_a_di_risparmio/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,data_source=saldi-risparmio,t=Movimenti_Quote_Saldi_Socio_inpage)@
+			@FUN_MODULE(q=object/detail,p=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@,data_source=saldi,t=Movimenti_Libretti_Saldi_Socio_inpage)@
+   
+     <ul class="right-menu">
+     
+	
+			
+				<li><a href="?q=object/list&amp;p=Movimenti_Quote/_a_di_risparmio/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@&amp;data_source=movimenti-risparmio&amp;t=Movimenti_Quote_Socio_inpage" title="movimenti quote risparmio">lista movimenti quote<a></li>
+      			
+      			<li><a href="?q=object/list&amp;p=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@&amp;t=Movimenti_Libretti_Socio_inpage" title="movimenti risparmio libretti">lista movimenti riparmio</a></li>
+      			
+      			<li><a href="?q=object/list&amp;p=Movimenti_Libretti/_a_libretto/_c_Libretti/_a_ID/_v_@tag_ID#FLAT@&amp;data_source=senza-quote-o-quote-sbilanciate&amp;t=Movimenti_Libretti_Socio_inpage" title="Movimenti risparmio senza corrispondente quota capitale di 1/4">lista movimenti risparmio senza corrispondente quota capitale</a></li>
+	
+     </ul>
+     
+     
+      </div>
+
+      
+      <br />
+      
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        <tr>
+	        <th>
+	        Utente
+	        </th>
+	         <td>
+        	@tag_last_modification_user#FLAT@
+        	</td>
+        </tr>
+        <tr>
+	        <th>Aggiornamento
+	        </th>
+	         <td>
+        	@tag_last_modification_date#FLAT@
+        	</td>
+        </tr>
+      </table>      
+      </div>@END_Libretti@
+  </div>@END_TEMPLATE@

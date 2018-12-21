@@ -1,0 +1,75 @@
+@METABEGIN_TEMPLATE@
+  @BEGIN_TEMPLATE@
+  <script src="@CONTEXT@/app/Javascript/calendario/calendarEu.js" type="text/javascript" ></script>
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  <div class="filter">
+	
+  
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+	
+  </div>
+  
+  <h3>Ricerca</h3>
+  
+  @BLOCK_BEGIN_DESCRIPTION@
+  <div class="class-description">
+    @CLASS_DESCRIPTION@
+  </div>
+  @BLOCK_END_DESCRIPTION@
+
+
+  <div class="form-container">
+  <form id="filter" method="post" action="@ACTION@">
+  
+  	<!-- 
+   <fieldset>
+    <legend>ricerca a testo libero</legend>
+      <div class="memorandum">Puoi effettuare una ricerca modello &quot;motore di ricerca&quot;: specifica le parole che ti interessano, che verranno cercate fra tutti gli attributi.<br />
+      Per cercare un frase esatta, usare le virgolette (es: &quot;frase fra virgolette&quot;)</div>       
+    <label for="testo-libero">cerca</label>
+    <input id="testo-libero" name="KEY_search_all" type="text" />
+     <div class="buttonrow">
+      <input type="submit" name="post_search" class="button" title="avvia la ricerca" value="[ cerca ]" />
+    </div>
+  </fieldset>
+   -->
+  
+  <div>
+  <!-- 
+  <div class="memorandum">Specifica i parametri desiderati e premi invio per avviare la ricerca. <br />
+    Premere il bottone invia senza specificare parametri significa reperire tutte le schede presenti.
+  </div>
+   -->
+    @METABEGIN_bean@
+      @BEGIN_@METAtag_title@@
+      
+        @METABEGIN_attributes@
+          @METABEGIN_item[filter]@
+            @tag_@METAtag_name@@
+          @METAEND_item@
+        @METAEND_attributes@
+      
+      @END_@METAtag_title@@
+    @METAEND_bean@
+
+    <br class="clearBoth" />
+    <input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+    <input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+    <div class="buttonrow">
+      <input type="submit" name="post_search" class="button" title="avvia la ricerca" value="[ Cerca ]" />
+    </div>
+    
+  </div>
+  
+  </form>
+  </div>
+  </div>
+
+
+  @END_TEMPLATE@
+@METAEND_TEMPLATE@

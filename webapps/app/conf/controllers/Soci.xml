@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean>
+  <title>Soci</title>
+  <attributes>
+	    <item>
+	    	<name>residenza_regione</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>residenza_provincia</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	    <item>
+    		<name>residenza_provincia</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>residenza_comune</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	    <item>
+	    	<name>regione_nascita</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>provincia_nascita</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	    <item>
+    		<name>provincia_nascita</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>comune_nascita</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	</attributes>
+</bean>

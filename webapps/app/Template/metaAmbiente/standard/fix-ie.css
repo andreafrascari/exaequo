@@ -1,0 +1,4 @@
+<!-- CSS del metaambiente standard per sistemare i problemi di Internet Explorer -->
+
+#wrap {width:expression(document.body.clientWidth <850? "770px" : (document.body.clientWidth >995? "990px" : "85%"));}
+#splash {height:1px;}

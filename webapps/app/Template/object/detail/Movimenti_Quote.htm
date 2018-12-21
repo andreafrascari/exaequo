@@ -1,0 +1,132 @@
+@BEGIN_TEMPLATE@<div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+        
+        
+        
+      
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+    
+    @BEGIN_Movimenti_Quote@
+    
+    <!-- PULSANTI ELIMINATI ----
+    <a href="@CONTEXT@/Index?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+	 -->
+	 
+	@BLOCK_BEGIN_EDIT@
+<!--    	<a href="?q=object/detail_edit&amp;p=Movimenti_Quote&amp;a=_a_socio/_c_Soci/_a_ID/_v_@tag_socio.Soci.ID#FLAT@" title="Sottoscrizione nuova quota">Nuova quota</a>-->
+
+    		([
+        			[[] != [1]]
+    				?? [
+						
+							<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+							<span class="NoVisibility">|</span>
+						
+					]
+    			])
+        @BLOCK_END_EDIT@
+  </div>
+  
+  <br style="clear:both" />
+    
+	   	<h2>
+	   <a href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_socio.Soci.ID#FLAT@" title="vai alla scheda socio">
+	   <!-- 
+	   	   @tag_socio.Soci.dati_consumatore.Consumatori.cognome#FLAT@
+	   	   sono =
+	    -->
+	   	    
+	       @BEGIN_socio@
+	        @BEGIN_Soci@
+		      @BEGIN_dati_consumatore@
+	       			@BEGIN_Consumatori@
+	       				@tag_nome#FLAT@&nbsp;@tag_cognome#FLAT@
+	       			@END_Consumatori@
+	       		@END_dati_consumatore@
+		      @BEGIN_dati_organizzazione@
+	       			@BEGIN_Organizzazioni@
+	       				@tag_nome#FLAT@
+	       			@END_Organizzazioni@
+	       		@END_dati_organizzazione@
+	       	  @END_Soci@
+	       @END_socio@       		       
+	   </a> 
+	   </h2>
+	   
+    <div id="object-body">
+    	<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+    
+	        @tag_data_movimento@
+	        @tag_causale_quota@
+	        @tag_numero_quote@
+	        @tag_numero_quote_rimborsate@
+	        @tag_di_valore@
+	        @tag_note@
+	        <tr>
+	        	<th>
+	        	<strong>Totale</strong>
+	        	</th>
+	        	<td>
+	        	([[[@tag_numero_quote#FLAT@] !=[] && [@tag_numero_quote#FLAT@] !=[0]] ?? [
+					@XPATH_FUN(number(numero_quote)*number(di_valore))@@00 
+				])
+	        	([[[@tag_numero_quote_rimborsate#FLAT@] !=[]] && [@tag_numero_quote_rimborsate#FLAT@] !=[0]] ?? [
+					-@XPATH_FUN(number(numero_quote_rimborsate)*number(di_valore))@@00 
+				])
+	        	</td>
+	        </tr>
+	        
+		</table>      
+	</div>
+      
+      
+     <div id="object-body-links">      
+     </div>
+      
+      <br />
+      
+      
+      <div id="object-system">
+       <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        <!-- @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@ --> 
+       <tr>
+	        <th>
+	        Utente
+	        </th>
+	         <td>
+        	@tag_last_modification_user#FLAT@
+        	</td>
+        </tr>
+        <tr>
+	        <th>Aggiornamento
+	        </th>
+	         <td>
+        	@tag_last_modification_date#FLAT@
+        	</td>
+        </tr>
+        <!--  @tag_activation_flag@@tag_deletion_flag@ -->
+      </table>   
+      </div>@END_Movimenti_Quote@
+  </div>@END_TEMPLATE@

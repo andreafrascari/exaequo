@@ -1,0 +1,125 @@
+@BEGIN_TEMPLATE@
+
+<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>		
+<script type="text/javascript">
+	detailEdit=new Anastasis.DetailEdit('detail-edit','Attachment?q=prepare','Attachment?q=status&amp;id=');
+	
+	$(document).ready(function() {
+	  	 $("#INP_numero_quote_rimborsate").change(function() {
+		  	var quote=$("#INP_numero_quote_rimborsate").val();
+		 
+		  	var valorequota = $("#INP_di_valore").val(); 
+		  	var tot = parseFloat(quote) * parseFloat(valorequota);
+		  	$("#tot").append("-"+tot+" euro");
+		});
+});
+</script>
+
+  <div class="detail-edit">
+<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+   <div class="inserto">
+    
+          <a tabindex="56" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+      
+   	@BEGIN_Movimenti_Quote@
+		([ [[@tag_ID#FLAT@]!=[]] ?? 
+			[   
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+			]
+		]) 
+   	@END_Movimenti_Quote@
+
+	  	  <a tabindex="60" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  
+ 
+  <div id="splash">
+
+    <h2>Vendita Quote</h2>
+	 @BEGIN_Movimenti_Quote@		
+  </div>
+  
+     	
+
+ <div class="form-container">
+
+  <form id="detail-edit" method="post" action="@ACTION@">
+
+
+   <div class="form-container">
+      <div class="detail-rel">
+
+        </div>  
+        <div class="detail-body">
+
+        @tag_data_movimento@
+        @tag_causale_quota@
+        @tag_numero_quote_rimborsate@
+        @tag_note@
+<div id="totale" class="detail-component base-row">
+ 			<label for="INP_note">totale:  </label>
+ 			<span id="tot"></span> 
+ 		</div>
+        </div>
+
+      <div class="detail-edit-system">
+        
+        
+                <input type="hidden" id="INP_di_valore" name="INP_di_valore" value="25" />
+
+        
+        
+         <input type="hidden" name="class" value="@CLASS@" />
+
+    	<input type="hidden" name="r" value="@REDIRECT@" />
+
+    	<input type="hidden" name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+
+        
+        </div>
+        
+      
+
+   
+  </div>
+  </form>
+
+  
+  @END_Movimenti_Quote@
+
+          
+
+         
+
+  </div>
+
+   <div class="inserto">
+    
+          <a tabindex="50" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+   	@BEGIN_Movimenti_Quote@
+		([ [[@tag_ID#FLAT@]!=[]] ?? 
+			[   
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+			]
+		]) 
+   	@END_Movimenti_Quote@
+
+	  	  <a tabindex="54" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+
+
+
+  </div>@END_TEMPLATE@

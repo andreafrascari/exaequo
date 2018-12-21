@@ -1,0 +1,99 @@
+@BEGIN_TEMPLATE@<div>
+		<div id="list">
+			<div id="trails">
+				<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+			</div>
+			
+		  	<div class="inserto">
+				
+						<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+					    <span class="NoVisibility">|</span>
+					
+						<a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+						<span class="NoVisibility">|</span>
+					
+			</div>
+			<div id="splash">
+				<h2>@TITLE@</h2>
+					<a href="@CONTEXT@/Index?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+					<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+					@BLOCK_BEGIN_EDIT@
+    					<a href="@HREF_DETAIL_EDIT@" title="nuova scheda">Nuova scheda</a>
+    				@BLOCK_END_EDIT@
+    				
+			</div>
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+	    
+			
+	  		([
+						[[@tag__system_user.ID#FLAT@] != []]
+						?? [
+			<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+				<tr>
+					@BLOCK_BEGIN_HEADER@
+						<th scope="col">@HEAD_LABEL@</th>
+					@BLOCK_END_HEADER@
+				</tr>
+	
+					@BEGIN__system_user@([ 
+							[[@XPATH_FUN((count(preceding-sibling::_system_user)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+								<tr class="lista_linea_pari">
+							]
+							:: [
+								<tr class="lista_linea_dispari">
+							]
+						])
+		
+						<td><a href="?q=object/detail&amp;p=_system_user/_a_ID/_v_@tag_ID#FLAT@" title="vai alla scheda di dettaglio">@tag_user_user_id#FLAT@</a></td>
+						@tag_user_name@@tag_user_email@@tag_creation_date@
+								</tr>@END__system_user@
+	  		</table>
+	  		]
+			])
+	  		
+	  		<div class="pagine">
+					
+					@BLOCK_BEGIN_INDIETRO@
+						
+							<a class="linkfirst" href="@HREF_LIST_FIRST@" title="Vai alla prima pagina">[ Prima pagina ]</a>
+							<span class="NoVisibility">|</span>
+											
+						
+							<a class="linkprev" href="@HREF_LIST_BACK@" title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">[ Indietro ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_INDIETRO@
+					
+					<strong>@NUMERO_ELEMENTI@ elementi</strong> trovati - pagina @PAGINA_CORRENTE@
+					
+					@BLOCK_BEGIN_AVANTI@        
+						
+							<a class="linknext" href="@HREF_LIST@" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">[ Avanti ]</a>
+							<span class="NoVisibility">|</span>
+						
+						
+							<a class="linkfirst" href="@HREF_LIST_LAST@" title="Vai all'ultima pagina">[ Ultima pagina ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_AVANTI@
+					
+			</div>
+		</div>
+	<span id="apri-chiudi-filtro" title="apri/chiudi filtro di raffinamento">affina la ricerca</span>
+	<div @toggable="controller=apri-chiudi-filtro,init_state=closed">
+  
+ 	@FUN_MODULE(q=object/simplefilter)@  
+	</div>
+</div>@END_TEMPLATE@

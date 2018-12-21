@@ -1,0 +1,2125 @@
+; Sun Oct 18 13:51:29 CEST 2015
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot tema
+		(type SYMBOL)
+		(allowed-values cooperazione_decentrata ristorazione_solidale fair_trade legislazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot documenti
+		(type INSTANCE)
+;+		(allowed-classes _system_document)
+;+		(inverse-slot di_sessione)
+		(create-accessor read-write))
+	(single-slot organizzatore
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consumatori_bottega
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(cardinality 0 1)
+;+		(inverse-slot consumatori)
+		(create-accessor read-write))
+	(single-slot di_socio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_socio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_inizio_validita
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot quantita
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot regolamento_prestito
+		(type INSTANCE)
+;+		(allowed-classes RegolamentoPrestito)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_regolamento_prestito)
+		(create-accessor read-write))
+	(single-slot libretto
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(cardinality 0 1)
+;+		(inverse-slot movimenti)
+		(create-accessor read-write))
+	(single-slot apertura_libretto_dopo_adesione_giorni
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fornitore
+		(type SYMBOL)
+		(allowed-values CTM)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot importo_massimo_prestito
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot i_soci
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(inverse-slot di_cooperativa)
+		(create-accessor read-write))
+	(single-slot tipo_libretto
+		(type INSTANCE)
+;+		(allowed-classes CondizioniLibretto)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_tipo_libretto)
+		(create-accessor read-write))
+	(single-slot periodo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sotto_categoria
+		(type SYMBOL)
+		(allowed-values biscotti)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot file_type
+		(type SYMBOL)
+		(allowed-values pdf doc ppt odt xls ods mdb)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_apertura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_quote_rimborsate
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_quote
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno_iscrizione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interessi_lordi
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot web
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interessi_netti
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_domanda
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_domanda_recesso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot causale_libretto
+		(type SYMBOL)
+		(allowed-values Versamento Prelievo Accredito_interessi Accredito_saldo Prelievo_interessi)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note_contratto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appartiene_a
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+;+		(inverse-slot botteghe)
+		(create-accessor read-write))
+	(single-slot regione_nascita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot thumbnail
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono_lavoro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot newsletter_coop
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+;+		(inverse-slot newsletter_di_coop)
+		(create-accessor read-write))
+	(multislot partecipanti
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+;+		(inverse-slot ha_partecipato_a)
+		(create-accessor read-write))
+	(multislot movimenti_quote
+		(type INSTANCE)
+;+		(allowed-classes Movimenti_Quote)
+;+		(inverse-slot socio)
+		(create-accessor read-write))
+	(single-slot delibera_cda_adesione
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_rinnovo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_organizzazione
+		(type INSTANCE)
+;+		(allowed-classes Organizzazioni)
+;+		(cardinality 0 1)
+;+		(inverse-slot dati_associazione)
+		(create-accessor read-write))
+	(single-slot data_fine_validita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot risparmio
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(inverse-slot dati_socio)
+		(create-accessor read-write))
+	(single-slot numero_effetto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inverse_of_tipo_libretto
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(inverse-slot tipo_libretto)
+		(create-accessor read-write))
+	(single-slot luogo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comuniqcazione_modifiche_giorni
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot newsletter_di_coop
+		(type INSTANCE)
+;+		(allowed-classes Newsletter)
+;+		(inverse-slot newsletter_coop)
+		(create-accessor read-write))
+	(single-slot modalita_calcolo_interessi
+		(type SYMBOL)
+		(allowed-values Fisso Scaglioni_non_gestito Scaglioni_Capitale_non_gestito Proporzionato_non_gestito Frazionato_non_gestito)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot numero
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot spese_richiesta_documentazione
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot attachment_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comune_nascita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice_contratto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot importo_prestito
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot attachment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cognome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot causale_quota
+		(type SYMBOL)
+		(allowed-values Accredito_saldo Acquisto_quote_da_soci Perdita_per_riduzione_capitale Quota_da_risparmio Quota_di_adesione Rimborso_parziale Rimborso_quote_per_recesso Sottoscrizione_nuove_quote Vendita_quote)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ritenuta_fiscale
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interessi_indeducibili
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot residenza_cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot cooperativa_iniziative
+		(type INSTANCE)
+;+		(allowed-classes Iniziative)
+;+		(inverse-slot iniziative_cooperativa)
+		(create-accessor read-write))
+	(single-slot di_coop
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+;+		(inverse-slot tag_coop)
+		(create-accessor read-write))
+	(single-slot importo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot vincolo
+		(type SYMBOL)
+		(allowed-values Annuale Triennale Quinquennale Anticipiato)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tipo_cooperativa
+		(type SYMBOL)
+		(allowed-values sociale produzione-lavoro consumatori)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot teaser
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot per_consumatori
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+;+		(inverse-slot consumatori_tags)
+		(create-accessor read-write))
+	(single-slot inverse_of_regolamento_prestito
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 1 1)
+;+		(inverse-slot regolamento_prestito)
+		(create-accessor read-write))
+	(single-slot nome_mailing_list
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_valore
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot docenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_chiusura_bilancio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sez_mailing_list
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sez_statuto_regolamenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_associazione
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+;+		(inverse-slot dati_organizzazione)
+		(create-accessor read-write))
+	(multislot movimenti
+		(type INSTANCE)
+;+		(allowed-classes Movimenti_Libretti)
+;+		(inverse-slot libretto)
+		(create-accessor read-write))
+	(multislot di_sessione
+		(type INSTANCE)
+;+		(allowed-classes SessioniCorsi)
+;+		(inverse-slot documenti)
+		(create-accessor read-write))
+	(single-slot ragione_sociale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot categoria
+		(type SYMBOL)
+		(allowed-values alimentari)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot banca_di_riferimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot motivazione_chiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot accredito_interessi
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot rapporto_prestito_capitale
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome_iniziativa
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_libretto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_tassi_di_interesse
+		(type INSTANCE)
+;+		(allowed-classes CondizioniLibretto)
+;+		(cardinality 1 1)
+;+		(inverse-slot tassi_di_interesse)
+		(create-accessor read-write))
+	(single-slot di_corso
+		(type INSTANCE)
+;+		(allowed-classes CorsiFormazione)
+;+		(cardinality 0 1)
+;+		(inverse-slot sessioni)
+		(create-accessor read-write))
+	(single-slot modalita_rinnovo
+		(type SYMBOL)
+		(allowed-values Tacito Comunicazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot banca_di_riferimento_movimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot botteghe
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(inverse-slot appartiene_a)
+		(create-accessor read-write))
+	(single-slot genere
+		(type SYMBOL)
+		(allowed-values Maschio Femmina)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inviato_il
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot costo_singola_operazione
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot delega
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia_nascita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot professione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot per_organizzazioni
+		(type INSTANCE)
+;+		(allowed-classes Organizzazioni)
+;+		(inverse-slot i_tag_relativi)
+		(create-accessor read-write))
+	(single-slot indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot delibera_cda_recesso
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot body
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia
+		(type SYMBOL)
+		(allowed-values socio_exaequo socio_fondatore_exaequo)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot author
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot liquidazione_quote_esercizio_giorni
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot socio
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+;+		(inverse-slot movimenti_quote)
+		(create-accessor read-write))
+	(single-slot category
+		(type SYMBOL)
+		(allowed-values moduli formazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot spese_tenuta_conto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fax
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot importo_capitale
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot i_tag_relativi
+		(type INSTANCE)
+;+		(allowed-classes Tag)
+;+		(inverse-slot per_organizzazioni)
+		(create-accessor read-write))
+	(single-slot tasso_interesse
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot residenza_regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tag_coop
+		(type INSTANCE)
+;+		(allowed-classes Tag)
+;+		(inverse-slot di_coop)
+		(create-accessor read-write))
+	(single-slot telefono_casa
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot iban
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot logo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot consumatori
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+;+		(inverse-slot consumatori_bottega)
+		(create-accessor read-write))
+	(single-slot telefono_cellulare
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot associazione
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+;+		(inverse-slot dati_consumatore)
+		(create-accessor read-write))
+	(single-slot prodotti_bottega
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(cardinality 0 1)
+;+		(inverse-slot prodotti_mercatino)
+		(create-accessor read-write))
+	(single-slot importo_altre_quote
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot dati_consumatore
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+;+		(cardinality 0 1)
+;+		(inverse-slot associazione)
+		(create-accessor read-write))
+	(multislot consumatori_tags
+		(type INSTANCE)
+;+		(allowed-classes Tag)
+;+		(inverse-slot per_consumatori)
+		(create-accessor read-write))
+	(single-slot residenza_numero
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot conto_corrente
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot prezzo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot carica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice_libretto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provenienza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot sessioni
+		(type INSTANCE)
+;+		(allowed-classes SessioniCorsi)
+;+		(inverse-slot di_corso)
+		(create-accessor read-write))
+	(multislot condizioni_libretti
+		(type INSTANCE)
+;+		(allowed-classes CondizioniLibretto)
+;+		(inverse-slot inverse_of_condizioni_libretti)
+		(create-accessor read-write))
+	(multislot ha_partecipato_a
+		(type INSTANCE)
+;+		(allowed-classes Iniziative)
+;+		(inverse-slot partecipanti)
+		(create-accessor read-write))
+	(single-slot partita_iva
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estratticonto
+		(type INSTANCE)
+;+		(allowed-classes Estrattoconto)
+;+		(inverse-slot di_libretto)
+		(create-accessor read-write))
+	(single-slot data_fine_attivita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot per_corso
+		(type INSTANCE)
+;+		(allowed-classes CorsiFormazione)
+;+		(inverse-slot documenti_corso)
+		(create-accessor read-write))
+	(single-slot stato_libretto
+		(type SYMBOL)
+		(allowed-values Attivo Chiuso Chiusura_Anticipata In_Attesa_di_Chiusura)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_ammissione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_delibera_domanda_organizzazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot documenti_corso
+		(type INSTANCE)
+;+		(allowed-classes _system_document)
+;+		(inverse-slot per_corso)
+		(create-accessor read-write))
+	(single-slot residenza_provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esito_invio
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_delibera_recesso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice_condizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot giorni_valuta
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot produttore
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email_admin_mailing_list
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pdf
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot mezzo
+		(type SYMBOL)
+		(allowed-values Assegno_bancario Assegno_circolare Contanti Bancomat Bonifico_bancario Conto_Corrente_postale Vaglia_postale Giroconto)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_valuta
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot quote_relative
+		(type INSTANCE)
+;+		(allowed-classes Movimenti_Quote)
+;+		(inverse-slot di_risparmio)
+		(create-accessor read-write))
+	(single-slot titolo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_movimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot title
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tassi_di_interesse
+		(type INSTANCE)
+;+		(allowed-classes TassoInteresseLibretto)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot inverse_of_tassi_di_interesse)
+		(create-accessor read-write))
+	(single-slot abstract
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_bottega
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(cardinality 0 1)
+;+		(inverse-slot organizzazioni)
+		(create-accessor read-write))
+	(single-slot argomenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_chiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_via
+		(type SYMBOL)
+		(allowed-values via strada viale vicolo corso piazza piazzetta casella_postale galleria)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_risparmio
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(cardinality 0 1)
+;+		(inverse-slot quote_relative)
+		(create-accessor read-write))
+	(single-slot valore_quota
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot valore_quote
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_tipo_via
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_libretto
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(cardinality 1 1)
+;+		(inverse-slot estratticonto)
+		(create-accessor read-write))
+	(single-slot numero_quote_associazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_domanda
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_deposito
+		(type SYMBOL)
+		(allowed-values Ordinario Vincolato)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_scadenza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_organizzazione
+		(type SYMBOL)
+		(allowed-values associazione cooperativa cooperativa_sociale fondazione ong impresa ente_locale)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot legale_rappresentante
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot iniziative_cooperativa
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+;+		(inverse-slot cooperativa_iniziative)
+		(create-accessor read-write))
+	(single-slot inverse_of_condizioni_libretti
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 1 1)
+;+		(inverse-slot condizioni_libretti)
+		(create-accessor read-write))
+	(single-slot regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot mese_inizio_esercizio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_socio
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+;+		(inverse-slot risparmio)
+		(create-accessor read-write))
+	(single-slot presso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno_rinnovo
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot prodotti_mercatino
+		(type INSTANCE)
+;+		(allowed-classes Prodotti)
+;+		(inverse-slot prodotti_bottega)
+		(create-accessor read-write))
+	(single-slot quote_adesione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_costituzione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot organizzazioni
+		(type INSTANCE)
+;+		(allowed-classes Organizzazioni)
+;+		(inverse-slot di_bottega)
+		(create-accessor read-write))
+	(single-slot codice_fiscale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_cooperativa
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+;+		(inverse-slot i_soci)
+		(create-accessor read-write))
+	(single-slot liquidazione_interessi_chiusura
+		(type SYMBOL)
+		(allowed-values Fisso Contestuale)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot settore_attivita
+		(type SYMBOL)
+		(allowed-values associazionismo commercio)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Consumatori
+	(is-a USER)
+	(role concrete)
+	(single-slot comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cognome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot ha_partecipato_a
+		(type INSTANCE)
+;+		(allowed-classes Iniziative)
+		(create-accessor read-write))
+	(single-slot consumatori_bottega
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot consumatori_tags
+		(type INSTANCE)
+;+		(allowed-classes Tag)
+		(create-accessor read-write))
+	(single-slot tipo_via
+		(type SYMBOL)
+		(allowed-values via strada viale vicolo corso piazza piazzetta casella_postale galleria)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno_iscrizione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot presso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno_rinnovo
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot associazione
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Soci
+	(is-a USER)
+	(role concrete)
+	(single-slot stato_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot partita_iva
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_domanda_recesso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_domanda
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono_casa
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_socio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot genere
+		(type SYMBOL)
+		(allowed-values Maschio Femmina)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot regione_nascita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono_lavoro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia_nascita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot professione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono_cellulare
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot movimenti_quote
+		(type INSTANCE)
+;+		(allowed-classes Movimenti_Quote)
+		(create-accessor read-write))
+	(single-slot data_ammissione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_organizzazione
+		(type INSTANCE)
+;+		(allowed-classes Organizzazioni)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_tipo_via
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_delibera_domanda_organizzazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_consumatore
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot risparmio
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+		(create-accessor read-write))
+	(single-slot residenza_provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_delibera_recesso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_domanda
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice_fiscale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_numero
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_cooperativa
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comune_nascita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot carica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Libretti
+	(is-a USER)
+	(role concrete)
+	(multislot quote_relative
+		(type INSTANCE)
+;+		(allowed-classes Movimenti_Quote)
+		(create-accessor read-write))
+	(single-slot tipo_libretto
+		(type INSTANCE)
+;+		(allowed-classes CondizioniLibretto)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot motivazione_chiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot iban
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estratticonto
+		(type INSTANCE)
+;+		(allowed-classes Estrattoconto)
+		(create-accessor read-write))
+	(single-slot note_contratto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot modalita_rinnovo
+		(type SYMBOL)
+		(allowed-values Tacito Comunicazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_chiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_scadenza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot movimenti
+		(type INSTANCE)
+;+		(allowed-classes Movimenti_Libretti)
+		(create-accessor read-write))
+	(single-slot data_apertura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_socio
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot conto_corrente
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot delega
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice_contratto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato_libretto
+		(type SYMBOL)
+		(allowed-values Attivo Chiuso Chiusura_Anticipata In_Attesa_di_Chiusura)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot banca_di_riferimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_rinnovo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Movimenti_Quote
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_movimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot socio
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_quote_rimborsate
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot causale_quota
+		(type SYMBOL)
+		(allowed-values Accredito_saldo Acquisto_quote_da_soci Perdita_per_riduzione_capitale Quota_da_risparmio Quota_di_adesione Rimborso_parziale Rimborso_quote_per_recesso Sottoscrizione_nuove_quote Vendita_quote)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_quote
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_valore
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_risparmio
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Prodotti
+	(is-a USER)
+	(role concrete)
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot quantita
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot produttore
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sotto_categoria
+		(type SYMBOL)
+		(allowed-values biscotti)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fornitore
+		(type SYMBOL)
+		(allowed-values CTM)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot categoria
+		(type SYMBOL)
+		(allowed-values alimentari)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot prezzo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot prodotti_bottega
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot codice
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provenienza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Iniziative
+	(is-a USER)
+	(role concrete)
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot partecipanti
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+		(create-accessor read-write))
+	(single-slot nome_iniziativa
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot iniziative_cooperativa
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Cooperative
+	(is-a USER)
+	(role concrete)
+	(single-slot web
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot condizioni_libretti
+		(type INSTANCE)
+;+		(allowed-classes CondizioniLibretto)
+		(create-accessor read-write))
+	(multislot tag_coop
+		(type INSTANCE)
+;+		(allowed-classes Tag)
+		(create-accessor read-write))
+	(single-slot regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot cooperativa_iniziative
+		(type INSTANCE)
+;+		(allowed-classes Iniziative)
+		(create-accessor read-write))
+	(multislot botteghe
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+		(create-accessor read-write))
+	(single-slot regolamento_prestito
+		(type INSTANCE)
+;+		(allowed-classes RegolamentoPrestito)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot valore_quota
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_cooperativa
+		(type SYMBOL)
+		(allowed-values sociale produzione-lavoro consumatori)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot i_soci
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+		(create-accessor read-write))
+	(single-slot delibera_cda_adesione
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome_mailing_list
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_quote_associazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot delibera_cda_recesso
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_chiusura_bilancio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot newsletter_di_coop
+		(type INSTANCE)
+;+		(allowed-classes Newsletter)
+		(create-accessor read-write))
+	(single-slot sez_mailing_list
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sez_statuto_regolamenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot liquidazione_quote_esercizio_giorni
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email_admin_mailing_list
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ragione_sociale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fax
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Botteghe
+	(is-a USER)
+	(role concrete)
+	(single-slot comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot web
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot organizzazioni
+		(type INSTANCE)
+;+		(allowed-classes Organizzazioni)
+		(create-accessor read-write))
+	(single-slot appartiene_a
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot consumatori
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+		(create-accessor read-write))
+	(multislot prodotti_mercatino
+		(type INSTANCE)
+;+		(allowed-classes Prodotti)
+		(create-accessor read-write))
+	(single-slot fax
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Organizzazioni
+	(is-a USER)
+	(role concrete)
+	(single-slot comune
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot web
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot regione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_bottega
+		(type INSTANCE)
+;+		(allowed-classes Botteghe)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_via
+		(type SYMBOL)
+		(allowed-values via strada viale vicolo corso piazza piazzetta casella_postale galleria)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dati_associazione
+		(type INSTANCE)
+;+		(allowed-classes Soci)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_organizzazione
+		(type SYMBOL)
+		(allowed-values associazione cooperativa cooperativa_sociale fondazione ong impresa ente_locale)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot provincia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno_iscrizione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot legale_rappresentante
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno_rinnovo
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fax
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot i_tag_relativi
+		(type INSTANCE)
+;+		(allowed-classes Tag)
+		(create-accessor read-write))
+	(single-slot settore_attivita
+		(type SYMBOL)
+		(allowed-values associazionismo commercio)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Tag
+	(is-a USER)
+	(role concrete)
+	(multislot per_consumatori
+		(type INSTANCE)
+;+		(allowed-classes Consumatori)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_coop
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot per_organizzazioni
+		(type INSTANCE)
+;+		(allowed-classes Organizzazioni)
+		(create-accessor read-write)))
+
+(defclass _system_document
+	(is-a USER)
+	(role concrete)
+	(multislot per_corso
+		(type INSTANCE)
+;+		(allowed-classes CorsiFormazione)
+		(create-accessor read-write))
+	(single-slot file_type
+		(type SYMBOL)
+		(allowed-values pdf doc ppt odt xls ods mdb)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot attachment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot title
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot attachment_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot thumbnail
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot di_sessione
+		(type INSTANCE)
+;+		(allowed-classes SessioniCorsi)
+		(create-accessor read-write))
+	(single-slot category
+		(type SYMBOL)
+		(allowed-values moduli formazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot author
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot teaser
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Newsletter
+	(is-a USER)
+	(role concrete)
+	(single-slot title
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot thumbnail
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot newsletter_coop
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot body
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot teaser
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Movimenti_Libretti
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot libretto
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_movimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_effetto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot mezzo
+		(type SYMBOL)
+		(allowed-values Assegno_bancario Assegno_circolare Contanti Bancomat Bonifico_bancario Conto_Corrente_postale Vaglia_postale Giroconto)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_valuta
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot causale_libretto
+		(type SYMBOL)
+		(allowed-values Versamento Prelievo Accredito_interessi Accredito_saldo Prelievo_interessi)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot importo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot banca_di_riferimento_movimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass CorsiFormazione
+	(is-a USER)
+	(role concrete)
+	(multislot sessioni
+		(type INSTANCE)
+;+		(allowed-classes SessioniCorsi)
+		(create-accessor read-write))
+	(single-slot tema
+		(type SYMBOL)
+		(allowed-values cooperazione_decentrata ristorazione_solidale fair_trade legislazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot documenti_corso
+		(type INSTANCE)
+;+		(allowed-classes _system_document)
+		(create-accessor read-write))
+	(single-slot titolo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot organizzatore
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot logo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot abstract
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot periodo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot luogo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass SessioniCorsi
+	(is-a USER)
+	(role concrete)
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot documenti
+		(type INSTANCE)
+;+		(allowed-classes _system_document)
+		(create-accessor read-write))
+	(single-slot title
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot docenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot luogo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot argomenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_corso
+		(type INSTANCE)
+;+		(allowed-classes CorsiFormazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass RegolamentoPrestito
+	(is-a USER)
+	(role concrete)
+	(single-slot accredito_interessi
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot rapporto_prestito_capitale
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_regolamento_prestito
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ritenuta_fiscale
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot comuniqcazione_modifiche_giorni
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot giorni_valuta
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot spese_richiesta_documentazione
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot costo_singola_operazione
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot apertura_libretto_dopo_adesione_giorni
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot liquidazione_interessi_chiusura
+		(type SYMBOL)
+		(allowed-values Fisso Contestuale)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot spese_tenuta_conto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot importo_massimo_prestito
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass CondizioniLibretto
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_fine_validita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tassi_di_interesse
+		(type INSTANCE)
+;+		(allowed-classes TassoInteresseLibretto)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot inverse_of_condizioni_libretti
+		(type INSTANCE)
+;+		(allowed-classes Cooperative)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot inverse_of_tipo_libretto
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+		(create-accessor read-write))
+	(single-slot vincolo
+		(type SYMBOL)
+		(allowed-values Annuale Triennale Quinquennale Anticipiato)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_inizio_validita
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot codice_condizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot modalita_calcolo_interessi
+		(type SYMBOL)
+		(allowed-values Fisso Scaglioni_non_gestito Scaglioni_Capitale_non_gestito Proporzionato_non_gestito Frazionato_non_gestito)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tipologia_deposito
+		(type SYMBOL)
+		(allowed-values Ordinario Vincolato)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass TassoInteresseLibretto
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_fine_validita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tasso_interesse
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_inizio_validita
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_tassi_di_interesse
+		(type INSTANCE)
+;+		(allowed-classes CondizioniLibretto)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Estrattoconto
+	(is-a USER)
+	(role concrete)
+	(single-slot importo_prestito
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot esito_invio
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_libretto
+		(type INSTANCE)
+;+		(allowed-classes Libretti)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interessi_netti
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interessi_indeducibili
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inviato_il
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pdf
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interessi_lordi
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot importo_capitale
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot importo_altre_quote
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass InteressiIndeducibili
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_fine_validita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tasso_interesse
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_inizio_validita
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass SimulazioneEstrattoconto
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot importo_prestito
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interessi_indeducibili
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interessi_netti
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot di_socio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interessi_lordi
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot importo_capitale
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot importo_altre_quote
+		(type FLOAT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot codice_libretto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))

@@ -1,0 +1,40 @@
+@BEGIN_TEMPLATE@<div class="operation-result">
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">home</a> - Invio estrattoconto
+	</div>
+  <div id="splash">
+    <h2>Invio estrattoconto</h2>
+  </div>
+
+	<h3>Risultato dell'operazione</h3>
+
+  @BLOCK_BEGIN_RESULT_SUCCESS@
+
+    <div class="system-message-success">
+
+      Operazione effettuata correttamente
+      <br />
+      <a class="highlight" title="Lista estrattoconti da inviare" href="?q=object/list&amp;p=Estrattoconto/_a_inviato_il/_v_null/&amp;_a_data/_v_@DATA@">Vai alla lista estrattoconti da inviare</a>
+	 <br />
+	 <a title="Torna all'estrattoconto inviato" href="?q=object/detail&amp;p=Estrattoconto/_a_ID/_v_@ID@">Torna all'estrattoconto inviato</a>
+	
+  @BLOCK_END_RESULT_SUCCESS@
+  
+
+  @BLOCK_BEGIN_RESULT_ERROR@
+
+    <div class="system-message-error">
+
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+
+    </div>
+
+  @BLOCK_END_RESULT_ERROR@
+
+
+
+   
+
+  </div>
+
+  <br />@END_TEMPLATE@

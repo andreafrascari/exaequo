@@ -1,0 +1,123 @@
+@BEGIN_TEMPLATE@
+	<script src="@CONTEXT@/app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+	<script src="@CONTEXT@/app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>
+	<script src="@CONTEXT@/app/Javascript/anastasis/serena/ComplexDetailEdit.js" type="text/javascript"></script>
+	<script type="text/javascript">	
+		detailEdit=new Anastasis.ComplexDetailEdit("detail-edit","@CONTEXT@/Attachment?q=prepare","@CONTEXT@/Attachment?q=status&amp;id=");
+	</script>  
+	<script src="@CONTEXT@/app/Javascript/calendario/calendarEu.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		function areusure()	{
+			if (confirm("Uscire senza salvare?"))
+				history.back(); 
+		}
+	</script>
+	<!-- Va modificato se la posizione del modulo di menu non e' 2 -->
+	<!-- Commentare per attivare il menu dei nodi CMS
+	@TARGET_BEGIN_MOD_2@
+		@FUN_MENU(rootId=1,currentId=1)@
+	@TARGET_END_MOD_2@
+	-->
+	<div id="trails">
+			<a href="?me=standard" title="Homepage">Homepage</a>
+			&gt; Modifica
+		</div>
+	<div class="detail-edit">
+		<div id="splash">
+			<h2>Nodo CMS</h2>
+			
+				
+		
+			
+		</div>
+  
+	  	<h3>Inserimento/modifica scheda</h3>
+
+		<div class="form-container">
+			<form id="detail-edit" onsubmit="return Utils.checkAll()" method="post" action="Index?q=object/input">
+				<div>
+					
+					
+					@BEGIN__system_cms_node@
+						<div class="detail-heading">@tag_title@</div>
+								
+						<div class="detail-body">
+							@tag_teaser@
+							@tag_body@
+							@tag_extra@
+							@tag_progressive@
+							
+							
+							<!-- 
+							<div class="complex_sub_form">
+								<h4>Voci di menu</h4>
+								([
+	
+									[[@tag_ID#FLAT@] contains [NEWOBJ]]
+									?? [
+										<!-- E' un oggetto nuovo: bisogna prima salvare 
+										
+										
+										<div class="object-help"><strong>Attenzione</strong>: Prima di inserire una nuova voce di menu bisogna <a href="javascript:detailEdit.salva();" title="Salva la scheda">salvare</a>.</div>
+									] ::
+									[
+										<div class="object-help"><strong>Attenzione</strong>: Le modifiche ai menu, anche in seguito a salvataggio, vengono rese visibili solo dopo l'uscita dall'ambiente di amministrazione.</div>
+										@BEGIN_present_in_menu_as@
+											@BEGIN__system_menu_item@												
+												@tag_smi_parent#NOQUERY@
+												
+												([
+													[[@tag_smi_title#FLAT@] == []]
+													?? [
+														@FUN_SET_VALUE(input=@tag_smi_title@, value=@tag_<-.<-.title#FLAT@)@
+													] :: [
+														@tag_smi_title@
+													]
+												])
+												([
+													[[@tag_smi_alternative_text#FLAT@] == []]
+													?? [
+														@FUN_SET_VALUE(input=@tag_smi_alternative_text@, value=@tag_<-.<-.title#FLAT@)@
+													] :: [
+														@tag_smi_alternative_text@
+													]
+												])										
+												@tag_smi_order@
+												<div style="display:none"> 		
+													@FUN_SET_VALUE(input=@tag_smi_href@, value=?q=object/detail&amp;p=_system_cms_node/_a_ID/_v_@tag_<-.<-.ID#FLAT@)@
+													@tag_smi_parent._system_menu_item.ID#FLAT@
+												</div>
+											@END__system_menu_item@
+										@END_present_in_menu_as@
+									]
+								])
+							</div>
+							 -->															
+							<!--
+								@tag_publication_from@
+								@tag_publication_to@
+							-->
+						</div>
+								
+	     
+						<input type="hidden" id="main_instance_id" name="main_instance_id" value="@MAIN_INSTANCE_ID@" />	    
+					@END__system_cms_node@
+					<div class="inserto">
+						<a href="javascript:areusure();" title="Indietro">[ Esci ]</a>
+						<span class="NoVisibility">|</span>
+						<a href='stampa("contenuto");' title="Stampa la scheda">[ Stampa ]</a>
+						<span class="NoVisibility">|</span>
+						<a href="javascript:detailEdit.salva();" title="Salva la scheda">[ Salva ]</a>
+						<span class="NoVisibility">|</span>
+						<a href="javascript:detailEdit.delObject(null, '?q=object/filter&amp;p=_system_cms_node');" title="cancella la scheda">[ Elimina ]</a>
+						<span class="NoVisibility">|</span>
+						<a href="@HREF_DETAIL@&amp;fme=1&amp;me=standard" title="vai alla visualizzazione della scheda">[ Scheda ]</a>
+						<span class="NoVisibility">|</span>					
+					</div>  	  
+					
+				</div>
+			</form>
+		</div>
+
+	</div>
+@END_TEMPLATE@

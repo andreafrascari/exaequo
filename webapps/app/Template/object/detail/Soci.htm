@@ -1,0 +1,268 @@
+@BEGIN_TEMPLATE@<div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+   	@BEGIN_Soci@
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+            
+      
+   	</div>
+  <div id="splash">
+    ([ [[@tag_data_ammissione#FLAT@]!=[]] ?? 
+		[   <h2>Soci</h2>
+		]::[
+		 	<h2>Domanda ammissione</h2>
+	]])
+    <a href="@CONTEXT@/Index?q=object/filter&amp;p=Soci_Anagrafica" title="Nuova ricerca">Ricerca</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=Soci_Anagrafica" title="Lista completa">Lista</a>
+	
+    @BLOCK_BEGIN_EDIT@     
+    		([
+        			[[] != [1]]
+    				?? [
+						
+							<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+							<span class="NoVisibility">|</span>
+						
+					]
+    			])
+        @BLOCK_END_EDIT@
+  </div>
+  <br style="clear:both" />
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+    
+    <div class="object-title">
+	    <h2>
+	    ([ [[@tag_dati_organizzazione.Organizzazioni.ID#FLAT@]] ?? 
+			[
+			<a title="vai alla scheda organizzazione" href="?q=object/detail&amp;p=Organizzazioni/_a_ID/_v_@tag_dati_organizzazione.Organizzazioni.ID#FLAT@/_m_Organizzazioni">@tag_dati_organizzazione.Organizzazioni.nome#FLAT@</a>
+			]::[
+			<a title="vai alla scheda consumatore" href="?q=object/detail&amp;p=Consumatori/_a_ID/_v_@tag_dati_consumatore.Consumatori.ID#FLAT@/_m_Consumatori">@tag_dati_consumatore.Consumatori.nome#FLAT@ @tag_dati_consumatore.Consumatori.cognome#FLAT@</a>
+		]])		
+	    </h2>
+    </div>
+      
+
+      
+    <div id="object-body">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+        
+        
+        @tag_data_nascita@
+        @tag_genere@
+		<tr>
+		   	<th>
+		    Luogo nascita
+		    </th>
+		    <td>
+			@tag_comune_nascita#FLAT@ (@tag_provincia_nascita#FLAT@)
+			</td>
+		</tr>
+		@tag_stato_nascita@
+		@tag_codice_fiscale@
+		@tag_data_delibera_domanda_organizzazione@
+		<tr>
+		   	<th>
+		    Telefono
+		    </th>
+		    <td>casa&#58;
+			@tag_telefono_casa#FLAT@
+			&nbsp;/&nbsp;
+			lavoro&#58;
+			@tag_telefono_lavoro#FLAT@
+			&nbsp;/&nbsp;
+			cellulare&#58;
+			@tag_telefono_cellulare#FLAT@
+			</td>
+		</tr>
+
+		@tag_dati_consumatore.Consumatori.email@
+		
+		@tag_professione@
+		<tr>
+			<td class="sezione_dettaglio" scope="row" colspan="2">Residenza</td>			
+		</tr>
+		<tr>
+	        <th>&nbsp;</th>
+	        <td>
+	        	@tag_residenza_tipo_via#FLAT@
+	        	@tag_residenza_indirizzo#FLAT@
+	        	@tag_residenza_numero#FLAT@
+			</td>
+	    </tr>
+	    <tr>
+	        <th>
+	        &nbsp;
+	        </th>
+	        <td>
+	        	@tag_residenza_cap#FLAT@
+	        	@tag_residenza_comune#FLAT@ (@tag_residenza_provincia#FLAT@)
+			</td>
+	    </tr>        
+	    
+	    
+	    <tr>
+			<td class="sezione_dettaglio" scope="row" colspan="2">Domicilio</td>			
+		</tr>
+		
+		<tr>
+	        <th>&nbsp;</th>
+	        <td>
+		        @tag_dati_consumatore.Consumatori.presso#FLAT@ 
+	        	@tag_dati_organizzazione.Organizzazioni.tipo_via#FLAT@ 
+	        	@tag_dati_consumatore.Consumatori.tipo_via#FLAT@ 
+	        	@tag_dati_organizzazione.Organizzazioni.indirizzo#FLAT@ 
+	        	@tag_dati_consumatore.Consumatori.indirizzo#FLAT@ 
+	        	@tag_dati_organizzazione.Organizzazioni.numero#FLAT@
+	        	@tag_dati_consumatore.Consumatori.numero#FLAT@
+			</td>
+	    </tr>        
+	    <tr>
+	        <th>
+	        &nbsp;
+	        </th>
+	        <td>
+        	@tag_dati_consumatore.Consumatori.cap#FLAT@ 
+        	@tag_dati_organizzazione.Organizzazioni.cap#FLAT@ 
+        	@tag_dati_consumatore.Consumatori.comune#FLAT@ 
+        	@tag_dati_organizzazione.Organizzazioni.comune#FLAT@ 
+        	@tag_dati_consumatore.Consumatori.provincia#FLAT@
+        	@tag_dati_organizzazione.Organizzazioni.provincia#FLAT@
+			</td>
+	    </tr>     
+	    
+
+	            
+	    <tr>
+			<td class="sezione_dettaglio" scope="row" colspan="2">Keywords</td>
+		</tr>			
+		<tr>
+			<th scope="row">Tags</th>
+			<td>@tag_dati_consumatore.Consumatori.consumatori_tags.Tag.nome#FLAT@@tag_dati_organizzazione.Organizzazioni.i_tag_relativi.Tag.nome#FLAT@</td>
+		</tr>			
+		<tr>
+			<th scope="row">Iniziative</th>
+			<td>@tag_dati_consumatore.Consumatori.ha_partecipato_a.Iniziative.nome_iniziativa#FLAT@</td>
+		</tr>
+		<tr>
+			<th class="sottolineato_dettaglio" scope="row">Cooperativa</th>
+			<td class="sottolineato_dettaglio">@tag_di_cooperativa.Cooperative.ragione_sociale#FLAT@&nbsp;</td>
+		</tr>	         		
+		<tr>
+			<th scope="row">Bottega</th>
+			<td>@tag_dati_consumatore.Consumatori.consumatori_bottega.Botteghe.nome#FLAT@&nbsp;</td>
+		</tr>	         		
+		<tr>
+			<td class="sezione_dettaglio" scope="row" colspan="2">Domanda ammissione / recesso</td>
+		</tr>
+		@tag_numero_socio@      
+		@tag_data_domanda@
+		@tag_data_ammissione@					
+		@tag_data_domanda_recesso@
+		@tag_data_delibera_recesso@
+		
+      </table>      
+      </div>
+      
+     <div id="object-body-links" class="no_th">
+      <h2>Info collegate</h2>     
+      
+      <ul class="right-menu">
+     	 
+	     	  <li>
+	     	  	<a title="vai al capitale sociale" href="?q=object/list&amp;p=Movimenti_Quote/_a_ID_Soci_movimenti_quote/_v_@tag_ID#FLAT@/_m_Movimenti_Quote&amp;t=Movimenti_Quote_Socio">capitale sociale</a>
+	     	 </li>
+     	
+
+		([ [[@tag_risparmio.Libretti.ID#FLAT@] != []] ?? [
+		  <li>
+				<a title="vai al prestito sociale" href="?q=object/list&amp;p=Libretti/_a_ID_Soci_risparmio/_v_@tag_ID#FLAT@/_m_Libretti&amp;t=Libretti_Socio">prestito sociale</a>
+		   </li>
+			] 			
+		])
+		</ul>
+				
+		<h2>Operazioni</h2>
+	
+		<ul class="right-menu">	  
+	 	
+ 		([ [[@tag_dati_organizzazione.Organizzazioni.ID#FLAT@]] ?? 
+		[
+		<!-- 
+				<li>
+					<a href="?q=object/detail_edit&amp;p=Movimenti_Quote&amp;a=_a_socio/_c_Soci/_a_ID/_v_@tag_ID#FLAT@&amp;s=_a_socio/_v_@tag_dati_organizzazione.Organizzazioni.nome#FLAT@" title="Nuovo movimento quote">nuova quota</a>
+				</li>
+				
+				<li>
+				<a href="?q=object/detail_edit&amp;p=Libretti&amp;a=_a_dati_socio/_c_Soci/_a_ID/_v_@tag_ID#FLAT@&amp;s=_a_dati_socio/_v_@tag_dati_organizzazione.Organizzazioni.nome#FLAT@" title="Apri nuovo Libretto">apri nuovo libretto</a>
+				</li>
+		   -->
+		  		<li>
+				<a href="?q=object/detail_edit&amp;p=Soci/_a_ID/_v_@tag_ID#FLAT@&amp;t=Wiz_Soci_Registrazione_Domanda_Recesso" title="Domanda recesso">domanda recesso</a>
+				</li>
+		]::[
+		<!-- 
+				<li>
+				<a href="?q=object/detail_edit&amp;p=Movimenti_Quote&amp;a=_a_socio/_c_Soci/_a_ID/_v_@tag_ID#FLAT@&amp;s=_a_socio/_v_@tag_dati_consumatore.Consumatori.nome#FLAT@%20@tag_dati_consumatore.Consumatori.cognome#FLAT@" title="Nuovo movimento quote">nuova quota</a>
+				</li>
+				
+				<li>
+				<a href="?q=object/detail_edit&amp;p=Libretti&amp;a=_a_dati_socio/_c_Soci/_a_ID/_v_@tag_ID#FLAT@&amp;s=_a_dati_socio/_v_@tag_dati_consumatore.Consumatori.nome#FLAT@%20@tag_dati_consumatore.Consumatori.cognome#FLAT@" title="apri nuovo Libretto">apri nuovo libretto</a>
+				</li>
+		 -->
+				<li>
+				<a href="?q=object/detail_edit&amp;p=Soci/_a_ID/_v_@tag_ID#FLAT@&amp;t=Wiz_Soci_Registrazione_Domanda_Recesso" title="Domanda recesso">domanda recesso</a>
+				</li>	 	
+		]])
+		
+		
+		([ [[@tag_risparmio.Libretti.ID#FLAT@] == []] ?? [
+		  <li>
+				<a title="apertura libretto" href="?q=object/detail_edit&amp;p=Libretti&amp;a=_a_dati_socio/_c_Soci/_a_ID/_v_@tag_ID#FLAT@">apertura libretto</a>
+		   </li>
+			] 			
+		])
+  		
+		
+     	 
+      </div>
+      
+      <br />     
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        <!-- @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@ --> 
+       <tr>
+	        <th>
+	        Utente
+	        </th>
+	         <td>
+        	@tag_last_modification_user#FLAT@
+        	</td>
+        </tr>
+        <tr>
+	        <th>
+	        Aggiornamento
+	        </th>
+	         <td>
+        	@tag_last_modification_date#FLAT@
+        	</td>
+        </tr>
+        <!--  @tag_activation_flag@@tag_deletion_flag@ -->
+      </table>        
+      </div>@END_Soci@
+  </div>@END_TEMPLATE@

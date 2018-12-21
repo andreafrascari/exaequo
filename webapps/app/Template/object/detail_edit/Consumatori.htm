@@ -1,0 +1,113 @@
+@BEGIN_TEMPLATE@
+
+<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>		
+<script type="text/javascript">
+	detailEdit=new Anastasis.DetailEdit('detail-edit','Attachment?q=prepare','Attachment?q=status&amp;id=');
+</script>
+
+
+  <div class="detail-edit">
+ 
+
+	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+   <div class="inserto">
+    
+          <a tabindex="56" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+   	@BEGIN_Consumatori@
+		([ [[@tag_ID#FLAT@]!=[] && [@tag_associazione.Soci.ID#FLAT@]==[]] ?? 
+			[   
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+			]
+		]) 
+   	@END_Consumatori@
+		
+	  	  <a tabindex="60" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+ 
+  <div id="splash">
+
+    <h2>@TITLE@</h2>
+ 	@BEGIN_Consumatori@
+ 	
+		([ [[@tag_associazione.Soci.ID#FLAT@]!=[]] ?? 
+			[   <a href="?q=object/detail_edit&amp;p=Soci/_a_ID/_v_@tag_associazione.Soci.ID#FLAT@" title="modifica la scheda socio">Modifica scheda socio</a> 			
+			]
+		]) 
+  </div>
+  
+<h3>Inserimento/modifica scheda</h3>
+<div class="form-container">
+
+  <form id="detail-edit" method="post" action="@ACTION@">
+       <div class="detail-body">
+
+        @tag_nome@@tag_cognome@
+        
+        <h4>Domicilio/Recapito</h4>
+        @tag_presso@
+        @tag_tipo_via@
+        @tag_indirizzo@
+        @tag_numero@
+        @tag_regione@
+        @tag_provincia@
+        @tag_comune@
+        @tag_cap@        
+        <h4>Riferimenti</h4>        
+        @tag_email@
+        @tag_anno_iscrizione@
+        @tag_anno_rinnovo@
+        @tag_note@
+        
+<!--         @tag_forza_bottega@ -->
+
+        </div>
+      <div class="detail-edit-system">
+      
+        
+    <input type="hidden" name="class" value="@CLASS@" />
+
+    <input type="hidden" name="r" value="@REDIRECT@" />
+
+    <input type="hidden" name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+        </div>
+       <div class="detail-rel">
+
+        @tag_consumatori_bottega@
+        @tag_consumatori_tags@
+        @tag_ha_partecipato_a@
+
+        </div>  
+  </form>
+  </div>
+
+  
+@END_Consumatori@
+   <div class="inserto">
+    
+          <a tabindex="50" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+   	@BEGIN_Consumatori@
+		([ [[@tag_ID#FLAT@]!=[]] ?? 
+			[   
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+			]
+		]) 
+   	@END_Consumatori@
+
+
+	  	  <a tabindex="54" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+
+  </div>@END_TEMPLATE@

@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+	<project name="Iniziative" default="1_localDeploy">
+			<property environment="env" />
+			
+			<!--
+				Se non si vuole sovrascrivere questo file,
+				impostare le variabili in un file separato
+				chiamato build.properties (secondo la sintassi
+				dei file properties di Java:
+				http://en.wikipedia.org/wiki/.properties
+			-->
+			<property file="build.properties" />
+
+			<!--
+				serverHome indica la cartella principale del server (solitamente Tomcat)
+				Per Windows solitamente e':
+					C:\Programmi\Apache Software Foundation\Tomcat x.y 
+				Per Linux solitamente e':
+					/usr/share/tomcatx.y
+				Dove x.y e' la versione di Tomcat installata.
+				Se la variabile d'ambiente TOMCAT_HOME e' correttamente impostata,
+				non c'e' bisogno di impostare questa proprieta'
+			-->
+			<property name="serverHome" value="${env.TOMCAT_HOME}" />
+
+			<!--
+				Nel caso in cui siano attivi dei webservice,
+				e' necessario indicare il nome della classe Java
+				che si occupa di gestirli. NB: Tale classe deve essere
+				nel package eu.anastasis.serena.webservices
+			-->
+			<property name="webserviceClassNames" value="SerenaWs" />
+
+			<property name="applicationProject" value="Serena_Application" />
+			<property name="serenaBaseLibraryProject" value="Serena_BaseLibrary" />
+			<import file="../${applicationProject}/build.xml" />
+			
+			
+			<target name="0_createApplicationSkeleton"
+					description="Crea lo scheletro dell'applicazione">
+				<createSerenaApplicationSkeleton projectname="${ant.project.name}"  webserviceclassnames="${webserviceClassNames}"  />	
+			</target>
+			
+			<target name="1_localDeploy"
+					description="Effettua il deploy in locale dell'applicazione">
+				<echo message="Binding..." />
+						<bind verbose="false" load="true">
+							<bindingfileset dir="webapps/app/conf/bean_bindings">
+								<include name="*.xml" />
+							</bindingfileset>
+							<classpath>
+								<pathelement path="bin" />
+								<pathelement path="../${applicationProject}/bin" />
+								<pathelement path="../${serenaBaseLibraryProject}/bin" />
+								<fileset dir="../${commonLibrariesProject}" includes="*.jar" />
+							</classpath>
+						</bind>
+				<localDeploySerenaApplication projectName="${ant.project.name}" serverHome="${serverHome}" />
+				
+				<!-- Per effettuare il deploy del modulo BirtReport --> 
+				<localDeploySerenaBirtReportModule projectName="${ant.project.name}" serverHome="${serverHome}" />
+				
+				<localDeploySerenaAnagraficaModule projectName="${ant.project.name}" serverHome="${serverHome}" />
+				
+				<!-- Per effettuare il deploy dei nodi 
+				<localDeploySerenaNodes projectName="${ant.project.name}" serverHome="${serverHome}" />
+				-->
+
+			</target>
+			
+			<target name="2_localClean"
+						description="Cancella dal server la cartella dell'applicazione">
+				<localCleanSerenaApplication projectName="${ant.project.name}" serverHome="${serverHome}" />
+			</target>
+			
+			<target name="3_localRedeploy" depends="2_localClean, 1_localDeploy"
+						description="Effettua il deploy in locale da zero dell'applicazione" />
+						
+			<target name="4_localDeployAppDir"
+						description="Cancella dal server la cartella dell'applicazione">
+				<localDeploySerenaCoreAppDir projectName="${ant.project.name}" serverHome="${serverHome}" />
+				<localDeploySpecificAppDir projectName="${ant.project.name}" serverHome="${serverHome}" />
+			</target>	
+		</project>

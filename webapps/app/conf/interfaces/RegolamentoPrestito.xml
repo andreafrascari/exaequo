@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>RegolamentoPrestito</title>  
+  <title_view>Regolamento Prestito Sociale</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>inverse_of_regolamento_prestito</name>  
+      <label>cooperativa</label>  
+      <detail>cooperativa</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>importo_massimo_prestito</name>  
+      <label>importo massimo prestito</label>  
+      <detail>importo massimo prestito</detail>  
+      <detail_edit>importo massimo prestito</detail_edit>  
+      <list>importo massimo prestito</list>  
+      <heading>1</heading>  
+      <needed>1</needed>
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>ritenuta_fiscale</name>  
+      <label>ritenuta fiscale</label>  
+      <detail>ritenuta fiscale</detail>  
+      <detail_edit>ritenuta fiscale</detail_edit>  
+      <list>ritenuta fiscale</list>  
+      <heading>1</heading>  
+      <needed>1</needed>
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>accredito_interessi</name>  
+      <label>accredito interessi</label>  
+      <detail>accredito interessi</detail>  
+      <detail_edit>accredito interessi</detail_edit>
+      <detail_help>gg/mm (giorno/mese)</detail_help>  
+      <list>accredito interessi</list>  
+      <heading>1</heading>
+      <needed>1</needed>  
+      <max_length>5</max_length>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>liquidazione_interessi_chiusura</name>  
+      <label>liquidazione interessi chiusura</label>  
+      <detail>liquidazione interessi chiusura</detail>  
+      <detail_edit>liquidazione interessi chiusura</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>apertura_libretto_dopo_adesione_giorni</name>  
+      <label>apertura libretto dopo adesione giorni</label>  
+      <detail>apertura libretto dopo adesione giorni</detail>  
+      <detail_edit>apertura libretto dopo adesione giorni</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>spese_tenuta_conto</name>  
+      <label>spese tenuta conto</label>  
+      <detail>spese tenuta conto</detail>  
+      <detail_edit>spese tenuta conto</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>rapporto_prestito_capitale</name>  
+      <label>rapporto prestito capitale</label>  
+      <detail>rapporto prestito capitale</detail>  
+      <detail_edit>rapporto prestito capitale</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>costo_singola_operazione</name>  
+      <label>costo singola operazione</label>  
+      <detail>costo singola operazione</detail>  
+      <detail_edit>costo singola operazione</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>spese_richiesta_documentazione</name>  
+      <label>spese richiesta documentazione</label>  
+      <detail>spese richiesta documentazione</detail>  
+      <detail_edit>spese richiesta documentazione</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>giorni_valuta</name>  
+      <label>giorni valuta</label>  
+      <detail>giorni valuta</detail>  
+      <detail_edit>giorni valuta</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>comuniqcazione_modifiche_giorni</name>  
+      <label>comunicazione modifiche (giorni)</label>  
+      <detail>comunicazione modifiche (giorni)</detail>  
+      <detail_edit>comunicazione modifiche (giorni)</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

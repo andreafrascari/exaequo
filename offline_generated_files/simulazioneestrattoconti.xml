@@ -1,0 +1,32 @@
+<serena>
+	<service name="get">
+		<SimulazioneEstrattoconto>
+			<ID>47</ID>
+			<data>01/07/2015</data>
+			<codice_libretto>108</codice_libretto>
+			<di_socio>Frascari</di_socio>
+			<importo_capitale>5125</importo_capitale>
+			<importo_prestito>20752.18</importo_prestito>
+			<interessi_indeducibili>279.5671756907586</interessi_indeducibili>
+			<interessi_netti>456.81682088996223</interessi_netti>
+			<interessi_lordi>600</interessi_lordi>
+			<creation_user>afrascari</creation_user>
+			<creation_date>21/10/2015</creation_date>
+			<activation_flag>true</activation_flag>
+		</SimulazioneEstrattoconto>
+		 <SimulazioneEstrattoconto>
+			<ID>49</ID>
+			<data>01/07/2015</data>
+			<codice_libretto>109</codice_libretto>
+			<di_socio>Lelli</di_socio>
+			<importo_capitale>5125</importo_capitale>
+			<importo_prestito>20752.18</importo_prestito>
+			<interessi_indeducibili>279.5671756907586</interessi_indeducibili>
+			<interessi_netti>456.81682088996223</interessi_netti>
+			<interessi_lordi>600</interessi_lordi>
+			<creation_date>21/10/2015</creation_date>
+			<creation_user>afrascari</creation_user>
+			<activation_flag>true</activation_flag>
+		</SimulazioneEstrattoconto>
+	</service>
+</serena>

@@ -1,0 +1,44 @@
+@BEGIN_TEMPLATE@<div class="operation-result">
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">home</a> - @TITLE@
+	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+  </div>
+
+	<h3>Risultato dell'operazione</h3>
+
+  @BLOCK_BEGIN_RESULT_SUCCESS@
+
+    <div class="system-message-success">
+
+      Operazione effettuata correttamente
+      <br />
+      <ul>
+      <li><a class="highlight" title="Vai al libretto appena movimentato" href="?q=object/detail&amp;p=Libretti/_a_ID/_v_@ID@">Vai al libretto appena movimentato</a></li>
+	  <li><a title="Torna all'ultima lista libretti" href="?q=object/list&amp;p=Libretti_Anagrafica&amp;page=XML-QUERY">Torna all'ultima lista libretti</a></li>
+  	</ul>
+  @BLOCK_END_RESULT_SUCCESS@
+  
+  
+
+
+
+
+  @BLOCK_BEGIN_RESULT_ERROR@
+
+    <div class="system-message-error">
+
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+
+    </div>
+
+  @BLOCK_END_RESULT_ERROR@
+
+
+
+   
+
+  </div>
+
+  <br />@END_TEMPLATE@

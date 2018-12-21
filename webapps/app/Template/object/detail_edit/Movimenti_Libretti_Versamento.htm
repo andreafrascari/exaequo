@@ -1,0 +1,189 @@
+@BEGIN_TEMPLATE@<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>		
+<script type="text/javascript">
+	detailEdit=new Anastasis.DetailEdit('detail-edit','Attachment?q=prepare','Attachment?q=status&amp;id=');
+			
+	$(document).ready(function() {
+		$("#INP_importo").change(function() {
+			var libretto = @FUN_GET_URL_PARAM(param=libretto)@;
+			var path="ModuleIndex?q=iniziativesolidali/infolibretto/id="+libretto;
+			var rep = $.ajax({
+		        url: path,
+		        async: false,
+		        type: "GET",
+		        cache: false
+		        }).responseText;		
+			try
+			{
+				var xmlrep = Anastasis.Utils.parseXML(rep);
+				anastasis.logger.info("res = " + rep);
+				var msg = Anastasis.XMessage.buildXMessage(xmlrep);
+				if(msg.isErrorMessage())
+				{
+					alert("il sistema non riesce a caricare i dati del libretto!");
+					return;
+				}
+				var elem=msg.selectSingleNode("libretto/descrizione");
+				var cooperativa = Anastasis.Ajax.getText(elem);
+				elem=msg.selectSingleNode("libretto/costo_singola_operazione");
+				var costo_singola_operazione = null;
+				if (elem!=null)	{
+					costo_singola_operazione = Anastasis.Ajax.getText(elem);
+				}
+				var giorni_valuta = null;
+				elem=msg.selectSingleNode("libretto/giorni_valuta");
+				if (elem!=null)	{
+					giorni_valuta = Anastasis.Ajax.getText(elem);
+				}			
+				elem=msg.selectSingleNode("libretto/importo_massimo_prestito");
+				var importo_massimo_prestito = Anastasis.Ajax.getText(elem);
+				
+				elem=msg.selectSingleNode("libretto/rapporto_prestito_capitale");
+				var rapporto_prestito_capitale = parseFloat(Anastasis.Ajax.getText(elem));
+				elem=msg.selectSingleNode("libretto/valore_quota");
+				var valore_quota = parseFloat(Anastasis.Ajax.getText(elem));
+				
+				var importo = parseFloat($("#INP_importo").val());
+				
+				// partizione in prestito quote: almeno 1/rapporto_prestito_capitale di importo deve essere di quote
+				var numero_quote_float = importo/rapporto_prestito_capitale/valore_quota;
+				var numero_quote_int = parseInt(numero_quote_float);
+				// se il float non coincide con l'intero ..... una quota in piu'!
+				if (numero_quote_int<numero_quote_float)	
+					numero_quote_int++;
+					
+				var prestito = importo - (numero_quote_int * valore_quota);
+				
+				$("#EXTRA_numero_quote").val(numero_quote_int);
+				$("#EXTRA_importo_quote").html(numero_quote_int*valore_quota);
+				$("#EXTRA_importo_prestito").val(prestito);
+				$("#EXTRA_valore_quota").val(valore_quota);
+				$("#importo_splitted").show();
+				var action = $("#detail-edit").attr("action");
+				// only care about token....
+				var n=action.indexOf("&token");
+				action = "?q=iniziativesolidali/versamento&p=Movimenti_Libretti" + action.substring(n,action.length);
+				$("#detail-edit").attr("action",action);
+			}
+			catch(e){alert("errore: "+e);}
+	});
+	
+	
+	$("#EXTRA_numero_quote").change(function()	{
+				var importo = parseFloat($("#INP_importo").val());
+				var numero_quote =$("#EXTRA_numero_quote").val();
+				var valore_quota = $("#EXTRA_valore_quota").val();
+
+				var importo_quote =  valore_quota * numero_quote;
+				var prestito = importo - importo_quote;
+				
+				$("#EXTRA_importo_quote").html(importo_quote); 				 
+				$("#EXTRA_importo_prestito").val(prestito);
+	});
+});
+	
+</script>
+
+  <div class="detail-edit">
+<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+   <div class="inserto">
+    
+          <a tabindex="56" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+ 
+
+	  	  <a tabindex="60" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  <div id="splash">
+
+    <h2>Versamento</h2>
+  </div>
+   
+
+ @BEGIN_Movimenti_Libretti@<div class="form-container">
+
+  <form id="detail-edit" method="post" action="@ACTION@">
+
+
+   <div class="form-container">
+
+        <div class="detail-body">
+
+        @tag_data_movimento@@tag_importo@
+        
+        <div id="importo_splitted" style="display:none;">
+        	L'importo verrebbe partizionato in:
+        	<div class="detail-component" id="numero_quote">
+		 		<label for="EXTRA_numero_quote">numero quote di capitale sociale:</label>
+		 		<input type="text" name="EXTRA_numero_quote" id="EXTRA_numero_quote" />
+			</div>
+        	<div class="detail-component" id="importo_quote">
+		 		<label for="EXTRA_importo_quote">importo quote di capitale sociale:</label>
+		 		<span id="EXTRA_importo_quote"></span>
+			</div>
+			<div class="detail-component" id="importo_prestito">
+		 		<label for="EXTRA_importo_prestito">prestito &euro;:</label>
+		 		<input type="text" 	readonly="readonly" name="EXTRA_importo_prestito" id="EXTRA_importo_prestito" />
+			</div>
+		</div>
+        
+        @tag_mezzo@@tag_note@@tag_numero_effetto@@tag_banca_di_riferimento_movimento@@tag_data_valuta@
+
+        </div>
+
+		
+
+      
+      
+      
+      
+      <div class="detail-edit-system">
+      
+        
+        
+        
+        
+         <input type="hidden" name="class" value="@CLASS@" />
+         <input type="hidden" name="EXTRA_libretto" value="@FUN_GET_URL_PARAM(param=libretto)@" />
+         <input type="hidden" name="EXTRA_valore_quota" id="EXTRA_valore_quota" />
+	   
+	   	<input type="hidden" name="r" value="@REDIRECT@" />
+
+    	<input type="hidden" name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+
+        
+        </div>
+        
+      
+
+   
+  </div>
+  </form>
+   <div class="detail-attachments">
+
+        @tag_allegato@
+
+     </div>@END_Movimenti_Libretti@
+
+          
+
+         
+
+  </div>
+   <div class="inserto">
+    
+          <a tabindex="50" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+ 
+
+	  	  <a tabindex="54" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  </div>@END_TEMPLATE@

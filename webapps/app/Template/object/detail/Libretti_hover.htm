@@ -1,0 +1,92 @@
+@BEGIN_TEMPLATE@<div id="detail">
+  	
+  <div id="splash">
+    <h2>@TITLE@</h2>
+	
+	
+  </div>
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+ <br style="clear:both" />
+ 
+@BEGIN_Libretti@         
+    <H2>   
+	Libretto di 
+	<a title="vai alla scheda socio" href="?q=object/detail&amp;p=Soci/_a_ID/_v_@tag_dati_socio.Soci.ID#FLAT@">
+	   @BEGIN_dati_socio@
+        @BEGIN_Soci@
+	      @BEGIN_dati_consumatore@
+	       			@BEGIN_Consumatori@
+	       				@tag_nome#FLAT@&nbsp;@tag_cognome#FLAT@
+	       			@END_Consumatori@
+	       		@END_dati_consumatore@
+		      @BEGIN_dati_organizzazione@
+	       			@BEGIN_Organizzazioni@
+	       				@tag_nome#FLAT@
+	       			@END_Organizzazioni@
+	       		@END_dati_organizzazione@
+       	  @END_Soci@
+       @END_dati_socio@   
+	</a>
+    </H2> 
+         
+    <div id="object-body">
+    	<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+    	@tag_codice_contratto@
+		@tag_tipo_libretto@
+		@tag_data_apertura@
+		@tag_modalita_rinnovo@
+		<!--
+		@tag_data_scadenza@
+		@tag_data_rinnovo@
+		-->
+		@tag_stato_libretto@
+		@tag_delega@
+		@tag_banca_di_riferimento@
+		@tag_conto_corrente@
+		@tag_iban@
+		@tag_note_contratto@
+		@tag_data_chiusura@
+		@tag_motivazione_chiusura@
+       
+      </table>      
+     
+    
+      
+      </div>
+       
+     
+     
+      
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        <tr>
+	        <th>
+	        Utente
+	        </th>
+	         <td>
+        	@tag_last_modification_user#FLAT@
+        	</td>
+        </tr>
+        <tr>
+	        <th>Aggiornamento
+	        </th>
+	         <td>
+        	@tag_last_modification_date#FLAT@
+        	</td>
+        </tr>
+      </table>      
+      </div>@END_Libretti@
+  </div>@END_TEMPLATE@

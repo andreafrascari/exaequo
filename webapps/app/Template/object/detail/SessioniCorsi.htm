@@ -1,0 +1,93 @@
+@BEGIN_TEMPLATE@<div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+        <a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+            <span class="NoVisibility">|</span>
+        
+        
+        
+      
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    <a href="@CONTEXT@/Index?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+    @BLOCK_BEGIN_EDIT@     
+    		([
+        			[[] != [1]]
+    				?? [
+						
+							<a href="@HREF_DETAIL_EDIT@" title="Modifica i dati dell'oggetto">Modifica</a>
+							<span class="NoVisibility">|</span>
+						
+					]
+    			])
+        @BLOCK_END_EDIT@
+  </div>
+  <br style="clear:both" />
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+    
+
+    
+    @BEGIN_SessioniCorsi@<div class="object-title">
+    
+      <h2>
+       <a title="vai alla scheda corso di formazione" href="?q=object/detail&amp;p=CorsiFormazione/_a_ID/_v_@tag_di_corso.CorsiFormazione.ID#FLAT@/_m_CorsiFormazione">
+       		@BEGIN_di_corso@
+       			@BEGIN_CorsiFormazione@
+       				
+       				@tag_titolo#FLAT@
+       				
+       			@END_CorsiFormazione@
+       		@END_di_corso@
+		</a>
+	</h2>
+	<h3>@tag_title#FLAT@</h3>
+      
+      </div>
+      
+
+      
+    <div id="object-body">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+        @tag_argomenti@
+        @tag_docenti@
+        @tag_data@
+        @tag_luogo@
+      </table>      
+      </div>
+      
+       <div id="object-body-links" class="no_th">     
+     <h2>Materiali</h2>  
+     <table summary="tabella dei collegamenti">
+     	<tbody>
+     	@tag_documenti@
+		</tbody>
+      </table>
+    
+      </div>
+      
+   
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+      </table>      
+      </div>@END_SessioniCorsi@
+  </div>@END_TEMPLATE@

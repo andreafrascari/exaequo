@@ -1,0 +1,98 @@
+@BEGIN_TEMPLATE@
+@BEGIN__system_cms_node@
+<!-- fake -->
+@END__system_cms_node@
+<div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - Finanza
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+   	</div>
+<div id="splash">
+  <h2>Finanza</h2>
+ </div>
+<br style="clear:both" />
+
+<script type="text/javascript">
+function confirmAndGo(me,what,go)	{
+	if (confirm("Confermare " +what+":"))	{
+		loading(me,{text:'Attendere prego....'});
+		location.href=go;
+	}
+}
+</script>
+
+<div id="finanza">
+<h4>Operazione estrattoconto:</h4>
+
+<ul>
+	<li><a href="javascript:confirmAndGo(this,'accredito interessi','?q=iniziativesolidali/accredito_interessi&action=do&cooperativa=1');"  title="Accredito Interessi">Accredito Interessi</a>&nbsp; (ExAequo) - Anno corrente<br />
+	questa operazione determina il calcolo e l&#39;accredito degli interessi del risparmio secondo i parametri definiti nella gestione cooperativa. Al momento valida solo per ExAequo.<br />
+	&nbsp;</li>
+	<li><a href="javascript:confirmAndGo(this,'annulla accredito interessi','?q=iniziativesolidali/accredito_interessi&action=undo&cooperativa=1');" id="anastasis_link_267153538" title="Annulla operazione">Annulla operazione</a>&nbsp; accredito interessi (ExAequo) - Anno corrente<br />
+	cancella gli accrediti, annullando l&#39;operazione precedente<br />
+	&nbsp;</li>
+	<li><a href="?q=object/filter&amp;p=Estrattoconto"><strong>Controllo e invio estrattoconto</strong></a> e modulo accredito interessi<br />
+	presenta un filtro da cui elaborare una lista di soci prestatori da cui scaricare il pdf dell&#39;estrattoconto<br />
+	&nbsp;</li>
+	<li><strong>Proiezione estratticonto</strong> prossimo anno
+	<ul>
+		<li><a href="javascript:confirmAndGo(this,'nuova proiezione interessi in rieferimento alla situazione odierna','?q=iniziativesolidali/accredito_interessi&action=simula&cooperativa=1');"><strong>calcola</strong></a> (registra una nuova proiezione fotografando la situazione risparmio alla data odierna)</li>
+		<li><a href="?q=object/filter&amp;p=SimulazioneEstrattoconto"><strong>controlla</strong></a> (filtra i risultati ed esporta in pdf/excel)</li>
+	</ul>
+	</li>
+</ul>
+
+<h4>Stampe ed esportazioni risparmio e quote</h4>
+
+<ul>
+	<li>Situazione libretti ANNO CORRENTE: <a href="ModuleIndex?q=iniziativesolidali/export_estrattoconti/CLS=Estrattoconto/DOC=Estrattoconto/FILE=SituazioneLibretti/TYPE=pdf"><strong>pdf</strong></a> - <a href="ModuleIndex?q=iniziativesolidali/export_estrattoconti/CLS=Estrattoconto/DOC=EstrattocontoXls/FILE=SituazioneLibretti/TYPE=xls"><strong>xls</strong></a><br />
+	esportazione pdf e xls dei libretti con: importo prestito e capitale sociale, interessi netti e interessi deducibili, totali.<br />
+	&nbsp;</li>
+	<li>Situazione libretti ANNO PASSATO: <a href="ModuleIndex?q=iniziativesolidali/export_estrattoconti/CLS=Estrattoconto/DOC=Estrattoconto/FILE=SituazioneLibretti/TYPE=pdf&amp;ANNO=-1"><strong>pdf</strong></a> - <a href="ModuleIndex?q=iniziativesolidali/export_estrattoconti/CLS=Estrattoconto/DOC=EstrattocontoXls/FILE=SituazioneLibretti/TYPE=xls&amp;ANNO=-1"><strong>xls</strong></a><br />
+	esportazione pdf e xls dei libretti con: importo prestito e capitale sociale, interessi netti e interessi deducibili, totali.<br />
+	&nbsp;</li>
+	<li>Situazione quote: <a href="ModuleIndex?q=iniziativesolidali/export_quote/CLS=Movimenti_Quote/DOC=Movimenti_Quote/FILE=SituazioneQuote/TYPE=pdf"><strong>pdf</strong></a> - <a href="ModuleIndex?q=iniziativesolidali/export_quote/CLS=Movimenti_Quote_Totali/DOC=Movimenti_Quote_Totali/FILE=SituazioneQuote/TYPE=xls"><strong>xls</strong></a><br />
+	esportazione pdf e xls delle quote di capitale sociale<br />
+	&nbsp;</li>
+	<li>Anagrafica soci <a href="ModuleIndex?q=iniziativesolidali/anagrafica/CLS=Soci/DOC=anagrafica/FILE=AnagraficaSoci/TYPE=xls"><strong>xls</strong></a><br />
+	esportazione xls anagrafica soci con eventuali info libretto<br />
+	&nbsp;</li>
+</ul>
+
+<h4>Controllo libretti</h4>
+
+<ul>
+	<li><a href="?q=object/list&amp;p=Libretti_Anagrafica/_a_modalita_rinnovo/_v_Comunicazione/_a_stato_libretto/_v_Attivo">Aperti - rinnovo con comunicazione</a></li>
+	<li><a href="?q=object/list&amp;p=Libretti_Anagrafica/_a_stato_libretto/_v_Chiuso">Chiusi</a></li>
+	<li><a href="?q=object/list&amp;p=Libretti_Anagrafica/_a_stato_libretto/_v_Chiusura Anticipata">Chiusura anticipata</a><br />
+	&nbsp;</li>
+</ul>
+
+<h4>Gestione dati cooperativa</h4>
+
+<ul>
+	<li><a href="?q=object/detail&amp;p=Cooperative/_a_ID/_v_1" id="anastasis_link_1293351056" title="Gestione Cooperativa ExAequo">Gestione Cooperativa ExAequo</a><br />
+	tutti i parametri della cooperativa, dal regolamento prestito alle condizioni libretti<br />
+	&nbsp;</li>
+	<li>Archivio <a href="?q=object/list&amp;p=InteressiIndeducibili">tassi deducibili</a><br />
+	&nbsp;</li>
+</ul>
+<!--
+<ul>
+ <li>Libretti:
+ </li>
+ <li><a href="?q=object/filter&p=Soci_Anagrafica&t=Soci_Estrattoconto" id="anastasis_link_284168393" title="Stampe estratto-conto">Stampe estratto-conto</a><br />
+ presenta un filtro da cui elaborare una lista di soci prestatori da cui scaricare il pdf dell'estrattoconto<br />
+  </li>
+ <li>Anni precedenti (per test)
+ <ul>
+  <li>2014: <a href="?q=iniziativesolidali/accredito_interessi&action=do&cooperativa=1&year=2014" id="anastasis_link_1153094393" title="do">do</a>  - <a href="?q=iniziativesolidali/accredito_interessi&action=undo&cooperativa=1&year=2014" id="anastasis_link_1412054356" title="undo">undo</a> </li>
+ </ul>
+ </li>
+</ul>
+--></div>
+</div>
+@END_TEMPLATE@

@@ -1,0 +1,25 @@
+@BEGIN_TEMPLATE@
+  <div class="loginbox">
+    <form method="post" action="Index">
+    <div>
+      <label for="user">Username:</label> <input class="campo" type="text" name="user" id="user" />
+      
+      <label for="pass">Password:</label> <input class="campo" type="password" name="pass" id="pass" />
+      
+      <input name="invia" type="submit" value="[ Entra ]" title="Entra nel sistema" class="bottone" />
+      
+      <input type="hidden" name="q" value="login/login" />
+      <input type="hidden" name="me" value="private" />
+      
+     </div>
+	 @CALLS@
+    </form>
+      <p>All'interno di questa area sono disponibili gli strumenti di lavoro per gli operatori delle cooperative socie del consorzio
+      <br />
+      <br />
+      Per accedere &egrave; necessaria la registrazione che pupu&ograve; essere effettuata attraverso il presente
+      <a title="accesso procedura di registrazione" href="?q=userRegistration/register">modulo</a>.</p>
+       <p><a title="accesso procedura recupero password" href="?q=userRegistration/recover/FORM=step1">Ho dimenticato la password</a></p>
+   
+  </div>
+@END_TEMPLATE@

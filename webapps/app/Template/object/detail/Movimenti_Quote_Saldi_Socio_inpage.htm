@@ -1,0 +1,22 @@
+@BEGIN_TEMPLATE@
+<div class="inpage">
+				
+				<div class="saldi">
+				Saldo Quote Risparmio:
+				@BEGIN_Movimenti_Quote@
+					<div style="display:none">@tag_di_valore#FLAT@</div>
+					<strong>@XPATH_FUN(string(context:format-currency(di_valore)))@@ &euro;</strong>
+				@END_Movimenti_Quote@
+				
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<strong>0 &euro;</strong>
+				@BLOCK_END_RESULT_EMPTY@
+				</h4>
+			
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	</div>
+</div>@END_TEMPLATE@

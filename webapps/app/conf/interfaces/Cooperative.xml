@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Cooperative</title>  
+  <title_view>Cooperative</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>ragione_sociale</name>  
+      <label>ragione sociale</label>  
+      <detail>ragione sociale</detail>  
+      <detail_edit>ragione sociale</detail_edit>  
+      <filter autocomplete="">ragione sociale</filter>  
+      <list>ragione sociale</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>tipo_cooperativa</name>  
+      <label>tipo cooperativa</label>  
+      <detail>tipo cooperativa</detail>  
+      <detail_edit>tipo cooperativa</detail_edit>  
+      <filter>tipo cooperativa</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>15</order> 
+    </item>  
+    <item> 
+      <name>indirizzo</name>  
+      <label>indirizzo</label>  
+      <detail>indirizzo</detail>  
+      <detail_edit>indirizzo</detail_edit>  
+      <filter>indirizzo</filter>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <label>descrizione</label>  
+      <detail>descrizione</detail>  
+      <detail_edit>descrizione</detail_edit>  
+      <filter>descrizione</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>regione</name>  
+      <label>regione</label>  
+      <detail_edit>regione</detail_edit>  
+      <filter>regione</filter>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>23</order> 
+    </item>  
+    <item> 
+      <name>provincia</name>  
+      <label>provincia</label>  
+      <detail>provincia</detail>  
+      <detail_edit>provincia</detail_edit>  
+      <filter>provincia</filter>  
+      <list>provincia</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>25</order> 
+    </item>  
+    <item> 
+      <name>comune</name>  
+      <label>comune</label>  
+      <detail>comune</detail>  
+      <detail_edit>comune</detail_edit>  
+      <filter>comune</filter>  
+      <list>comune</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>27</order> 
+    </item>  
+    <item> 
+      <name>cap</name>  
+      <label>cap</label>  
+      <detail>cap</detail>  
+      <detail_edit>cap</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>29</order> 
+    </item>  
+    <item> 
+      <name>telefono</name>  
+      <label>telefono</label>  
+      <detail>telefono</detail>  
+      <detail_edit>telefono</detail_edit>  
+      <list>telefono</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>fax</name>  
+      <label>fax</label>  
+      <detail>fax</detail>  
+      <detail_edit>fax</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>35</order> 
+    </item>  
+    <item> 
+      <name>email</name>  
+      <label>email</label>  
+      <detail>email</detail>  
+      <detail_edit>email</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>web</name>  
+      <label>web</label>  
+      <detail>web</detail>  
+      <detail_edit>web</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>43</order> 
+    </item>  
+    <item> 
+      <name>sez_mailing_list</name>  
+      <label>Mailing List</label>  
+      <detail>Mailing List</detail>  
+      <detail_edit>Mailing List</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>45</order> 
+    </item>  
+    <item> 
+      <name>nome_mailing_list</name>  
+      <label>postfisso mailing list</label>  
+      <detail>postfisso mailing list</detail>  
+      <detail_edit>postfisso mailing list</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order>  
+      <detail_help>ATTENZIONE!!! Ricordarsi di generare e configurare da Sympa le 3 mailing list: soci_xxx, consumatori_xxx e risparmio_xxx@iniziativesolidali.org. Il sistema si occupa invece automaticamente di iscrizioni e aggiornamenti.</detail_help> 
+    </item>  
+    <item> 
+      <name>email_admin_mailing_list</name>  
+      <label>email moderatore/i lista</label>  
+      <detail>email moderatore/i lista</detail>  
+      <detail_edit>email moderatore/i lista</detail_edit>
+      <detail_help>la/le email del/i moderatore/i della lista: solo questi indirizzi potranno spedire messaggi. ATTENZIONE!!! Ricordarsi di inserire i moderatori nella configurazione Sympa della lista</detail_help>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>sez_statuto_regolamenti</name>  
+      <label>Statuto, regolamenti, prestito sociale</label>  
+      <detail>Statuto, regolamenti, prestito sociale</detail>  
+      <detail_edit>Statuto, regolamenti, prestito sociale</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>67</order> 
+    </item>  
+    <item> 
+      <name>data_chiusura_bilancio</name>  
+      <label>data chiusura bilancio</label>  
+      <detail>data chiusura bilancio</detail>  
+      <detail_edit>data chiusura bilancio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>valore_quota</name>  
+      <label>valore quota</label>  
+      <detail>valore quota</detail>  
+      <detail_edit>valore quota</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>73</order> 
+    </item>  
+    <item> 
+      <name>numero_quote_associazione</name>  
+      <label>numero minimo quote</label>  
+      <detail>numero minimo quote</detail>  
+      <detail_edit>numero minimo quote</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>75</order> 
+    </item>  
+    <item> 
+      <name>delibera_cda_adesione</name>  
+      <label>delibera CdA per adesione (giorni)</label>  
+      <detail>delibera CdA per adesione (giorni)</detail>  
+      <detail_edit>delibera CdA per adesione (giorni)</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>77</order> 
+    </item>  
+    <item> 
+      <name>delibera_cda_recesso</name>  
+      <label>delibera CdA per recesso (giorni)</label>  
+      <detail>delibera CdA per recesso (giorni)</detail>  
+      <detail_edit>delibera CdA per recesso (giorni)</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>79</order> 
+    </item>  
+    <item> 
+      <name>liquidazione_quote_esercizio_giorni</name>  
+      <label>liquidazione quote esercizio (giorni)</label>  
+      <detail>liquidazione quote esercizio (giorni)</detail>  
+      <detail_edit>liquidazione quote esercizio (giorni)</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+       <item> 
+      <name>regolamento_prestito</name>  
+      <label>regolamento prestito</label>  
+      <detail>regolamento prestito</detail>  
+      <detail_edit>regolamento prestito</detail_edit>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>83</order> 
+    </item>  
+    <item> 
+      <name>condizioni_libretti</name>  
+      <label>condizioni libretti</label>  
+      <detail>condizioni libretti</detail>  
+      <detail_edit>condizioni libretti</detail_edit>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>83</order> 
+    </item>  
+    <item> 
+      <name>sez_link</name>  
+      <label>Collegamenti</label>  
+      <detail>Collegamenti</detail>  
+      <detail_edit>Crea collegamenti</detail_edit>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>90</order> 
+    </item>  
+    <item> 
+      <name>botteghe</name>  
+      <label>botteghe</label>  
+      <detail>botteghe</detail>
+      <detail_edit>botteghe</detail_edit>    
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>cooperativa_iniziative</name>  
+      <label>iniziative</label>  
+      <detail>iniziative</detail>  
+      <detail_edit>iniziative</detail_edit>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>93</order> 
+    </item>  
+    <item> 
+      <name>newsletter_di_coop</name>  
+      <label>newsletter</label>  
+      <detail>newsletter</detail>  
+      <detail_edit>newsletter</detail_edit>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>94</order> 
+    </item>  
+    <item> 
+      <name>i_soci</name>  
+      <label>soci</label>  
+      <detail>i soci</detail>    
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>95</order> 
+    </item>  
+    <item> 
+      <name>tag_coop</name>  
+      <label>tag</label>  
+      <detail>tag</detail>  
+      <detail_edit>tag coop</detail_edit>  
+      <filter>tag</filter>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>foto</name>  
+      <label>foto</label>  
+      <detail>foto</detail>  
+      <detail_edit>foto</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>131</order> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

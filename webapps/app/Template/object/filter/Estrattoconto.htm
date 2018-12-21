@@ -1,0 +1,81 @@
+@BEGIN_TEMPLATE@<script src="@CONTEXT@/app/Javascript/calendario/calendarEu.js" type="text/javascript" ></script>
+<script  type="text/javascript">
+	$(document).ready(function()	{
+		$("#anno").change(function()	{
+			$("#KEY_data__FROM").val($("#anno").val());
+			$("#KEY_data__TO").val($("#anno").val());
+		});
+	});
+
+</script>
+
+
+
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  <div class="filter">
+	
+  
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+	
+  </div>
+  
+  <h3>Ricerca</h3>
+  
+  @BLOCK_BEGIN_DESCRIPTION@
+  <div class="class-description">
+    @CLASS_DESCRIPTION@
+  </div>
+  @BLOCK_END_DESCRIPTION@
+
+
+  <div class="form-container">
+  <form id="filter" method="post" action="@ACTION@">
+  
+  	
+  
+  <div>
+  
+    @BEGIN_Estrattoconto@
+    
+    @tag_di_libretto@
+    
+    <div class="item linkN-1">
+ <label for="anno">anno</label> 
+ <select name="anno" id="anno"><option selected="selected" value="01/07/2010">specificare (obbligatoriamente) l'anno</option>
+ 
+ <option value="01/07/2015">2015</option>
+ <option value="01/07/2016">2016</option>
+ <option value="01/07/2017">2017</option>
+ <option value="01/07/2018">2018</option>
+ <option value="01/07/2019">2019</option>
+ <option value="01/07/2020">2020</option>
+ <option value="01/07/2021">2021</option>
+ <option value="01/07/2022">2022</option>
+ <option value="01/07/2023">2023</option>
+ <option value="01/07/2024">2024</option>
+ <option value="01/07/2025">2025</option>
+</select> <br class="spaced-clear-both">
+</div>
+	@tag_inviato_il@@tag_esito_invio@@tag_note@@END_Estrattoconto@
+
+    <br class="clearBoth" />
+    
+    
+    <input type="hidden" name="KEY_data__FROM" id="KEY_data__FROM" value="01/07/2010"/>
+    <input type="hidden" name="KEY_data__TO" id="KEY_data__TO" value="01/07/2010"/>
+    <input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+    <input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+    <div class="buttonrow">
+      <input type="submit" name="post_search" class="button" title="avvia la ricerca" value="[ Cerca ]" />
+    </div>
+    
+  </div>
+  
+  </form>
+  </div>
+  </div>@END_TEMPLATE@

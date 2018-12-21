@@ -1,0 +1,75 @@
+<serena>
+	<service name="get">
+		<Movimenti_Quote>
+			<ID>2562</ID>
+			<data_movimento>28/01/2015</data_movimento>
+			<socio>
+				<Soci>
+					<ID>12373</ID>
+					<dati_consumatore>
+						<Consumatori>
+							<ID>12938</ID>
+							<nome>simona</nome>
+							<cognome>di tullio</cognome>
+							<creation_user>BCalegari </creation_user>
+							<activation_flag>true</activation_flag>
+						</Consumatori>
+					</dati_consumatore>
+					<dati_organizzazione />
+					<numero_socio>941</numero_socio>
+					<creation_user>BCalegari </creation_user>
+					<activation_flag>true</activation_flag>
+				</Soci>
+			</socio>
+			<causale_quota>Quota di adesione</causale_quota>
+			<numero_quote>1</numero_quote>
+			<numero_quote_rimborsate>0</numero_quote_rimborsate>
+			<di_valore>25</di_valore>
+			<creation_user>BCalegari </creation_user>
+			<creation_date>21/04/2015</creation_date>
+			<activation_flag>true</activation_flag>
+		</Movimenti_Quote>
+		<Movimenti_Quote>
+			<data_movimento>12/06/2002</data_movimento>
+			<causale_quota>adesione</causale_quota>
+			<numero_quote>5</numero_quote>
+			<numero_quote_rimborsate>7</numero_quote_rimborsate>
+			<di_valore>25</di_valore>
+			<creation_user>atrevisani</creation_user>
+			<creation_date>08/03/2013</creation_date>
+			<socio>
+				<Soci>
+					<ID>8425</ID>
+					<numero_socio>345</numero_socio>
+					<dati_consumatore>
+						<Consumatori>
+							<ID>8425</ID>
+							<nome>Andrea</nome>
+							<cognome>Frascari</cognome>
+							<tipo_via>Via</tipo_via>
+							<presso></presso>
+							<indirizzo>Cesare Pavese</indirizzo>
+							<numero>33</numero>
+							<provincia>Bologna</provincia>
+							<comune>Bologna</comune>
+							<cap>40141</cap>
+							<email>andreafrascari@katamail.com</email>
+							<creation_user>atrevisani</creation_user>
+							<activation_flag>true</activation_flag>
+						</Consumatori>
+					</dati_consumatore>
+					<dati_organizzazione>
+						<Organizzazioni>
+							<nome>Wyse</nome>
+							<tipo_organizzazione>associazione</tipo_organizzazione>
+							<email>andreafrascari@katamail.com</email>
+						</Organizzazioni>
+					</dati_organizzazione>
+					<creation_user>atrevisani</creation_user>
+					<activation_flag>true</activation_flag>
+				</Soci>
+			</socio>
+
+		</Movimenti_Quote>
+	</service>
+</serena>

@@ -1,0 +1,18 @@
+@BEGIN_TEMPLATE@
+<div class="menubox">
+    <ul>
+      @BEGIN__system_menu_item@
+        ([
+         [ [@tag_smi_href@] != [] ]  ??
+           [
+           <a @tag_smi_href@ title="@tag_smi_alternative_text@">@tag_smi_title@</a>
+           <p>@tag_smi_alternative_text@</p>
+            ]
+          ]) 
+        @BEGIN_smi_children@
+          @tag__system_menu_item@
+        @END_smi_children@
+      @END__system_menu_item@
+    </ul>
+</div>
+@END_TEMPLATE@

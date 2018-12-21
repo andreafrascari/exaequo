@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Soci</title>  
+  <title_view>Soci</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>dati_consumatore</name>  
+      <label>nome cognome</label>  
+      <detail>nome cognome</detail>  
+      <detail_edit>socio</detail_edit>  
+      <filter autocomplete="cls=Consumatori,slot=cognome,display1=cognome,display2=nome">cognome</filter>
+      <list>vai alla scheda consumatore</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order>  
+    </item>  
+    <item> 
+      <name>dati_organizzazione</name>  
+      <label>organizzazione</label>  
+      <detail>organizzazione</detail>  
+      <detail_edit>organizzazione</detail_edit>  
+      <filter autocomplete="cls=Organizzazioni,slot=nome">ragione sociale</filter>  
+      <list>vai alla scheda organizzazione</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order>  
+      <edit_type>filtered</edit_type>  
+    </item>  
+    <item> 
+      <name>di_cooperativa</name>  
+      <label>di cooperativa</label>  
+      <detail>di cooperativa</detail>
+      <list>di cooperativa</list>    
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>3</order> 
+    </item>  
+    <item> 
+      <name>numero_socio</name>  
+      <label>numero libro soci</label>  
+      <detail>numero libro soci</detail>  
+      <detail_edit>numero libro soci</detail_edit>  
+      <filter>numero libro soci</filter>  
+      <list>vai alla scheda socio</list>  
+      <heading>1</heading>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>5</order>  
+      <detail_help>se lasciato vuoto, viene calcolato automaticamente dal sistema</detail_help> 
+    </item>  
+    <item> 
+      <name>regione_nascita</name>  
+      <label>regione nascita</label>  
+      <detail_edit>regione nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>stato_nascita</name>  
+      <label>stato di nascita</label>
+      <filter autocomplete="">stato di nascita</filter>  
+      <detail_edit>stato di nascita</detail_edit>
+      <detail_help>per soci di origine straniera, specificare solo lo stato di nascita, omettendo comune, provincia e regione</detail_help>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>12</order> 
+    </item>
+    <item> 
+      <name>numero_domanda</name>  
+      <label>numero domanda</label>  
+      <detail>numero domanda</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>14</order> 
+    </item>  
+    <item> 
+      <name>codice_fiscale</name>  
+      <label>codice fiscale</label>  
+      <detail>codice fiscale</detail>  
+      <detail_edit>codice fiscale</detail_edit>  
+      <filter>codice fiscale</filter>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length>16</max_length>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>partita_iva</name>  
+      <label>partita iva</label>  
+      <detail>partita iva</detail>  
+      <detail_edit>partita iva</detail_edit>  
+      <filter>partita iva</filter>  
+      <heading>1</heading>  
+      <max_length>16</max_length>  
+      <default/>  
+      <order>33</order> 
+    </item>  
+    <item> 
+      <name>data_nascita</name>  
+      <label>data nascita</label>  
+      <detail>data nascita</detail>  
+      <detail_edit>data nascita</detail_edit>  
+      <filter>data nascita</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>genere</name>  
+      <label>genere</label>  
+      <detail>genere</detail>  
+      <detail_edit>genere</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>43</order> 
+    </item>  
+    <item> 
+      <name>comune_nascita</name>  
+      <label>comune nascita</label>  
+      <detail>comune nascita</detail>  
+      <detail_edit>comune nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>provincia_nascita</name>  
+      <label>provincia nascita</label>  
+      <detail>provincia nascita</detail>  
+      <detail_edit>provincia nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>data_delibera_domanda_organizzazione</name>  
+      <label>data delibera domanda</label>  
+      <detail>data delibera domanda</detail>  
+      <detail_edit>data delibera domanda</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>65</order> 
+    </item>  
+    <item> 
+      <name>telefono_casa</name>  
+      <label>telefono casa</label>  
+      <detail>telefono casa</detail>  
+      <detail_edit>telefono casa</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>telefono_lavoro</name>  
+      <label>telefono ufficio</label>  
+      <detail>telefono ufficio</detail>  
+      <detail_edit>telefono ufficio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>85</order> 
+    </item>  
+    <item> 
+      <name>telefono_cellulare</name>  
+      <label>telefono cellulare</label>  
+      <detail>telefono cellulare</detail>  
+      <detail_edit>telefono cellulare</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>professione</name>  
+      <label>professione</label>  
+      <detail>professione</detail>  
+      <detail_edit>professione</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>data_domanda</name>  
+      <label>data domanda</label>  
+      <detail>data domanda ammissione</detail>  
+      <detail_edit>data domanda ammissione</detail_edit>  
+      <filter>data domanda ammissione</filter>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default>@TODAY@</default>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>residenza_regione</name>  
+      <label>residenza regione</label>  
+      <detail_edit>residenza regione</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>data_ammissione</name>  
+      <label>delibera ammissione</label>
+      <list>ammissione</list>    
+      <detail>delibera ammissione</detail>  
+      <detail_edit>data cda delibera ammissione</detail_edit>  
+      <filter>data delibera ammissione</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>131</order>  
+      <filter-operator>not</filter-operator> 
+    </item>  
+    <item> 
+      <name>data_domanda_recesso</name>  
+      <label>data domanda recesso</label>  
+      <detail>data domanda recesso</detail>  
+      <detail_edit>data domanda recesso</detail_edit>  
+      <list>data domanda recesso</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>191</order> 
+    </item>  
+    <item> 
+      <name>data_delibera_recesso</name>  
+      <label>delibera recesso</label>  
+      <detail>delibera recesso</detail>  
+      <detail_edit>data cda delibera recesso</detail_edit>  
+      <filter>data delibera recesso</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>201</order> 
+    </item>  
+    <item> 
+      <name>carica</name>  
+      <label>carica</label>  
+      <detail>carica</detail>  
+      <detail_edit>carica</detail_edit>  
+      <filter>carica</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>211</order> 
+    </item>  
+    <item> 
+      <name>residenza_tipo_via</name>  
+      <label>tipo via</label>  
+      <detail>tipo via</detail>  
+      <detail_edit>tipo via</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>221</order> 
+    </item>  
+    <item> 
+      <name>residenza_indirizzo</name>  
+      <label>nome via</label>  
+      <detail>nome via</detail>  
+      <detail_edit>nome via</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>231</order> 
+    </item>  
+    <item> 
+      <name>residenza_comune</name>  
+      <label>comune</label>  
+      <detail>comune</detail>  
+      <detail_edit>comune</detail_edit>  
+      <list>comune</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>241</order> 
+    </item>  
+    <item> 
+      <name>residenza_provincia</name>  
+      <label>provincia</label>  
+      <detail>provincia</detail>  
+      <detail_edit>provincia</detail_edit>  
+      <list>provincia</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>242</order> 
+    </item>  
+    <item> 
+      <name>residenza_numero</name>  
+      <label>numero</label>  
+      <detail>numero</detail>  
+      <detail_edit>numero</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>243</order> 
+    </item>  
+    <item> 
+      <name>residenza_cap</name>  
+      <label>cap</label>  
+      <detail>cap</detail>  
+      <detail_edit>cap</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>244</order> 
+    </item>  
+    <item> 
+      <name>movimenti_quote</name>  
+      <label>capitale sociale</label>  
+      <detail>capitale sociale</detail>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>255</order> 
+    </item>  
+    <item> 
+      <name>risparmio</name>  
+      <label>libretto risparmio</label>  
+      <detail>libretti risparmio</detail>  
+      <detail_edit>libretti risparmio</detail_edit>  
+      <filter>libretto risparmio</filter>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>305</order> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

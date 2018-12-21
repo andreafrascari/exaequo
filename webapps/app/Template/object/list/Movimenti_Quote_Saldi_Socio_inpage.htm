@@ -1,0 +1,48 @@
+@BEGIN_TEMPLATE@<div class="inpage">
+	<div id="list">
+				<h4>Saldo Capitale Sociale</h4>
+			
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+	    
+	  
+			<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+				([ [[@tag_Movimenti_Quote.ID#FLAT@] != []] ??
+               [ 
+				<tr>
+
+					<th scope="col">Saldo</a></th>
+				</tr>
+				]])
+	
+				@BEGIN_Movimenti_Quote@
+				
+						([ 
+							[[@XPATH_FUN((count(preceding-sibling::Movimenti_Quote)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+								<tr class="lista_linea_pari">
+							]
+							:: [
+								<tr class="lista_linea_dispari">
+							]
+						])
+						
+						
+						@tag_di_valore@
+						</tr>
+				@END_Movimenti_Quote@
+
+	  		</table>
+
+	
+		</div>
+		</div>@END_TEMPLATE@

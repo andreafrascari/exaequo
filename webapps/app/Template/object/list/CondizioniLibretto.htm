@@ -1,0 +1,95 @@
+@BEGIN_TEMPLATE@<div>
+		
+		<div id="list">
+			<div id="trails">
+				<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+			</div>
+			
+		  	<div class="inserto">
+				
+						<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+					    <span class="NoVisibility">|</span>
+					
+						<a href="javascript:Anastasis.Utils.print('home');" title="stampa">[ Stampa ]</a>
+						<span class="NoVisibility">|</span>
+					
+			</div>
+			<div id="splash">
+				<h2>@TITLE@</h2>
+    					<a href="?q=object/detail_edit&p=CondizioniLibretto&amp;a=@FUN_GET_URL_PARAM(param=p, pre=CondizioniLibretto/)@" title="nuova scheda condizione">Nuova condizione</a>
+    				
+			</div>
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+	    
+			
+	  		([
+						[[@tag_CondizioniLibretto.ID#FLAT@] != []]
+						?? [
+			<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+				<tr>
+					@BLOCK_BEGIN_HEADER@
+						<th scope="col">@HEAD_LABEL@</th>
+					@BLOCK_END_HEADER@
+				</tr>
+	
+					@BEGIN_CondizioniLibretto@([ 
+							[[@XPATH_FUN((count(preceding-sibling::CondizioniLibretto)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+								<tr class="lista_linea_pari">
+							]
+							:: [
+								<tr class="lista_linea_dispari">
+							]
+						])
+		
+						@tag_codice_condizione@@tag_tipologia_deposito@@tag_vincolo@
+								</tr>@END_CondizioniLibretto@
+	  		</table>
+	  		]
+			])
+	  		
+	  		<div class="pagine">
+					
+					@BLOCK_BEGIN_INDIETRO@
+						
+							<a class="linkfirst" href="@HREF_LIST_FIRST@" title="Vai alla prima pagina">[ Prima pagina ]</a>
+							<span class="NoVisibility">|</span>
+											
+						
+							<a class="linkprev" href="@HREF_LIST_BACK@" title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">[ Indietro ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_INDIETRO@
+					
+					<strong>@NUMERO_ELEMENTI@ elementi</strong> trovati - pagina @PAGINA_CORRENTE@
+					
+					@BLOCK_BEGIN_AVANTI@        
+						
+							<a class="linknext" href="@HREF_LIST@" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">[ Avanti ]</a>
+							<span class="NoVisibility">|</span>
+						
+						
+							<a class="linkfirst" href="@HREF_LIST_LAST@" title="Vai all'ultima pagina">[ Ultima pagina ]</a>
+							<span class="NoVisibility">|</span>
+						
+					@BLOCK_END_AVANTI@
+					
+			</div>
+		</div>
+	<span id="apri-chiudi-filtro" title="apri/chiudi filtro di raffinamento">affina la ricerca</span>
+	<div @toggable="controller=apri-chiudi-filtro,init_state=closed">
+  
+ 	@FUN_MODULE(q=object/simplefilter)@  
+	</div>
+</div>@END_TEMPLATE@

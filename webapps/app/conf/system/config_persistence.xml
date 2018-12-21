@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<CONFIGURAZIONE>
+	<DATABASE>
+    	<STRINGA_CONNESSIONE>jdbc:mysql://localhost:3306/iniziativesolidali</STRINGA_CONNESSIONE> 
+		<NOME_UTENTE>iniziative</NOME_UTENTE>
+		<PASSWORD>h4w%pi!M</PASSWORD>
+    	<DRIVER>com.mysql.jdbc.Driver</DRIVER> 
+
+		<LOG_FILE>/var/serena/iniziative/log/pool_log.log</LOG_FILE>		
+		
+    	<MIN_IDLE_CONNECTIONS>5</MIN_IDLE_CONNECTIONS>
+    	<MAX_IDLE_CONNECTIONS>10</MAX_IDLE_CONNECTIONS>
+    	<MAX_ACTIVE_CONNECTIONS>200</MAX_ACTIVE_CONNECTIONS>
+    	<!--
+    		MAX_WAIT. Il tempo (in millisecondi) che il persistence attende, 
+    		dopo aver richiesto una connessione al server, 
+    		prima di andare in timeout. 
+    	-->
+    	<MAX_WAIT>2000</MAX_WAIT> <!-- in msecs (attesa per richiesta in caso di "rotten connection"...-->
+    	<!--
+    		MIN_EVICTABLE_IDLE_TIME. Il tempo (in millisecondi) oltre il quale 
+    		una connessione inutilizzata viene candidata per essere distrutta. 
+    	-->
+		<MIN_EVICTABLE_IDLE_TIME>10000</MIN_EVICTABLE_IDLE_TIME> <!-- 10 secs -->
+		<!--
+			EVICTION_RUN_TIME. Il tempo (in millisecondi) ogni quanto il sistema 
+			controllera' se ci sono connessioni da distruggere. 
+		-->
+		<EVICTION_RUN_TIME>60000</EVICTION_RUN_TIME> <!-- 1 min -->
+		
+		<!--
+	    	Il campo DB_TYPE ha il compito di identificare che tipo
+	    	di db si sta utilizzando.
+			I valori che puo' assumere sono:
+			1 se il DB e' MS SQLServer 2000
+			2 se il DB e' MySql  
+			3 se il DB e' Access
+			4 se il DB e' Oracle (non implementato) 
+		-->
+		<DB_TYPE>2</DB_TYPE>
+	</DATABASE>
+
+	<PARAMETRI>
+		<PARAM NOME="DELETE_TYPE">logical</PARAM> <!-- vs physical -->						
+	    <PARAM NOME="ONTHOLOGY_MAX_DEPTH">10</PARAM>
+		
+		<PARAM NOME="INTERFACE_DATE_FORMAT">dd/MM/yyyy</PARAM>
+		<PARAM NOME="INTERFACE_DATE_FORMAT_2">dd-MM-yyyy</PARAM> 
+		<PARAM NOME="FROM_DB_DATE_FORMAT">yyyy-MM-dd</PARAM>
+		
+ 		<PARAM NOME="INTERFACE_DATETIME_FORMAT">dd/MM/yyyy HH:mm:ss</PARAM>
+		<PARAM NOME="INTERFACE_DATETIME_FORMAT_2">dd-MM-yyyy HH:mm:ss</PARAM> 
+		<PARAM NOME="FROM_DB_DATETIME_FORMAT">yyyy-MM-dd HH:mm:ss</PARAM>
+
+		<PARAM NOME="LOG4J">/conf/system/logservice.xml</PARAM>
+	</PARAMETRI>
+</CONFIGURAZIONE>

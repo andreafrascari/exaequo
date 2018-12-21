@@ -1,0 +1,7 @@
+@BEGIN_TEMPLATE@
+		([ [[@tag__system_user.user_password#FLAT@] != []] 
+		?? 
+		[<div class="system-message-error">L'operazione di recupero password &egrave; andata a buon fine: ti &egrave; stata spedita una mail con una nuova password.<br /><a href="?me=standard&fme=1">Torna all'homepage</a></div>] 
+		:: 
+		[<div class="system-message-error">Recupero password fallito<br /><a href="?q=userRegistration/recover/FORM=step1">Torna alla procedura di recupero</a></div>] ])		
+@END_TEMPLATE@

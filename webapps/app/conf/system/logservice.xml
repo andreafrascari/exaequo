@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!--
+
+	Level Inheritance
+    The inherited level for a given logger C, is equal to the first non-null level in the logger hierarchy,
+    starting at C and proceeding upwards in the hierarchy towards the root logger.
+
+
+	Basic Selection Rule
+	A log request of level p in a logger with (either assigned or inherited, whichever is appropriate)
+	level q, is enabled if  p >= q.
+	DEBUG < INFO < WARN < ERROR < FATAL
+
+	Appender Additivity
+    The output of a log statement of logger C will go to all the appenders in C and its ancestors.
+
+ -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="CONSOLE_APPENDER" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"/>
+		<param name="Threshold" value="DEBUG"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%p] [%d{ABSOLUTE}] %m\n"/>
+		</layout>
+	</appender>
+
+	<appender name="DEBUG_APPENDER" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/var/serena/exaequo/log/exaequo.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="50MB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="Threshold" value="DEBUG"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p; %d{DATE}; %m\n"/>
+		</layout>
+	</appender>
+
+	<appender name="WARN_APPENDER" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/var/serena/exaequo/log/exaequo_warn.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="30MB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="Threshold" value="WARN"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p; %d{DATE}; %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="ERROR_APPENDER" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/var/serena/exaequo/log/exaequo_error.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="Threshold" value="ERROR"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p; %d{DATE}; %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="FATAL_APPENDER" class="org.apache.log4j.net.SMTPAppender">
+		<param name="SMTPHost" value="localhost" />
+		<param name="From" value="afrascari@anastasis.it" />
+		<param name="To" value="afrascari@anastasis.it" />
+		<param name="Subject" value="SERENA FATAL ERROR - exaequo" />
+		<param name="BufferSize" value="1" />
+		<param name="threshold" value="fatal" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p; %d{DATE}; %m%n" />
+		</layout>
+	</appender>
+
+<!--
+	//Non viene piu' utilizzato, tanto noi non distinguiamo tra package.
+	<logger name="eu.anastasis.serena">
+		<level value="DEBUG"/>
+		<appender-ref ref="ERROR_APPENDER"/>
+	</logger>
+-->
+
+
+	<root>
+		
+		<level value="DEBUG"/>
+		<appender-ref ref="FATAL_APPENDER" />
+		<appender-ref ref="DEBUG_APPENDER" />
+		<appender-ref ref="WARN_APPENDER" />
+		<appender-ref ref="ERROR_APPENDER" />
+		<appender-ref ref="CONSOLE_APPENDER" />
+	</root>
+
+</log4j:configuration>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean>
+  <title>Botteghe</title>
+  <attributes>
+	    <item>
+	    	<name>regione</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>provincia</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	    <item>
+    		<name>provincia</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>comune</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	</attributes>
+</bean>

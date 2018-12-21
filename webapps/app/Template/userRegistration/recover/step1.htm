@@ -1,0 +1,56 @@
+@BEGIN_TEMPLATE@
+	<script src="@CONTEXT@/app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+	<script src="@CONTEXT@/app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>
+	<script src="@CONTEXT@/app/Javascript/anastasis/serena/ComplexDetailEdit.js" type="text/javascript"></script>
+	<script type="text/javascript">	
+		detailEdit=new Anastasis.ComplexDetailEdit("detail-edit","@CONTEXT@/Attachment?q=prepare","@CONTEXT@/Attachment?q=status&id=");
+	</script>  
+	<script src="@CONTEXT@/app/Javascript/calendario/calendarEu.js" type="text/javascript" ></script>
+	
+	<!-- Va modificato se la posizione del modulo di menu non e' 2 -->
+	<!-- Commentare per attivare il menu dei nodi CMS
+	@TARGET_BEGIN_MOD_2@
+		@FUN_MENU(rootId=1,currentId=1)@
+	@TARGET_END_MOD_2@
+	-->
+	
+	<div class="detail-edit">
+		<div id="trails">
+			<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - Recupero password
+		</div>	
+		<div class="inserto">
+			<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+			<span class="NoVisibility">|</span>
+			<a href="javascript:print();" title="stampa">[ Stampa ]</a>		
+		</div>		
+		<div id="splash">
+			<h2>Recupero Password</h2>
+			<div class="box_titolo_scheda">
+				<h3>Hai perso la password? Segui la procedura di ripristino</h3>
+			</div>
+		</div>
+  
+	  	
+		
+			<form name="detail-edit" id="detail-edit" onsubmit="return Utils.checkAll()" method="post" action="Index?q=userRegistration/recover/FORM=step2">
+				<div class="form-container">
+				<H3>Inserisci il nome utente</H3>
+	  				
+					@BEGIN__system_user@
+						
+						
+						<div class="detail-body">
+						
+							@tag_user_user_id#CONDITION@
+							
+						</div>
+							     
+						<input class="button" type="submit" value="[Invia]"/>	    
+					@END__system_user@
+					
+				</div>
+			</form>
+		
+
+	</div>
+@END_TEMPLATE@

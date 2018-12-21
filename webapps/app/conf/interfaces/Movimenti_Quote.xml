@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Movimenti_Quote</title>  
+  <title_view>Movimenti di Capitale Sociale</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>data_movimento</name>  
+      <label>data</label>  
+      <detail>data</detail>  
+      <detail_edit>data</detail_edit>  
+      <filter>data</filter>  
+      <list>data</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default>@TODAY@</default>  
+      <order>2</order> 
+    </item>  
+    <item> 
+      <name>socio</name>  
+      <label>dati socio</label>  
+      <detail>socio</detail>  
+      <detail_edit>socio</detail_edit>  
+      <filter>socio</filter>  
+      <list>socio</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>3</order> 
+    </item>  
+    <item> 
+      <name>causale_quota</name>  
+      <label>causale</label>  
+      <detail>causale</detail>  
+      <detail_edit>causale</detail_edit>  
+      <filter>causale</filter>  
+      <list>causale</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>numero_quote</name>  
+      <label>quote sottoscritte</label>  
+      <detail>quote sottoscritte/acquistate</detail>  
+      <detail_edit>numero quote sottoscritte/acquistate</detail_edit>  
+      <list>quote sottoscritte/acquistate</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order>   
+    </item>  
+    <item> 
+      <name>numero_quote_rimborsate</name>  
+      <label>quote rimborsate/vendute</label>  
+      <detail>quote rimborsate</detail>  
+      <detail_edit>numero quote rimborsate/vendute</detail_edit>  
+      <list>quote rimborsate/vendute</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>52</order>   
+    </item>  
+    <item> 
+      <name>di_valore</name>  
+      <label>di valore</label>  
+      <detail>di valore</detail>  
+      <detail_edit>di valore</detail_edit>  
+      <list>di valore</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default>25</default>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <detail>note</detail>  
+      <detail_edit>note</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>63</order> 
+    </item>  
+    <item> 
+      <name>di_risparmio</name>  
+      <label>relativa a risparmio</label>  
+      <detail>relativa a risparmio</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>nome_socio_consumatore</name>  
+      <label>socio</label>  
+      <list type="flat">socio</list>  
+      <detail>socio</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item>  
+    <item> 
+      <name>nome_socio_organizzazione</name>  
+      <label>socio</label>  
+      <list type="flat"/>  
+      <detail>socio</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item> 
+  </attributes> 
+</bean>

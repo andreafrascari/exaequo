@@ -1,0 +1,202 @@
+@BEGIN_TEMPLATE@
+
+
+<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>		
+<script type="text/javascript">
+	detailEdit=new Anastasis.DetailEdit('detail-edit','Attachment?q=prepare','Attachment?q=status&amp;id=');
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  $("#INP_codice_fiscale").change(function() {
+	       $("#INP_codice_fiscale").val($("#INP_codice_fiscale").val().toUpperCase());
+	     });
+	}); 
+</script>
+
+
+
+  <div class="detail-edit">
+<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+   <div class="inserto">
+    
+          <a tabindex="56" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+  <!--      
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+ -->
+	  	  <a tabindex="60" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  
+  <div id="splash">
+
+	@BEGIN_Soci@
+
+	([ [[@tag_data_ammissione#FLAT@]!=[]] ?? 
+		[   <h2>Soci</h2>
+		]::[
+		 	<h2>Domanda ammissione</h2>
+	]])
+		
+
+  </div>
+ 
+  <h3>Inserimento/modifica scheda</h3>
+ 	<h2>
+ 		([ [[@tag_dati_organizzazione.Organizzazioni.ID#FLAT@]] ?? 
+		[  
+		@tag_dati_organizzazione.Organizzazioni.nome#FLAT@ - @tag_numero_socio#FLAT@
+		]::[
+	 	@tag_dati_consumatore.Consumatori.nome#FLAT@
+	    @tag_dati_consumatore.Consumatori.cognome#FLAT@ - @tag_numero_socio#FLAT@
+	]])
+ 	</h2>
+ 
+ <div class="form-container">
+
+  <form id="detail-edit" method="post" action="@ACTION@">
+    
+      <div class="detail-body">
+       		
+        @tag_data_nascita@
+       	@tag_genere@
+        @tag_regione_nascita@       
+      
+        @tag_provincia_nascita@       
+        @tag_comune_nascita@
+        @tag_stato_nascita@  
+        @tag_codice_fiscale@
+        
+       	([ [[@tag_dati_organizzazione.Organizzazioni.ID#FLAT@]] ?? 
+		[  
+			@tag_data_delibera_domanda_organizzazione@
+		]])
+		
+        @tag_telefono_casa@        
+        @tag_telefono_lavoro@
+        @tag_telefono_cellulare@
+        @tag_professione@
+        
+        <h4>Residenza</h4>
+        @tag_residenza_tipo_via@
+        @tag_residenza_indirizzo@  
+        @tag_residenza_numero@
+        @tag_residenza_regione@
+        @tag_residenza_provincia@
+        @tag_residenza_comune@
+        @tag_residenza_cap@
+
+        <h4>Domanda Ammissione / Recesso</h4>
+        <div class="object-instruction">
+        <ul>
+        	<li><strong>ammissione</strong>: inserire la <!-- <em>numero domanda</em>, <em>numero socio,</em>-->  <em>  data delibera Cda</em> e salvare</li> 
+        	<li><strong>recesso</strong>: inserire la <em>data delibera recesso</em> e salvare</li> 
+        </ul>
+        </div>
+        @tag_data_domanda@
+	<!-- @tag_numero_domanda@ -->
+		@tag_numero_socio@
+		
+		
+		([ [[@tag_data_ammissione#FLAT@]==[]] ?? 
+			[  
+	        <div class="to-enter">
+	        	@tag_data_ammissione@
+	        </div>
+	     	] 
+	     	:: 
+	     	[@tag_data_ammissione@]
+	     ])
+       
+        @tag_data_domanda_recesso@
+
+
+		([ [[@tag_data_domanda_recesso#FLAT@]!=[] && @tag_data_delibera_recesso#FLAT@==[]] ?? 
+			[  
+	        <div class="to-enter">
+	        	@tag_data_delibera_recesso@
+	        </div>
+	     	] 
+	     	:: 
+	     	[@tag_data_delibera_recesso@]
+	     ])
+        
+        @tag_carica@
+<!--       @tag_di_cooperativa@
+ 	@tag_tipologia@ 
+ 		@tag_quote_adesione@
+        @tag_valore_quote@
+        @tag_stato@ -->
+        </div>
+        
+        
+        <!-- 
+([ [[@tag_movimenti_quote.Movimenti_Quote.ID#FLAT@]!=[]] ?? 
+[
+	    <div id="object-body-links" class="no_th">
+	      <h2>Info collegate</h2>     
+	      <table summary="tabella info collegate">
+	     	<tbody>
+				<tr><td>
+				<div class="object-link">
+					   <a href="?q=object/list&amp;p=Movimenti_Quote/_a_socio/_v_@tag_ID#FLAT@" title="lista movimenti di quote">Capitale Sociale</a>
+				</div>
+				</td></tr>
+				  ([ [[@tag_risparmio.Libretti.ID#FLAT@]!=[]] ?? 
+						[   <tr><td><div class="object-link">
+							<a href="?q=object/list&amp;p=Libretti/_a_dati_socio/_c_Soci/_a_ID/_v_@tag_ID#FLAT@" title="lista libretti di risparmio">Libretti di Risparmio</a>
+							</div>
+							</td></tr> 			
+					]])
+	      	</tbody>
+	      </table>
+	      </div>
+]])
+      
+         -->
+        
+        
+      <div class="detail-edit-system">
+        <input type="hidden" name="class" value="@CLASS@" />
+
+    	<input type="hidden" name="r" value="@REDIRECT@" />
+
+    	<input type="hidden" name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+        </div>
+  </form>
+   <div class="detail-attachments">
+
+        
+
+     </div>@END_Soci@
+
+          
+
+         
+
+  </div>
+
+   <div class="inserto">
+    
+          <a tabindex="50" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+<!--       
+          <a tabindex="52" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+ -->
+ 
+	  	  <a tabindex="54" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+
+
+
+  </div>@END_TEMPLATE@

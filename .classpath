@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Serena_BaseLibrary"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Serena_Application"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Serena_Auth"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Serena_Persistence"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Serena_Presentation"/>
+	<classpathentry kind="lib" path="/commonLibraries/mail.jar"/>
+	<classpathentry kind="lib" path="/commonLibraries/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/commonLibraries/jibx-bind.jar"/>
+	<classpathentry kind="lib" path="/commonLibraries/jibx-run.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Serena_ExtraModules"/>
+	<classpathentry kind="lib" path="/commonLibraries/dom4j.jar"/>
+	<classpathentry kind="lib" path="/commonLibraries/log4j.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

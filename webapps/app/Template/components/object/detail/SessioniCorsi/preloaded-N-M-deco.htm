@@ -1,0 +1,18 @@
+@BEGIN_TEMPLATE@
+<tr>
+	<th class="corso">@LABEL@</th>
+	<td> 
+		@BEGIN__system_decode[not (sd_image/_system_attachment/ID)]@
+	  			@tag_sd_description#FLAT@<br />
+	  	@END__system_decode@	
+	  	@BEGIN__system_decode[sd_image/_system_attachment/ID]@
+		  	@BEGIN_sd_image@
+		  		@BEGIN__system_attachment@
+		  			<img src="Attachment?q=get&amp;id=@tag_ID#FLAT@" title="@tag_sa_alt_text#FLAT@" alt="@tag_sa_alt_text#FLAT@" width="100" />
+		  			&nbsp;
+		  		@END__system_attachment@
+		  	@END_sd_image@
+	  	@END__system_decode@
+	</td>
+</tr>
+@END_TEMPLATE@

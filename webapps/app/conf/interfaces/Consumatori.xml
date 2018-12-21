@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Consumatori</title>  
+  <title_view>Consumatori</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>cognome</name>  
+      <label>cognome</label>  
+      <detail>cognome</detail>  
+      <detail_edit>cognome</detail_edit>  
+      <filter>cognome</filter>  
+      <list>cognome</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item>  
+    <item> 
+      <name>nome</name>  
+      <label>nome</label>  
+      <detail>nome</detail>  
+      <detail_edit>nome</detail_edit>  
+      <filter>nome</filter>  
+      <list>nome</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>consumatori_bottega</name>  
+      <label>bottega</label>  
+      <detail>bottega</detail>  
+      <detail_edit no-link-new="1">bottega</detail_edit>  
+      <filter>bottega</filter>  
+      <list>bottega</list>  
+      <heading>4</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>26</order> 
+    </item>  
+    <item> 
+      <name>anno_iscrizione</name>  
+      <label>anno iscrizione</label>  
+      <detail>anno iscrizione</detail>  
+      <detail_edit>anno iscrizione</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>27</order> 
+    </item>  
+    <item> 
+      <name>anno_rinnovo</name>  
+      <label>aggiornamento</label>  
+      <detail>aggiornamento</detail>  
+      <detail_edit>aggiornamento</detail_edit>
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>28</order> 
+    </item>  
+    <item> 
+      <name>tipo_via</name>  
+      <label>tipo via</label>  
+      <detail>tipo via</detail>  
+      <detail_edit>tipo via</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>presso</name>  
+      <label>presso</label>  
+      <detail>presso</detail>  
+      <detail_edit>presso</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>indirizzo</name>  
+      <label>indirizzo</label>  
+      <detail>indirizzo</detail>  
+      <detail_edit>indirizzo</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>
+    <item> 
+      <name>numero</name>  
+      <label>numero</label>  
+      <detail>numero</detail>  
+      <detail_edit>numero</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>53</order> 
+    </item>    
+    <item> 
+      <name>regione</name>  
+      <label>regione</label>  
+      <detail_edit>regione</detail_edit>  
+      <filter>regione</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>57</order> 
+    </item>  
+    <item> 
+      <name>provincia</name>  
+      <label>provincia</label>  
+      <detail>provincia</detail>  
+      <detail_edit>provincia</detail_edit>  
+      <filter>provincia</filter>  
+      <list>provincia</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>58</order> 
+    </item>  
+    <item> 
+      <name>comune</name>  
+      <label>comune</label>  
+      <detail>comune</detail>  
+      <detail_edit>comune</detail_edit>  
+      <filter>comune</filter>  
+      <list>comune</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>cap</name>  
+      <label>cap</label>  
+      <detail>cap</detail>
+      <filter>cap</filter>  
+      <detail_edit>cap</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>consumatori_tags</name>  
+      <label>tag</label>  
+      <detail>tag</detail>  
+      <detail_edit type="easy_selection" no-link-new="1">tag</detail_edit>  
+      <filter>tag</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>75</order> 
+    </item>  
+    <item> 
+      <name>ha_partecipato_a</name>  
+      <label>ha partecipato a</label>  
+      <detail>ha partecipato a</detail>    
+      <detail_edit type="easy_selection" no-link-new="1">ha partecipato a</detail_edit>    
+      <detail>ha partecipato a</detail>    
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>77</order> 
+    </item>  
+    <item> 
+      <name>email</name>  
+      <label>email</label>  
+      <detail>email</detail>  
+      <detail_edit>email</detail_edit>  
+      <filter>email</filter>
+      <list>email</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <detail>note</detail>  
+      <detail_edit>note</detail_edit>  
+      <filter>note</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
+    </item>  
+    <item> 
+      <name>associazione</name>  
+      <label>scheda socio</label>  
+      <detail>scheda socio</detail>  
+      <list>n. libro soci</list>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>121</order>  
+      <detail_help>per associare il consumatore, seguire il link e inserire i dati della scheda socio</detail_help> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

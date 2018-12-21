@@ -1,0 +1,105 @@
+@BEGIN_TEMPLATE@
+<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>		
+<script type="text/javascript">
+	detailEdit=new Anastasis.DetailEdit('detail-edit','Attachment?q=prepare','Attachment?q=status&amp;id=');
+</script>
+
+
+  <div class="detail-edit">
+<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - Domanda Ammissione
+	</div>
+   <div class="inserto">
+    
+          <a tabindex="56" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+      
+          <a tabindex="58" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+
+	  	  <a tabindex="60" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+  
+  <div id="splash">
+
+    <h2>Domanda di Ammissione</h2>
+	@BEGIN_Soci@
+ 
+ 
+  </div>
+ 
+  <h3>Inserimento/modifica scheda</h3>
+ 	@tag__a_dati_consumatore@@tag__a_dati_organizzazione@
+ 
+ <div class="form-container">
+
+  <form id="detail-edit" method="post" action="@ACTION@">
+    
+      <div class="detail-body">
+        @tag_data_domanda@
+        @tag_genere@
+        @tag_regione_nascita@
+        @tag_provincia_nascita@       
+        @tag_comune_nascita@        
+        @tag_data_nascita@
+        @tag_codice_fiscale@
+        @tag_telefono_casa@        
+        @tag_telefono_lavoro@
+        @tag_telefono_cellulare@
+        @tag_professione@
+        
+        <h4>Residenza</h4>
+        <div class="object-instruction">
+        <ul>
+        	<li>Il sistema richiede qui <strong>i dati relativi la residenza,</strong> obbligatori anche nel caso in cui questi coincidano con quelli del <strong>domicilio</strong> inseriti nella <em>scheda consumatore</em></li> 
+        </ul>
+        </div>
+        
+        @tag_residenza_tipo_via@
+        @tag_residenza_indirizzo@  
+        @tag_residenza_numero@
+        @tag_residenza_regione@
+        @tag_residenza_provincia@
+        @tag_residenza_comune@
+        @tag_residenza_cap@
+      </div>
+      <div class="detail-edit-system">
+        <input type="hidden" name="class" value="@CLASS@" />
+
+    	<input type="hidden" name="r" value="@REDIRECT@" />
+
+    	<input type="hidden" name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+        </div>
+  </form>
+   <div class="detail-attachments">
+
+        
+
+     </div>@END_Soci@
+
+          
+
+         
+
+  </div>
+   <div class="inserto">
+    
+          <a tabindex="50" href="javascript:detailEdit.saveObject();" title="salva la scheda">[ Salva ]</a>  
+          <span class="NoVisibility">|</span>
+
+      
+          <a tabindex="52" href="javascript:detailEdit.delObject('forced_post_save');" title="cancella la scheda">[ Elimina ]</a>
+          <span class="NoVisibility">|</span>
+
+	  	  <a tabindex="54" href="javascript:areusure();" title="indietro">[ Esci ]</a>
+            <span class="NoVisibility">|</span>
+    
+  </div>  
+
+
+
+  </div>@END_TEMPLATE@

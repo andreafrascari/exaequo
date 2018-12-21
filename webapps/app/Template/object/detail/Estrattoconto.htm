@@ -1,0 +1,104 @@
+@BEGIN_TEMPLATE@
+<script type="text/javascript">
+$(document).ready(function() {
+	var interessiNetti = parseFloat($("#interessi").val());
+	if (interessiNetti < 25)	{
+		$("#modulo_accredito").hide();
+	} else {
+		$("#modulo_accredito").show();
+	}
+	
+	
+});
+
+function inviaMail(id) {
+	var url = "?q=iniziativesolidali/inviaModuli&ID=" + id;		
+	if (confirm("Confermare invio modulo/i al socio?"))	{
+		location.href=url;
+	}
+}
+
+</script>
+
+<div id="meta-detail">
+  <div id="detail">
+  	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+  	<div class="inserto">
+  		<a href="javascript:history.back();" title="indietro">[ Indietro ]</a>
+            <span class="NoVisibility">|</span>
+          
+        
+ 
+   	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+    <a href="@CONTEXT@/Index?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+	<a href="@CONTEXT@/Index?q=object/list&amp;p=@CLASS@/_a_inviato_il/_v_null" title="Lista completa">Da inviare</a>
+   
+  </div>
+    @BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+  
+    
+
+    
+    @BEGIN_Estrattoconto@<div class="object-title">
+       <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella titolo scheda">
+        @tag_data@
+        </table>
+      </div>
+      
+
+
+      
+    <div id="object-body">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+
+
+        <tr class="di_libretto"><th scope="row">libretto</th><td>@tag_di_libretto.Libretti.codice_contratto#FLAT@</td></tr>
+        
+        @tag_importo_prestito@@tag_importo_capitale@@tag_interessi_lordi@@tag_interessi_netti@@tag_interessi_indeducibili@@tag_inviato_il@@tag_esito_invio@@tag_note@
+      </table>      
+      </div>
+      
+      
+     <div id="object-body-links" >
+     <h3>Controlla i moduli pdf generati:</h3>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+      
+      ([[[@tag_pdf@]!=[]] ?? [
+      	@tag_pdf@
+      	@tag_allegato@
+      ]::[
+        <tr class="estrattoconto_pdf"><th scope="row">estrattoconto</th><td><a href="ModuleIndex?q=iniziativesolidali/balance_give/CLS=Soci/ID=@tag_di_libretto.Libretti.dati_socio.Soci.ID#FLAT@/DOC=CurrentBalance/FILE=Posizione_Socio_@tag_di_libretto.Libretti.dati_socio.Soci.numero_socio#FLAT@/TYPE=pdf">estrattoconto pdf</a></td></tr>
+        <tr id="modulo_accredito" class="modulo_accredito_pdf"><th scope="row">modulo accredito</th><td><a href="ModuleIndex?q=iniziativesolidali/genera_modulo_accredito_interessi/CLS=Libretti/ID=@tag_di_libretto.Libretti.ID#FLAT@/DOC=ModuloAccreditoInteressi/FILE=Modulo_Accredito_@tag_di_libretto.Libretti.ID#FLAT@/TYPE=pdf">modulo accredito pdf</a></td></tr>
+      ]])
+      </table>      
+      </div>
+
+     <h3>Invia come mail al socio:</h3>
+        <a id="invioMail" href="#" title="invia modulo/i via email" onclick="inviaMail(@tag_ID#FLAT@)">invia!</a>
+      <br />
+      
+      
+      <div id="object-system">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">      
+        @tag_owner_user@@tag_owner_group@@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+      </table>      
+      
+      <input id="interessi" type="hidden" value="@tag_interessi_netti#FLAT@" />
+      </div>@END_Estrattoconto@
+  </div>
+  </div>@END_TEMPLATE@

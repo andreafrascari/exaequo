@@ -1,0 +1,101 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import logging
+from xml.dom.minidom import parse
+from suds.client import Client
+from suds.xsd.doctor import ImportDoctor, Import
+
+# ----------------------------------------------------------------------
+
+def getNodeText(node):
+  rc = []
+  nodelist = node.childNodes
+  for inode in nodelist:
+    if inode.nodeType == inode.TEXT_NODE:
+      rc.append(inode.data)
+  return ''.join(rc)
+
+# ----------------------------------------------------------------------
+def writeResultXML(result):
+  f = open('result.txt', 'w')
+  f.write(result)
+  f.close()
+
+
+
+
+def readXMLfile(fileName):
+  parser = parse(fileName)
+  print(fileName)
+  subscribers = {}
+  root = parser.getElementsByTagName("lists")[0]
+  list_nodes = root.getElementsByTagName("list")
+  for list_node in list_nodes:
+    node =  list_node.getElementsByTagName("name")[0]
+    listName = getNodeText(node)
+    subscribers_root = parser.getElementsByTagName("subscribers")[0]
+    subscribers_nodes = list_node.getElementsByTagName("subscriber")
+    for subscriber_node in subscribers_nodes:
+      node =  subscriber_node.getElementsByTagName("name")[0]
+      subscriberName = getNodeText(node)
+      node =  subscriber_node.getElementsByTagName("email")[0]
+      subscriberMail = getNodeText(node)
+      print(subscriberMail)
+      subscribers[subscriberMail] = { "name": subscriberName }
+    if not syncronizeList(listName,subscribers):
+      return 'ERROR'
+  return 'OK'
+
+# ----------------------------------------------------------------------
+
+def syncronizeList(listName, subscribers):
+  wsdl = 'http://liste.exaequo.bo.it/wws/wsdl'
+  myTestApp = 'exaequo'
+  pwd = 'PiruPuzzo45'
+  userMail = 'andreafrascari@katamail.com'
+  authInfos = 'USER_EMAIL=' + userMail + ',remote_host=liste.exaequo.bo.it'
+  logging.basicConfig(level='CRITICAL')
+  imp = Import('http://schemas.xmlsoap.org/soap/encoding/')
+  d = ImportDoctor(imp)
+  client = Client(wsdl, doctor=d)
+  print("OK synList after Client")
+  try:
+    # Verifica l'esistenza della lista
+    print("auth?")
+    print(myTestApp)
+    print(pwd)
+    print(authInfos)
+    print(listName)
+    client.service.authenticateRemoteAppAndRun(myTestApp,pwd,authInfos,'info',[listName,])
+    print("OK auth")
+    # Ottiene gli elementi della lista sul server
+    remote_subscribers = client.service.authenticateRemoteAppAndRun(myTestApp,pwd,authInfos,'review',[listName,])
+    remote_mails = []
+    for remote_subscriber in remote_subscribers:
+      print(remote_subscriber)
+      remote_mails.append(remote_subscriber.encode('raw_unicode_escape').decode('utf-8'))
+    print("ok after remote_sub")
+    for remote_mail in remote_mails:
+      if not (remote_mail in subscribers.keys()):
+        # Cancella la mail non più presente
+        client.service.authenticateRemoteAppAndRun(myTestApp,pwd,authInfos,'del',[listName,remote_mail,'1'])
+    print("ok after delete")
+    for subscriber_mail in subscribers.keys():
+      if not (subscriber_mail in remote_mails):
+        # Aggiunge un nuovo elemento
+        subscriber_name = subscribers[subscriber_mail]["name"]
+        client.service.authenticateRemoteAppAndRun(myTestApp,pwd,authInfos,'add',[listName,subscriber_mail,subscriber_name,'1'])
+	writeResultXML(subscriber_mail)
+      print("ok after add")
+    return True
+  except:
+    return False
+
+
+# ----------------------------------------------------------------------
+# MAIN
+# ----------------------------------------------------------------------
+
+if __name__=='__main__':
+  writeResultXML(readXMLfile("list.xml"))

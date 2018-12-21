@@ -1,0 +1,77 @@
+@METABEGIN_TEMPLATE@
+
+@BEGIN_TEMPLATE@
+
+            
+  <div class="operation-result">
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">home</a> - @TITLE@
+	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+     <div class="navigation-options">
+
+      @BLOCK_BEGIN_BACK_TO_CURRENT_OPERATION@
+
+        <a title="Tornare all'operazione in corso" href="@HREF_CURRENT_OPERATION@">Indietro</a>
+
+      @BLOCK_END_BACK_TO_CURRENT_OPERATION@
+
+    </div>
+  </div>
+
+	<h3>Risultato dell'operazione</h3>
+
+  @BLOCK_BEGIN_RESULT_SUCCESS@
+
+    <div class="system-message-success">
+
+      Operazione effettuata correttamente
+      <br />
+      
+      @METABEGIN_bean@
+      	([ [[@tag_@METAtag_title@.ID#FLAT@] == []] ?? 
+      		[
+      			<a title="Tornare all'ultima lista visualizzata" href="@HREF_LIST@&amp;page=XML-QUERY">Tornare all'ultima lista visualizzata</a>
+      		] ::      	
+      		[       
+      			<a title="Torna alla risorsa" href="@HREF_DETAIL@">Torna alla Scheda</a>
+	      	] 
+      	])
+         @BEGIN_@METAtag_title@@
+ 			@METABEGIN_attributes@
+ 				<!--  necessario! -->
+        	@METAEND_attributes@
+	   	 @END_@METAtag_title@@
+       @METAEND_bean@
+
+    </div>
+
+  @BLOCK_END_RESULT_SUCCESS@
+  
+
+
+
+
+  @BLOCK_BEGIN_RESULT_ERROR@
+
+    <div class="system-message-error">
+
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+
+    </div>
+
+  @BLOCK_END_RESULT_ERROR@
+
+
+
+   
+
+  </div>
+
+  <br />
+
+@END_TEMPLATE@
+
+@METAEND_TEMPLATE@
+

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Convertitore da XML a Java-->
+<binding direction="input">
+  <format type="java.util.Date" deserializer="eu.anastasis.serena.beans.Deserializers.deserializeDateTime" label="datetimeFormat"/>
+  <format type="java.util.Date" deserializer="eu.anastasis.serena.beans.Deserializers.deserializeDate" label="dateFormat"/>
+  <format type="java.lang.Double" deserializer="eu.anastasis.serena.beans.Deserializers.deserializeDouble" default="0.0"/>
+  <format type="java.lang.Float" deserializer="eu.anastasis.serena.beans.Deserializers.deserializeFloat" default="0.0"/>
+  <format type="java.lang.Integer" deserializer="eu.anastasis.serena.beans.Deserializers.deserializeInt" default="0"/>
+  <mapping name="Botteghe" class="eu.anastasis.serena.beans.Botteghe" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <structure name="appartiene_a" usage="optional">
+      <structure usage="optional" field="appartiene_a"/>
+    </structure>
+    <value name="cap" get-method="getCap" set-method="setCap" usage="optional"/>
+    <value name="comune" get-method="getComune" set-method="setComune" usage="optional"/>
+    <collection name="consumatori" field="consumatori" item-type="eu.anastasis.serena.beans.Consumatori" usage="optional"/>
+    <value name="descrizione" get-method="getDescrizione" set-method="setDescrizione" usage="optional"/>
+    <value name="email" get-method="getEmail" set-method="setEmail" usage="optional"/>
+    <value name="fax" get-method="getFax" set-method="setFax" usage="optional"/>
+    <value name="foto" get-method="getFoto" set-method="setFoto" usage="optional"/>
+    <value name="indirizzo" get-method="getIndirizzo" set-method="setIndirizzo" usage="optional"/>
+    <value name="nome" get-method="getNome" set-method="setNome" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <collection name="organizzazioni" field="organizzazioni" item-type="eu.anastasis.serena.beans.Organizzazioni" usage="optional"/>
+    <collection name="prodotti_mercatino" field="prodotti_mercatino" item-type="eu.anastasis.serena.beans.Prodotti" usage="optional"/>
+    <value name="provincia" get-method="getProvincia" set-method="setProvincia" usage="optional"/>
+    <value name="regione" get-method="getRegione" set-method="setRegione" usage="optional"/>
+    <value name="telefono" get-method="getTelefono" set-method="setTelefono" usage="optional"/>
+    <value name="web" get-method="getWeb" set-method="setWeb" usage="optional"/>
+  </mapping>
+  <mapping name="CondizioniLibretto" class="eu.anastasis.serena.beans.CondizioniLibretto" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="codice_condizione" get-method="getCodice_condizione" set-method="setCodice_condizione" usage="optional"/>
+    <value name="data_fine_validita" get-method="getData_fine_validita" set-method="setData_fine_validita" usage="optional" format="dateFormat"/>
+    <value name="data_inizio_validita" get-method="getData_inizio_validita" set-method="setData_inizio_validita" usage="optional" format="dateFormat"/>
+    <structure name="inverse_of_condizioni_libretti" usage="optional">
+      <structure usage="optional" field="inverse_of_condizioni_libretti"/>
+    </structure>
+    <collection name="inverse_of_tipo_libretto" field="inverse_of_tipo_libretto" item-type="eu.anastasis.serena.beans.Libretti" usage="optional"/>
+    <value name="modalita_calcolo_interessi" get-method="getModalita_calcolo_interessi" set-method="setModalita_calcolo_interessi" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <collection name="tassi_di_interesse" field="tassi_di_interesse" item-type="eu.anastasis.serena.beans.TassoInteresseLibretto" usage="optional"/>
+    <value name="tipologia_deposito" get-method="getTipologia_deposito" set-method="setTipologia_deposito" usage="optional"/>
+    <value name="vincolo" get-method="getVincolo" set-method="setVincolo" usage="optional"/>
+  </mapping>
+  <mapping name="Consumatori" class="eu.anastasis.serena.beans.Consumatori" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="anno_iscrizione" get-method="getAnno_iscrizione" set-method="setAnno_iscrizione" usage="optional"/>
+    <value name="anno_rinnovo" get-method="getAnno_rinnovo" set-method="setAnno_rinnovo" usage="optional"/>
+    <structure name="associazione" usage="optional">
+      <structure usage="optional" field="associazione"/>
+    </structure>
+    <value name="cap" get-method="getCap" set-method="setCap" usage="optional"/>
+    <value name="cognome" get-method="getCognome" set-method="setCognome" usage="optional"/>
+    <value name="comune" get-method="getComune" set-method="setComune" usage="optional"/>
+    <structure name="consumatori_bottega" usage="optional">
+      <structure usage="optional" field="consumatori_bottega"/>
+    </structure>
+    <collection name="consumatori_tags" field="consumatori_tags" item-type="eu.anastasis.serena.beans.Tag" usage="optional"/>
+    <value name="email" get-method="getEmail" set-method="setEmail" usage="optional"/>
+    <collection name="ha_partecipato_a" field="ha_partecipato_a" item-type="eu.anastasis.serena.beans.Iniziative" usage="optional"/>
+    <value name="indirizzo" get-method="getIndirizzo" set-method="setIndirizzo" usage="optional"/>
+    <value name="nome" get-method="getNome" set-method="setNome" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="presso" get-method="getPresso" set-method="setPresso" usage="optional"/>
+    <value name="provincia" get-method="getProvincia" set-method="setProvincia" usage="optional"/>
+    <value name="regione" get-method="getRegione" set-method="setRegione" usage="optional"/>
+    <value name="tipo_via" get-method="getTipo_via" set-method="setTipo_via" usage="optional"/>
+  </mapping>
+  <mapping name="Cooperative" class="eu.anastasis.serena.beans.Cooperative" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <collection name="botteghe" field="botteghe" item-type="eu.anastasis.serena.beans.Botteghe" usage="optional"/>
+    <value name="cap" get-method="getCap" set-method="setCap" usage="optional"/>
+    <value name="comune" get-method="getComune" set-method="setComune" usage="optional"/>
+    <collection name="condizioni_libretti" field="condizioni_libretti" item-type="eu.anastasis.serena.beans.CondizioniLibretto" usage="optional"/>
+    <collection name="cooperativa_iniziative" field="cooperativa_iniziative" item-type="eu.anastasis.serena.beans.Iniziative" usage="optional"/>
+    <value name="data_chiusura_bilancio" get-method="getData_chiusura_bilancio" set-method="setData_chiusura_bilancio" usage="optional"/>
+    <value name="delibera_cda_adesione" get-method="getDelibera_cda_adesione" set-method="setDelibera_cda_adesione" usage="optional"/>
+    <value name="delibera_cda_recesso" get-method="getDelibera_cda_recesso" set-method="setDelibera_cda_recesso" usage="optional"/>
+    <value name="descrizione" get-method="getDescrizione" set-method="setDescrizione" usage="optional"/>
+    <value name="email" get-method="getEmail" set-method="setEmail" usage="optional"/>
+    <value name="email_admin_mailing_list" get-method="getEmail_admin_mailing_list" set-method="setEmail_admin_mailing_list" usage="optional"/>
+    <value name="fax" get-method="getFax" set-method="setFax" usage="optional"/>
+    <value name="foto" get-method="getFoto" set-method="setFoto" usage="optional"/>
+    <collection name="i_soci" field="i_soci" item-type="eu.anastasis.serena.beans.Soci" usage="optional"/>
+    <value name="indirizzo" get-method="getIndirizzo" set-method="setIndirizzo" usage="optional"/>
+    <value name="liquidazione_quote_esercizio_giorni" get-method="getLiquidazione_quote_esercizio_giorni" set-method="setLiquidazione_quote_esercizio_giorni" usage="optional"/>
+    <collection name="newsletter_di_coop" field="newsletter_di_coop" item-type="eu.anastasis.serena.beans.Newsletter" usage="optional"/>
+    <value name="nome_mailing_list" get-method="getNome_mailing_list" set-method="setNome_mailing_list" usage="optional"/>
+    <value name="numero_quote_associazione" get-method="getNumero_quote_associazione" set-method="setNumero_quote_associazione" usage="optional"/>
+    <value name="provincia" get-method="getProvincia" set-method="setProvincia" usage="optional"/>
+    <value name="ragione_sociale" get-method="getRagione_sociale" set-method="setRagione_sociale" usage="optional"/>
+    <value name="regione" get-method="getRegione" set-method="setRegione" usage="optional"/>
+    <structure name="regolamento_prestito" usage="optional">
+      <structure usage="optional" field="regolamento_prestito"/>
+    </structure>
+    <value name="sez_mailing_list" get-method="getSez_mailing_list" set-method="setSez_mailing_list" usage="optional"/>
+    <value name="sez_statuto_regolamenti" get-method="getSez_statuto_regolamenti" set-method="setSez_statuto_regolamenti" usage="optional"/>
+    <collection name="tag_coop" field="tag_coop" item-type="eu.anastasis.serena.beans.Tag" usage="optional"/>
+    <value name="telefono" get-method="getTelefono" set-method="setTelefono" usage="optional"/>
+    <value name="tipo_cooperativa" get-method="getTipo_cooperativa" set-method="setTipo_cooperativa" usage="optional"/>
+    <value name="valore_quota" get-method="getValore_quota" set-method="setValore_quota" usage="optional"/>
+    <value name="web" get-method="getWeb" set-method="setWeb" usage="optional"/>
+  </mapping>
+  <mapping name="CorsiFormazione" class="eu.anastasis.serena.beans.CorsiFormazione" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <collection name="documenti_corso" field="documenti_corso" item-type="eu.anastasis.serena.beans._system_document" usage="optional"/>
+    <value name="logo" get-method="getLogo" set-method="setLogo" usage="optional"/>
+    <value name="luogo" get-method="getLuogo" set-method="setLuogo" usage="optional"/>
+    <value name="organizzatore" get-method="getOrganizzatore" set-method="setOrganizzatore" usage="optional"/>
+    <value name="periodo" get-method="getPeriodo" set-method="setPeriodo" usage="optional"/>
+    <collection name="sessioni" field="sessioni" item-type="eu.anastasis.serena.beans.SessioniCorsi" usage="optional"/>
+    <value name="tema" get-method="getTema" set-method="setTema" usage="optional"/>
+    <value name="titolo" get-method="getTitolo" set-method="setTitolo" usage="optional"/>
+  </mapping>
+  <mapping name="Estrattoconto" class="eu.anastasis.serena.beans.Estrattoconto" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="data" get-method="getData" set-method="setData" usage="optional" format="dateFormat"/>
+    <structure name="di_libretto" usage="optional">
+      <structure usage="optional" field="di_libretto"/>
+    </structure>
+    <value name="esito_invio" get-method="getEsito_invio" set-method="setEsito_invio" usage="optional"/>
+    <value name="importo_altre_quote" get-method="getImporto_altre_quote" set-method="setImporto_altre_quote" usage="optional"/>
+    <value name="importo_capitale" get-method="getImporto_capitale" set-method="setImporto_capitale" usage="optional"/>
+    <value name="importo_prestito" get-method="getImporto_prestito" set-method="setImporto_prestito" usage="optional"/>
+    <value name="interessi_indeducibili" get-method="getInteressi_indeducibili" set-method="setInteressi_indeducibili" usage="optional"/>
+    <value name="interessi_lordi" get-method="getInteressi_lordi" set-method="setInteressi_lordi" usage="optional"/>
+    <value name="interessi_netti" get-method="getInteressi_netti" set-method="setInteressi_netti" usage="optional"/>
+    <value name="inviato_il" get-method="getInviato_il" set-method="setInviato_il" usage="optional" format="dateFormat"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+  </mapping>
+  <mapping name="Iniziative" class="eu.anastasis.serena.beans.Iniziative" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="data" get-method="getData" set-method="setData" usage="optional" format="dateFormat"/>
+    <value name="descrizione" get-method="getDescrizione" set-method="setDescrizione" usage="optional"/>
+    <value name="foto" get-method="getFoto" set-method="setFoto" usage="optional"/>
+    <structure name="iniziative_cooperativa" usage="optional">
+      <structure usage="optional" field="iniziative_cooperativa"/>
+    </structure>
+    <value name="nome_iniziativa" get-method="getNome_iniziativa" set-method="setNome_iniziativa" usage="optional"/>
+    <collection name="partecipanti" field="partecipanti" item-type="eu.anastasis.serena.beans.Consumatori" usage="optional"/>
+  </mapping>
+  <mapping name="InteressiIndeducibili" class="eu.anastasis.serena.beans.InteressiIndeducibili" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="data_fine_validita" get-method="getData_fine_validita" set-method="setData_fine_validita" usage="optional" format="dateFormat"/>
+    <value name="data_inizio_validita" get-method="getData_inizio_validita" set-method="setData_inizio_validita" usage="optional" format="dateFormat"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="tasso_interesse" get-method="getTasso_interesse" set-method="setTasso_interesse" usage="optional"/>
+  </mapping>
+  <mapping name="Libretti" class="eu.anastasis.serena.beans.Libretti" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="banca_di_riferimento" get-method="getBanca_di_riferimento" set-method="setBanca_di_riferimento" usage="optional"/>
+    <value name="codice_contratto" get-method="getCodice_contratto" set-method="setCodice_contratto" usage="optional"/>
+    <value name="conto_corrente" get-method="getConto_corrente" set-method="setConto_corrente" usage="optional"/>
+    <value name="data_apertura" get-method="getData_apertura" set-method="setData_apertura" usage="optional" format="dateFormat"/>
+    <value name="data_chiusura" get-method="getData_chiusura" set-method="setData_chiusura" usage="optional" format="dateFormat"/>
+    <value name="data_rinnovo" get-method="getData_rinnovo" set-method="setData_rinnovo" usage="optional" format="dateFormat"/>
+    <value name="data_scadenza" get-method="getData_scadenza" set-method="setData_scadenza" usage="optional" format="dateFormat"/>
+    <structure name="dati_socio" usage="optional">
+      <structure usage="optional" field="dati_socio"/>
+    </structure>
+    <value name="delega" get-method="getDelega" set-method="setDelega" usage="optional"/>
+    <collection name="estratticonto" field="estratticonto" item-type="eu.anastasis.serena.beans.Estrattoconto" usage="optional"/>
+    <value name="iban" get-method="getIban" set-method="setIban" usage="optional"/>
+    <value name="modalita_rinnovo" get-method="getModalita_rinnovo" set-method="setModalita_rinnovo" usage="optional"/>
+    <value name="motivazione_chiusura" get-method="getMotivazione_chiusura" set-method="setMotivazione_chiusura" usage="optional"/>
+    <collection name="movimenti" field="movimenti" item-type="eu.anastasis.serena.beans.Movimenti_Libretti" usage="optional"/>
+    <value name="note_contratto" get-method="getNote_contratto" set-method="setNote_contratto" usage="optional"/>
+    <collection name="quote_relative" field="quote_relative" item-type="eu.anastasis.serena.beans.Movimenti_Quote" usage="optional"/>
+    <value name="stato_libretto" get-method="getStato_libretto" set-method="setStato_libretto" usage="optional"/>
+    <structure name="tipo_libretto" usage="optional">
+      <structure usage="optional" field="tipo_libretto"/>
+    </structure>
+  </mapping>
+  <mapping name="Movimenti_Libretti" class="eu.anastasis.serena.beans.Movimenti_Libretti" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="banca_di_riferimento_movimento" get-method="getBanca_di_riferimento_movimento" set-method="setBanca_di_riferimento_movimento" usage="optional"/>
+    <value name="causale_libretto" get-method="getCausale_libretto" set-method="setCausale_libretto" usage="optional"/>
+    <value name="data_movimento" get-method="getData_movimento" set-method="setData_movimento" usage="optional" format="dateFormat"/>
+    <value name="data_valuta" get-method="getData_valuta" set-method="setData_valuta" usage="optional" format="dateFormat"/>
+    <value name="importo" get-method="getImporto" set-method="setImporto" usage="optional"/>
+    <structure name="libretto" usage="optional">
+      <structure usage="optional" field="libretto"/>
+    </structure>
+    <value name="mezzo" get-method="getMezzo" set-method="setMezzo" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="numero_effetto" get-method="getNumero_effetto" set-method="setNumero_effetto" usage="optional"/>
+  </mapping>
+  <mapping name="Movimenti_Quote" class="eu.anastasis.serena.beans.Movimenti_Quote" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="causale_quota" get-method="getCausale_quota" set-method="setCausale_quota" usage="optional"/>
+    <value name="data_movimento" get-method="getData_movimento" set-method="setData_movimento" usage="optional" format="dateFormat"/>
+    <structure name="di_risparmio" usage="optional">
+      <structure usage="optional" field="di_risparmio"/>
+    </structure>
+    <value name="di_valore" get-method="getDi_valore" set-method="setDi_valore" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="numero_quote" get-method="getNumero_quote" set-method="setNumero_quote" usage="optional"/>
+    <value name="numero_quote_rimborsate" get-method="getNumero_quote_rimborsate" set-method="setNumero_quote_rimborsate" usage="optional"/>
+    <structure name="socio" usage="optional">
+      <structure usage="optional" field="socio"/>
+    </structure>
+  </mapping>
+  <mapping name="Newsletter" class="eu.anastasis.serena.beans.Newsletter" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="body" get-method="getBody" set-method="setBody" usage="optional"/>
+    <structure name="newsletter_coop" usage="optional">
+      <structure usage="optional" field="newsletter_coop"/>
+    </structure>
+    <value name="teaser" get-method="getTeaser" set-method="setTeaser" usage="optional"/>
+    <value name="thumbnail" get-method="getThumbnail" set-method="setThumbnail" usage="optional"/>
+    <value name="title" get-method="getTitle" set-method="setTitle" usage="optional"/>
+  </mapping>
+  <mapping name="Organizzazioni" class="eu.anastasis.serena.beans.Organizzazioni" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="anno_iscrizione" get-method="getAnno_iscrizione" set-method="setAnno_iscrizione" usage="optional"/>
+    <value name="anno_rinnovo" get-method="getAnno_rinnovo" set-method="setAnno_rinnovo" usage="optional"/>
+    <value name="cap" get-method="getCap" set-method="setCap" usage="optional"/>
+    <value name="comune" get-method="getComune" set-method="setComune" usage="optional"/>
+    <structure name="dati_associazione" usage="optional">
+      <structure usage="optional" field="dati_associazione"/>
+    </structure>
+    <structure name="di_bottega" usage="optional">
+      <structure usage="optional" field="di_bottega"/>
+    </structure>
+    <value name="email" get-method="getEmail" set-method="setEmail" usage="optional"/>
+    <value name="fax" get-method="getFax" set-method="setFax" usage="optional"/>
+    <collection name="i_tag_relativi" field="i_tag_relativi" item-type="eu.anastasis.serena.beans.Tag" usage="optional"/>
+    <value name="indirizzo" get-method="getIndirizzo" set-method="setIndirizzo" usage="optional"/>
+    <value name="legale_rappresentante" get-method="getLegale_rappresentante" set-method="setLegale_rappresentante" usage="optional"/>
+    <value name="nome" get-method="getNome" set-method="setNome" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="numero" get-method="getNumero" set-method="setNumero" usage="optional"/>
+    <value name="provincia" get-method="getProvincia" set-method="setProvincia" usage="optional"/>
+    <value name="regione" get-method="getRegione" set-method="setRegione" usage="optional"/>
+    <value name="settore_attivita" get-method="getSettore_attivita" set-method="setSettore_attivita" usage="optional"/>
+    <value name="telefono" get-method="getTelefono" set-method="setTelefono" usage="optional"/>
+    <value name="tipo_organizzazione" get-method="getTipo_organizzazione" set-method="setTipo_organizzazione" usage="optional"/>
+    <value name="tipo_via" get-method="getTipo_via" set-method="setTipo_via" usage="optional"/>
+    <value name="web" get-method="getWeb" set-method="setWeb" usage="optional"/>
+  </mapping>
+  <mapping name="Prodotti" class="eu.anastasis.serena.beans.Prodotti" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="categoria" get-method="getCategoria" set-method="setCategoria" usage="optional"/>
+    <value name="codice" get-method="getCodice" set-method="setCodice" usage="optional"/>
+    <value name="descrizione" get-method="getDescrizione" set-method="setDescrizione" usage="optional"/>
+    <value name="fornitore" get-method="getFornitore" set-method="setFornitore" usage="optional"/>
+    <value name="foto" get-method="getFoto" set-method="setFoto" usage="optional"/>
+    <value name="nome" get-method="getNome" set-method="setNome" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="prezzo" get-method="getPrezzo" set-method="setPrezzo" usage="optional"/>
+    <structure name="prodotti_bottega" usage="optional">
+      <structure usage="optional" field="prodotti_bottega"/>
+    </structure>
+    <value name="produttore" get-method="getProduttore" set-method="setProduttore" usage="optional"/>
+    <value name="provenienza" get-method="getProvenienza" set-method="setProvenienza" usage="optional"/>
+    <value name="quantita" get-method="getQuantita" set-method="setQuantita" usage="optional"/>
+    <value name="sotto_categoria" get-method="getSotto_categoria" set-method="setSotto_categoria" usage="optional"/>
+  </mapping>
+  <mapping name="RegolamentoPrestito" class="eu.anastasis.serena.beans.RegolamentoPrestito" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="accredito_interessi" get-method="getAccredito_interessi" set-method="setAccredito_interessi" usage="optional"/>
+    <value name="apertura_libretto_dopo_adesione_giorni" get-method="getApertura_libretto_dopo_adesione_giorni" set-method="setApertura_libretto_dopo_adesione_giorni" usage="optional"/>
+    <value name="comuniqcazione_modifiche_giorni" get-method="getComuniqcazione_modifiche_giorni" set-method="setComuniqcazione_modifiche_giorni" usage="optional"/>
+    <value name="costo_singola_operazione" get-method="getCosto_singola_operazione" set-method="setCosto_singola_operazione" usage="optional"/>
+    <value name="giorni_valuta" get-method="getGiorni_valuta" set-method="setGiorni_valuta" usage="optional"/>
+    <value name="importo_massimo_prestito" get-method="getImporto_massimo_prestito" set-method="setImporto_massimo_prestito" usage="optional"/>
+    <structure name="inverse_of_regolamento_prestito" usage="optional">
+      <structure usage="optional" field="inverse_of_regolamento_prestito"/>
+    </structure>
+    <value name="liquidazione_interessi_chiusura" get-method="getLiquidazione_interessi_chiusura" set-method="setLiquidazione_interessi_chiusura" usage="optional"/>
+    <value name="rapporto_prestito_capitale" get-method="getRapporto_prestito_capitale" set-method="setRapporto_prestito_capitale" usage="optional"/>
+    <value name="ritenuta_fiscale" get-method="getRitenuta_fiscale" set-method="setRitenuta_fiscale" usage="optional"/>
+    <value name="spese_richiesta_documentazione" get-method="getSpese_richiesta_documentazione" set-method="setSpese_richiesta_documentazione" usage="optional"/>
+    <value name="spese_tenuta_conto" get-method="getSpese_tenuta_conto" set-method="setSpese_tenuta_conto" usage="optional"/>
+  </mapping>
+  <mapping name="SessioniCorsi" class="eu.anastasis.serena.beans.SessioniCorsi" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="argomenti" get-method="getArgomenti" set-method="setArgomenti" usage="optional"/>
+    <value name="data" get-method="getData" set-method="setData" usage="optional" format="dateFormat"/>
+    <structure name="di_corso" usage="optional">
+      <structure usage="optional" field="di_corso"/>
+    </structure>
+    <value name="docenti" get-method="getDocenti" set-method="setDocenti" usage="optional"/>
+    <collection name="documenti" field="documenti" item-type="eu.anastasis.serena.beans._system_document" usage="optional"/>
+    <value name="luogo" get-method="getLuogo" set-method="setLuogo" usage="optional"/>
+    <value name="title" get-method="getTitle" set-method="setTitle" usage="optional"/>
+  </mapping>
+  <mapping name="SimulazioneEstrattoconto" class="eu.anastasis.serena.beans.SimulazioneEstrattoconto" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="codice_libretto" get-method="getCodice_libretto" set-method="setCodice_libretto" usage="optional"/>
+    <value name="data" get-method="getData" set-method="setData" usage="optional" format="dateFormat"/>
+    <value name="di_socio" get-method="getDi_socio" set-method="setDi_socio" usage="optional"/>
+    <value name="importo_altre_quote" get-method="getImporto_altre_quote" set-method="setImporto_altre_quote" usage="optional"/>
+    <value name="importo_capitale" get-method="getImporto_capitale" set-method="setImporto_capitale" usage="optional"/>
+    <value name="importo_prestito" get-method="getImporto_prestito" set-method="setImporto_prestito" usage="optional"/>
+    <value name="interessi_indeducibili" get-method="getInteressi_indeducibili" set-method="setInteressi_indeducibili" usage="optional"/>
+    <value name="interessi_lordi" get-method="getInteressi_lordi" set-method="setInteressi_lordi" usage="optional"/>
+    <value name="interessi_netti" get-method="getInteressi_netti" set-method="setInteressi_netti" usage="optional"/>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+  </mapping>
+  <mapping name="Soci" class="eu.anastasis.serena.beans.Soci" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="carica" get-method="getCarica" set-method="setCarica" usage="optional"/>
+    <value name="codice_fiscale" get-method="getCodice_fiscale" set-method="setCodice_fiscale" usage="optional"/>
+    <value name="comune_nascita" get-method="getComune_nascita" set-method="setComune_nascita" usage="optional"/>
+    <value name="data_ammissione" get-method="getData_ammissione" set-method="setData_ammissione" usage="optional" format="dateFormat"/>
+    <value name="data_delibera_domanda_organizzazione" get-method="getData_delibera_domanda_organizzazione" set-method="setData_delibera_domanda_organizzazione" usage="optional" format="dateFormat"/>
+    <value name="data_delibera_recesso" get-method="getData_delibera_recesso" set-method="setData_delibera_recesso" usage="optional" format="dateFormat"/>
+    <value name="data_domanda" get-method="getData_domanda" set-method="setData_domanda" usage="optional" format="dateFormat"/>
+    <value name="data_domanda_recesso" get-method="getData_domanda_recesso" set-method="setData_domanda_recesso" usage="optional" format="dateFormat"/>
+    <value name="data_nascita" get-method="getData_nascita" set-method="setData_nascita" usage="optional" format="dateFormat"/>
+    <structure name="dati_consumatore" usage="optional">
+      <structure usage="optional" field="dati_consumatore"/>
+    </structure>
+    <structure name="dati_organizzazione" usage="optional">
+      <structure usage="optional" field="dati_organizzazione"/>
+    </structure>
+    <structure name="di_cooperativa" usage="optional">
+      <structure usage="optional" field="di_cooperativa"/>
+    </structure>
+    <value name="genere" get-method="getGenere" set-method="setGenere" usage="optional"/>
+    <collection name="movimenti_quote" field="movimenti_quote" item-type="eu.anastasis.serena.beans.Movimenti_Quote" usage="optional"/>
+    <value name="numero_domanda" get-method="getNumero_domanda" set-method="setNumero_domanda" usage="optional"/>
+    <value name="numero_socio" get-method="getNumero_socio" set-method="setNumero_socio" usage="optional"/>
+    <value name="partita_iva" get-method="getPartita_iva" set-method="setPartita_iva" usage="optional"/>
+    <value name="professione" get-method="getProfessione" set-method="setProfessione" usage="optional"/>
+    <value name="provincia_nascita" get-method="getProvincia_nascita" set-method="setProvincia_nascita" usage="optional"/>
+    <value name="regione_nascita" get-method="getRegione_nascita" set-method="setRegione_nascita" usage="optional"/>
+    <value name="residenza_cap" get-method="getResidenza_cap" set-method="setResidenza_cap" usage="optional"/>
+    <value name="residenza_comune" get-method="getResidenza_comune" set-method="setResidenza_comune" usage="optional"/>
+    <value name="residenza_indirizzo" get-method="getResidenza_indirizzo" set-method="setResidenza_indirizzo" usage="optional"/>
+    <value name="residenza_numero" get-method="getResidenza_numero" set-method="setResidenza_numero" usage="optional"/>
+    <value name="residenza_provincia" get-method="getResidenza_provincia" set-method="setResidenza_provincia" usage="optional"/>
+    <value name="residenza_regione" get-method="getResidenza_regione" set-method="setResidenza_regione" usage="optional"/>
+    <value name="residenza_tipo_via" get-method="getResidenza_tipo_via" set-method="setResidenza_tipo_via" usage="optional"/>
+    <collection name="risparmio" field="risparmio" item-type="eu.anastasis.serena.beans.Libretti" usage="optional"/>
+    <value name="stato_nascita" get-method="getStato_nascita" set-method="setStato_nascita" usage="optional"/>
+    <value name="telefono_casa" get-method="getTelefono_casa" set-method="setTelefono_casa" usage="optional"/>
+    <value name="telefono_cellulare" get-method="getTelefono_cellulare" set-method="setTelefono_cellulare" usage="optional"/>
+    <value name="telefono_lavoro" get-method="getTelefono_lavoro" set-method="setTelefono_lavoro" usage="optional"/>
+  </mapping>
+  <mapping name="Tag" class="eu.anastasis.serena.beans.Tag" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <structure name="di_coop" usage="optional">
+      <structure usage="optional" field="di_coop"/>
+    </structure>
+    <value name="nome" get-method="getNome" set-method="setNome" usage="optional"/>
+    <collection name="per_consumatori" field="per_consumatori" item-type="eu.anastasis.serena.beans.Consumatori" usage="optional"/>
+    <collection name="per_organizzazioni" field="per_organizzazioni" item-type="eu.anastasis.serena.beans.Organizzazioni" usage="optional"/>
+  </mapping>
+  <mapping name="TassoInteresseLibretto" class="eu.anastasis.serena.beans.TassoInteresseLibretto" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="data_fine_validita" get-method="getData_fine_validita" set-method="setData_fine_validita" usage="optional" format="dateFormat"/>
+    <value name="data_inizio_validita" get-method="getData_inizio_validita" set-method="setData_inizio_validita" usage="optional" format="dateFormat"/>
+    <structure name="inverse_of_tassi_di_interesse" usage="optional">
+      <structure usage="optional" field="inverse_of_tassi_di_interesse"/>
+    </structure>
+    <value name="note" get-method="getNote" set-method="setNote" usage="optional"/>
+    <value name="tasso_interesse" get-method="getTasso_interesse" set-method="setTasso_interesse" usage="optional"/>
+  </mapping>
+  <mapping name="_system_document" class="eu.anastasis.serena.beans._system_document" ordered="false" flexible="true">
+    <value name="ID" get-method="getId" set-method="setId" usage="optional"/>
+    <value name="attachment" get-method="getAttachment" set-method="setAttachment" usage="optional"/>
+    <value name="attachment_1" get-method="getAttachment_1" set-method="setAttachment_1" usage="optional"/>
+    <value name="author" get-method="getAuthor" set-method="setAuthor" usage="optional"/>
+    <value name="category" get-method="getCategory" set-method="setCategory" usage="optional"/>
+    <collection name="di_sessione" field="di_sessione" item-type="eu.anastasis.serena.beans.SessioniCorsi" usage="optional"/>
+    <value name="file_type" get-method="getFile_type" set-method="setFile_type" usage="optional"/>
+    <collection name="per_corso" field="per_corso" item-type="eu.anastasis.serena.beans.CorsiFormazione" usage="optional"/>
+    <value name="teaser" get-method="getTeaser" set-method="setTeaser" usage="optional"/>
+    <value name="thumbnail" get-method="getThumbnail" set-method="setThumbnail" usage="optional"/>
+    <value name="title" get-method="getTitle" set-method="setTitle" usage="optional"/>
+  </mapping>
+</binding>

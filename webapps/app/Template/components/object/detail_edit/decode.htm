@@ -1,0 +1,12 @@
+<div id="DIV_@NAME@" class="detail-component decode @NAME@">
+	<label for="@NAME@">@LABEL@
+		([ [[@NEEDED@] == [object-needed]] ?? [*] ])
+	</label>
+	<select tabindex="10" onchange="detailEdit.check(this); ([ [[@CONTROLLER@] == [true]] ?? [anastasis.controllers.controllerChanged(this,this.value);] ])" name="@NAME@" id="@NAME@">@OPTIONS@</select>
+	<input type="hidden" id="type_@NAME@" value="@CHK_TYPE@" />
+	<input type="hidden" id="required_@NAME@" value="@CHK_NOT_NULL@" />
+	<input type="hidden" id="label_@NAME@" value="@LABEL@" />
+	<input type="hidden" id="info_@NAME@" value="class=@CLASS@|controller=@CONTROLLER@" />
+	<div class="object-help">@HELP@</div>
+
+</div>

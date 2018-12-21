@@ -1,0 +1,43 @@
+@BEGIN_TEMPLATE@
+	<div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">Home</a> - @TITLE@
+	</div>
+	<div id="newsletter_list">	
+	<div id="splash">
+
+    <h2>Newsletter</h2>
+
+	
+  </div>
+	
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+		<div class="newsletter">
+		<div class="col_dx">	
+				<a href="" title="Registrati alla newsletter">Registrazione</a>
+				<p>Per ricevere la newsletter al proprio indirizzo di posta elettronica</p>
+		</div>
+		@BEGIN_Newsletter@
+				<div class="elements">
+							
+							<h2>@tag_title@</h2>
+							<h3>@tag_teaser@</h3>
+							
+							
+				</div>
+				
+		@END_Newsletter@	
+		
+		
+		</div>
+		</div>
+@END_TEMPLATE@

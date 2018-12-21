@@ -1,0 +1,73 @@
+@BEGIN_TEMPLATE@<div class="operation-result">
+  <div id="trails">
+		<a href="@CONTEXT@/Index" title="vai alla home page">home</a> - @TITLE@
+	</div>
+  <div id="splash">
+    <h2>@TITLE@</h2>
+     <div class="navigation-options">
+
+      @BLOCK_BEGIN_BACK_TO_CURRENT_OPERATION@
+
+        <a title="Tornare all'operazione in corso" href="@HREF_CURRENT_OPERATION@">Indietro</a>
+
+      @BLOCK_END_BACK_TO_CURRENT_OPERATION@
+      <a title="Tornare al filtro di ricerca" href="@HREF_FILTER@">Ricerca</a>
+      <a title="Tornare all'ultima lista visualizzata" href="@HREF_LIST@&amp;page=XML-QUERY">Tornare all'ultima lista visualizzata</a>
+      <a title="Tornare alla lista completa" href="@HREF_LIST@">Lista</a>
+      @BLOCK_BEGIN_NEW@
+      	<a title="Inserire una nuova risorsa" href="@HREF_NEW@">Nuova Scheda</a>
+      @BLOCK_END_NEW@
+      
+      
+	  
+      
+     
+  
+
+    </div>
+  </div>
+
+	<h3>Risultato dell'operazione</h3>
+
+  @BLOCK_BEGIN_RESULT_SUCCESS@
+
+    <div class="system-message-success">
+
+      Operazione effettuata correttamente
+      <br />
+      
+      ([ [[@tag_Soci.ID#FLAT@] == []] ?? 
+      		[
+      			<a title="Torna al filtro di ricerca" href="?q=object/filter&amp;p=@CLASS_NAME@">Torna al filtro di ricerca</a>
+      		] ::      	
+      		[       
+      			<a title="Torna alla risorsa" href="@HREF_DETAIL@">Torna alla Scheda</a>
+	      	] 
+      	])
+         @BEGIN_Soci@@END_Soci@
+
+    </div>
+
+  @BLOCK_END_RESULT_SUCCESS@
+  
+
+
+
+
+  @BLOCK_BEGIN_RESULT_ERROR@
+
+    <div class="system-message-error">
+
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+
+    </div>
+
+  @BLOCK_END_RESULT_ERROR@
+
+
+
+   
+
+  </div>
+
+  <br />@END_TEMPLATE@

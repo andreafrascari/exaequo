@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Libretti</title>  
+  <title_view>Prestito sociale</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>movimenti</name>  
+      <label>movimenti</label>  
+      <detail>movimenti</detail>  
+      <detail_edit>movimenti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item>  
+    <item> 
+      <name>codice_contratto</name>  
+      <label>codice libretto</label>  
+      <detail>codice libretto</detail>  
+      <detail_edit>codice libretto</detail_edit>  
+      <filter>codice libretto</filter>  
+      <list>codice libretto</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>12</order> 
+    </item>  
+    <item> 
+      <name>tipo_libretto</name>  
+      <label>condizioni</label>  
+      <detail>condizioni</detail>  
+      <detail_edit no-link-new="1">condizioni</detail_edit>  
+      <filter>condizioni</filter>  
+      <list>condizioni</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>15</order> 
+    </item>  
+    <item> 
+      <name>data_apertura</name>  
+      <label>data apertura</label>  
+      <detail>data apertura</detail>  
+      <detail_edit>data apertura</detail_edit>  
+      <filter>data apertura</filter>  
+      <list>data apertura</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>17</order> 
+    </item>  
+    <item> 
+      <name>data_rinnovo</name>  
+      <label>data rinnovo</label>  
+      <detail>data rinnovo</detail>  
+      <detail_edit>data rinnovo</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>19</order> 
+    </item>  
+    <item> 
+      <name>modalita_rinnovo</name>  
+      <label>modalita rinnovo</label>  
+      <filter>modalita rinnovo</filter>  
+      <list>modalita rinnovo</list>  
+      <detail>modalita rinnovo</detail>  
+      <detail_edit>modalita rinnovo</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>data_scadenza</name>  
+      <label>data scadenza</label>  
+      <filter>data scadenza</filter>
+      <list>data scadenza</list>
+      <detail>data scadenza</detail>  
+      <detail_edit>data scadenza</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>23</order> 
+    </item>  
+    <item> 
+      <name>stato_libretto</name>  
+      <label>stato</label>  
+      <detail>stato</detail>  
+      <detail_edit>stato</detail_edit>  
+      <filter>stato</filter>  
+      <list>stato</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default>Attivo</default>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>delega</name>  
+      <label>delega</label>  
+      <detail>delega</detail>  
+      <detail_edit>delega</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>banca_di_riferimento</name>  
+      <label>banca di appoggio</label>  
+      <detail>banca di riferimento</detail>  
+      <detail_edit>banca di riferimento</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>conto_corrente</name>  
+      <label>conto intestato a</label>  
+      <detail>conto intestato a</detail>  
+      <detail_edit>conto intestato a</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>53</order>  
+      <detail_help>obbligatorio per generazione automatica moduli accredito</detail_help> 
+    </item>  
+    <item> 
+      <name>iban</name>  
+      <label>iban</label>  
+      <detail>iban</detail>  
+      <detail_edit>iban</detail_edit>  
+      <heading>1</heading>  
+      <max_length>27</max_length>  
+      <default/>  
+      <order>55</order>  
+      <detail_help>obbligatorio per generazione automatica moduli accredito</detail_help> 
+    </item>  
+    <item> 
+      <name>quote_relative</name>  
+      <label>quote relative</label>  
+      <detail>quote relative</detail>  
+      <detail_edit>quote relative</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>56</order> 
+    </item>  
+    <item> 
+      <name>note_contratto</name>  
+      <label>note contratto</label>  
+      <detail>note contratto</detail>  
+      <detail_edit>note contratto</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>data_chiusura</name>  
+      <label>data chiusura</label>  
+      <detail>data chiusura</detail>  
+      <detail_edit>data chiusura</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
+    </item>  
+    <item> 
+      <name>motivazione_chiusura</name>  
+      <label>motivazione chiusura</label>  
+      <detail>motivazione chiusura</detail>  
+      <detail_edit>motivazione chiusura</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>estratticonto</name>  
+      <label>estratticonto</label>  
+      <detail>estratticonto</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>131</order> 
+    </item>  
+    <item> 
+      <name>dati_socio</name>  
+      <label>socio</label>  
+      <detail>socio</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>151</order> 
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <label>utente proprietario</label>  
+      <detail>utente proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <label>gruppo proprietario</label>  
+      <detail>gruppo proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>nome_socio_consumatore</name>  
+      <label>socio</label>  
+      <list type="flat">socio</list>  
+      <filter>cognome socio (dato esatto)</filter>  
+      <detail>socio</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item>  
+    <item> 
+      <name>nome_socio_organizzazione</name>  
+      <label>socio</label>  
+      <list type="flat">organizzazione</list>  
+      <filter>organizzazione (dato esatto)</filter>  
+      <detail>socio</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>1</order> 
+    </item> 
+  </attributes> 
+</bean>

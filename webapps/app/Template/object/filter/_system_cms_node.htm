@@ -1,0 +1,49 @@
+@BEGIN_TEMPLATE@
+	<script src="@CONTEXT@/app/Javascript/calendario/calendarEu.js" type="text/javascript" ></script>
+
+    <div id="trails">
+    	
+    		<a href="@CONTEXT/Index">Home</a> &gt; <a href=".">@TITLE@</a>
+    	
+    </div>
+    
+     <div class="filter">
+       
+  	<div id="splash">
+    	<h2>@TITLE@</h2>
+    	@BLOCK_BEGIN_EDIT@
+		<a href="@HREF_COMPLEX_DETAIL_EDIT@" title="nuova scheda">Nuova scheda</a>
+	@BLOCK_END_EDIT@
+  	</div>
+
+	<!-- 
+	@BLOCK_BEGIN_DESCRIPTION@
+	<div class="class-description">
+		@CLASS_DESCRIPTION@
+	</div>
+	@BLOCK_END_DESCRIPTION@
+ 	-->
+	
+
+		<div class="form-container">
+			<form id="filter" method="post" action="@ACTION@">
+				
+				<div>
+					
+					@BEGIN__system_cms_node@
+			            @tag_title@
+			            @tag_present_in_menu_as@
+					@END__system_cms_node@
+	
+				    <input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+					<input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+					<div class="buttonrow">
+						<input type="submit" name="post_search" class="button" title="avvia la ricerca" value="[ Invia ]" />
+						
+					</div>
+				</div>	
+			</form>
+		</div>
+
+	</div>
+@END_TEMPLATE@

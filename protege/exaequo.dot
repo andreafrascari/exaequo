@@ -1,0 +1,108 @@
+digraph exaequo {
+	node [label="\N"];
+	graph [bb="0,0,2255,2442"];
+	CorsiFormazione [label="{CorsiFormazione|{documenti_corso|Instance*|{_system_document}}|{logo|String}|{sessioni|Instance*|{SessioniCorsi}}|{luogo|String\
+}|{tema|Symbol|{cooperazione_decentrata|ristorazione_solidale|fair_trade|...}}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="295,2317", rects="114,2417,476,2442 114,2392,246,2417 246,2392,328,2417 328,2392,476,2417 114,2367,288,2392 288,2367,476,2392 114,2342,218,2367 21\
+8,2342,335,2367 335,2342,476,2367 114,2317,293,2342 293,2317,476,2342 114,2217,183,2317 183,2217,267,2317 267,2292,475,2317 267,\
+2267,475,2292 267,2242,475,2267 267,2217,475,2242 114,2192,476,2217", width="5.03", height="3.47"];
+	_system_document [label="{_system_document|{author|String}|{thumbnail|String}|{per_corso|Instance*|{CorsiFormazione}}|{teaser|String}|{di_sessione|Instan\
+ce*|{SessioniCorsi}}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="147,2050", rects="0,2112,295,2137 0,2087,150,2112 150,2087,295,2112 0,2062,161,2087 161,2062,295,2087 0,2037,82,2062 82,2037,164,2062 164,2037,295\
+,2062 0,2012,148,2037 148,2012,295,2037 0,1987,97,2012 97,1987,184,2012 184,1987,295,2012 0,1962,295,1987", width="4.08", height="2.43"];
+	SessioniCorsi [label="{SessioniCorsi|{argomenti|String}|{luogo|String}|{di_corso|Instance|{CorsiFormazione}}|{title|String}|{data|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="293,1808", rects="154,1870,432,1895 154,1845,307,1870 307,1845,432,1870 154,1820,291,1845 291,1820,432,1845 154,1795,226,1820 226,1795,301,1820 30\
+1,1795,432,1820 154,1770,286,1795 286,1770,432,1795 154,1745,287,1770 287,1745,432,1770 154,1720,432,1745", width="3.86", height="2.43"];
+	Tag [label="{Tag|{per_organizzazioni|Instance*|{Organizzazioni}}|{di_coop|Instance|{Cooperative}}|{per_consumatori|Instance*|{Consumatori}}|\
+{nome|String}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="825,2317", rects="651,2354,1000,2379 651,2329,798,2354 798,2329,880,2354 880,2329,1000,2354 651,2304,754,2329 754,2304,865,2329 865,2304,1000,2329\
+ 651,2279,792,2304 792,2279,885,2304 885,2279,999,2304 651,2254,823,2279 823,2254,1000,2279", width="4.83", height="1.74"];
+	Organizzazioni [label="{Organizzazioni|{dati_associazione|Instance|{Soci}}|{i_tag_relativi|Instance*|{Tag}}|{regione|Symbol|{}}|{web|String}|{indirizzo\
+|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1469,2050", rects="1342,2112,1597,2137 1342,2087,1478,2112 1478,2087,1553,2112 1553,2087,1597,2112 1342,2062,1456,2087 1456,2062,1548,2087 1548,206\
+2,1596,2087 1342,2037,1443,2062 1443,2037,1542,2062 1542,2037,1597,2062 1342,2012,1463,2037 1463,2012,1597,2037 1342,1987,1478,2\
+012 1478,1987,1597,2012 1342,1962,1597,1987", width="3.53", height="2.43"];
+	Cooperative [label="{Cooperative|{tag_coop|Instance*|{Tag}}|{foto|String}|{sez_mailing_list|String}|{sez_statuto_regolamenti|String}|{data_chiusura_\
+bilancio|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="838,1008", rects="716,1070,961,1095 716,1045,809,1070 809,1045,906,1070 906,1045,961,1070 716,1020,831,1045 831,1020,961,1045 716,995,871,1020 871\
+,995,961,1020 716,970,903,995 903,970,961,995 716,945,895,970 895,945,961,970 716,920,961,945", width="3.39", height="2.43"];
+	Consumatori [label="{Consumatori|{presso|String}|{regione|Symbol|{}}|{cognome|String}|{associazione|Instance|{Soci}}|{consumatori_tags|Instance*|{Ta\
+g}}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1520,548", rects="1391,610,1650,635 1391,585,1521,610 1521,585,1650,610 1391,560,1493,585 1493,560,1594,585 1594,560,1649,585 1391,535,1530,560 15\
+30,535,1650,560 1391,510,1505,535 1505,510,1593,535 1593,510,1649,535 1391,485,1529,510 1529,485,1611,510 1611,485,1650,510 1391\
+,460,1650,485", width="3.58", height="2.43"];
+	Iniziative [label="{Iniziative|{foto|String}|{partecipanti|Instance*|{Consumatori}}|{descrizione|String}|{nome_iniziativa|String}|{allegato_1|Strin\
+g}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="731,778", rects="589,840,874,865 589,815,724,840 724,815,874,840 589,790,688,815 688,790,770,815 770,790,874,815 589,765,749,790 749,765,874,790 \
+589,740,765,765 765,740,874,765 589,715,746,740 746,715,874,740 589,690,874,715", width="3.94", height="2.43"];
+	Botteghe [label="{Botteghe|{foto|String}|{regione|Symbol|{}}|{web|String}|{indirizzo|String}|{consumatori|Instance*|{Consumatori}}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1519,318", rects="1376,380,1663,405 1376,355,1512,380 1512,355,1663,380 1376,330,1488,355 1488,330,1598,355 1598,330,1663,355 1376,305,1513,330 15\
+13,305,1663,330 1376,280,1528,305 1528,280,1663,305 1376,255,1477,280 1477,255,1559,280 1559,255,1663,280 1376,230,1663,255", width="3.97", height="2.43"];
+	Prodotti [label="{Prodotti|{foto|String}|{codice|String}|{sotto_categoria|Symbol|{biscotti}}|{provenienza|String}|{produttore|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1519,88", rects="1392,150,1647,175 1392,125,1512,150 1512,125,1647,150 1392,100,1519,125 1519,100,1647,125 1392,75,1515,100 1515,75,1581,100 1581\
+,75,1647,100 1392,50,1541,75 1541,50,1647,75 1392,25,1535,50 1535,25,1647,50 1392,0,1647,25", width="3.53", height="2.43"];
+	Movimenti_Quote [label="{Movimenti_Quote|{causale_quota|Symbol|{sottoscrizione_quote|rimborso_quote}}|{note|String}|{socio|Instance|{Soci}}|{numero_quot\
+e|Integer}|{data_movimento|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1552,1554", rects="1383,1629,1722,1654 1383,1579,1497,1629 1497,1579,1563,1629 1563,1604,1722,1629 1563,1579,1722,1604 1383,1554,1547,1579 1547,155\
+4,1722,1579 1383,1529,1489,1554 1489,1529,1621,1554 1621,1529,1721,1554 1383,1504,1578,1529 1578,1504,1722,1529 1383,1479,1589,1\
+504 1589,1479,1722,1504 1383,1454,1722,1479", width="4.69", height="2.78"];
+	Soci [label="{Soci|{partita_iva|String}|{comune_nascita|Symbol|{}}|{genere|Symbol|{Maschio|Femmina}}|{dati_organizzazione|Instance|{Organizza\
+zioni}}|{data_delibera_domanda_organizzazione|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1373,1808", rects="1198,1883,1549,1908 1198,1858,1389,1883 1389,1858,1549,1883 1198,1833,1370,1858 1370,1833,1482,1858 1482,1833,1549,1858 1198,178\
+3,1309,1833 1309,1783,1423,1833 1423,1808,1548,1833 1423,1783,1548,1808 1198,1758,1354,1783 1354,1758,1429,1783 1429,1758,1549,1\
+783 1198,1733,1491,1758 1491,1733,1549,1758 1198,1708,1549,1733", width="4.86", height="2.78"];
+	Libretti [label="{Libretti|{banca_di_riferimento|String}|{movimenti|Instance*|{Movimenti_Libretti}}|{delega|Symbol|{SI|NO}}|{note_contratto|Strin\
+g}|{tipo_libretto|Instance|{CondizioniLibretto}}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1130,1554", rects="971,1629,1289,1654 971,1604,1181,1629 1181,1604,1289,1629 971,1579,1060,1604 1060,1579,1142,1604 1142,1579,1288,1604 971,1529,10\
+83,1579 1083,1529,1200,1579 1200,1554,1289,1579 1200,1529,1289,1554 971,1504,1161,1529 1161,1504,1289,1529 971,1479,1071,1504 10\
+71,1479,1146,1504 1146,1479,1289,1504 971,1454,1289,1479", width="4.42", height="2.78"];
+	CondizioniLibretto [label="{CondizioniLibretto|{tasso_interesse|Integer}|{data_inizio_validita|String}|{modalita_rinnovo|Symbol|{Tacito|Comunicazione}}|{co\
+muniqcazione_modifiche_giorni|Integer}|{codice_condizione|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="890,1275", rects="729,1350,1051,1375 729,1325,918,1350 918,1325,1051,1350 729,1300,935,1325 935,1300,1051,1325 729,1250,864,1300 864,1250,930,1300\
+ 930,1275,1051,1300 930,1250,1051,1275 729,1225,980,1250 980,1225,1051,1250 729,1200,930,1225 930,1200,1051,1225 729,1175,1051,1\
+200", width="4.47", height="2.78"];
+	Movimenti_Libretti [label="{Movimenti_Libretti|{numero_effetto|String}|{data_valuta|String}|{mezzo|Symbol|{Assegno_bancario|Assegno_circolare|Contanti|...}\
+}|{importo|Integer}|{banca_di_riferimento_movimento|String}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1220,1275", rects="1069,1375,1372,1400 1069,1350,1253,1375 1253,1350,1372,1375 1069,1325,1240,1350 1240,1325,1372,1350 1069,1225,1143,1325 1143,122\
+5,1221,1325 1221,1300,1372,1325 1221,1275,1372,1300 1221,1250,1372,1275 1221,1225,1372,1250 1069,1200,1222,1225 1222,1200,1372,1\
+225 1069,1175,1314,1200 1314,1175,1372,1200 1069,1150,1372,1175", width="4.19", height="3.47"];
+	RegolamentoPrestito [label="{RegolamentoPrestito|{inverse_of_regolamento_prestito|Instance|{Cooperative}}|{apertura_libretto_dopo_adesione_giorni|Integer}|{\
+ritenuta_fiscale|Integer}|{accredito_interessi|String}|{costo_singola_operazione|Integer}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1099,778", rects="891,840,1307,865 891,815,1133,840 1133,815,1208,840 1208,815,1307,840 891,790,1210,815 1210,790,1307,815 891,765,1127,790 1127,7\
+65,1307,790 891,740,1142,765 1142,740,1307,765 891,715,1162,740 1162,715,1307,740 891,690,1307,715", width="5.78", height="2.43"];
+	Newsletter [label="{Newsletter|{thumbnail|String}|{teaser|String}|{newsletter_coop|Instance|{Cooperative}}|{title|String}|{allegato_1|String}|{...}\
+}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1477,778", rects="1325,840,1629,865 1325,815,1491,840 1491,815,1629,840 1325,790,1478,815 1478,790,1629,815 1325,765,1455,790 1455,765,1530,790 15\
+30,765,1629,790 1325,740,1470,765 1470,740,1629,765 1325,715,1491,740 1491,715,1629,740 1325,690,1629,715", width="4.22", height="2.43"];
+	CorsiFormazione -> _system_document [style=filled, label="documenti_corso*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,101,2137 116,2192 113,2186 109,2180 106,2174 102,2165 100,2156 100,2147", lp="168,2165"];
+	CorsiFormazione -> SessioniCorsi [style=filled, label="sessioni*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,312,1895 316,2192 317,2186 318,2180 318,2174 327,2064 328,2035 316,1926 315,1919 315,1912 314,1905", lp="357,2050"];
+	Tag -> Organizzazioni [style=filled, label="per_organizzazioni*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1342,2088 943,2254 1005,2222 1083,2185 1154,2156 1212,2132 1276,2110 1332,2091", lp="1223,2165"];
+	Tag -> Cooperative [style=filled, label=di_coop, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,716,1080 758,2254 712,2203 659,2128 658,2050 658,2050 658,2050 658,1275 658,1202 648,1175 687,1114 693,1105 701,1095 709,1087", lp="684,1681"];
+	Tag -> Consumatori [style=filled, label="per_consumatori*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1391,556 679,2254 601,2210 521,2142 521,2050 521,2050 521,2050 521,778 521,715 537,689 589,654 654,610 1138,573 1381,557", lp="582,1427"];
+	_system_document -> CorsiFormazione [style=filled, label="per_corso*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,248,2192 218,2137 222,2143 225,2150 229,2156 234,2164 239,2174 243,2183", lp="277,2165"];
+	_system_document -> SessioniCorsi [style=filled, label="di_sessione*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,158,1895 129,1962 130,1949 133,1937 138,1926 142,1918 146,1910 152,1903", lp="181,1935"];
+	Iniziative -> Consumatori [style=filled, label="partecipanti*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1391,608 874,692 877,692 879,691 882,690 1016,649 1059,701 1197,672 1260,659 1326,635 1382,612", lp="1305,663"];
+	Iniziative -> Cooperative [style=filled, label=iniziative_cooperativa, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,780,920 756,865 761,878 766,890 771,902 773,905 774,908 776,911", lp="846,893"];
+	SessioniCorsi -> CorsiFormazione [style=filled, label=di_corso, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,372,2192 361,1895 373,1916 385,1939 391,1962 413,2037 411,2062 391,2138 388,2153 382,2168 376,2183", lp="436,2050"];
+	SessioniCorsi -> _system_document [style=filled, label="documenti*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,212,1962 250,1895 242,1912 232,1928 223,1944 221,1947 219,1950 217,1953", lp="272,1935"];
+	Botteghe -> Consumatori [style=filled, label="consumatori*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1469,460 1463,405 1460,417 1460,430 1463,442 1464,445 1465,448 1465,450", lp="1509,433"];
+	Botteghe -> Organizzazioni [style=filled, label="organizzazioni*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1597,2031 1663,345 1761,365 1879,394 1921,424 1974,462 2003,481 2003,548 2003,1808 2003,1808 2003,1808 2003,1878 1978,1902 192\
+1,1944 1871,1980 1721,2010 1607,2029", lp="2057,1123"];
+	Botteghe -> Prodotti [style=filled, label="prodotti_mercatino*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1447,175 1439,230 1435,218 1435,206 1439,194 1440,191 1441,188 1443,184", lp="1508,203"];
+	Botteghe -> Cooperative [style=filled, label=appartiene_a, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,716,978 1376,327 1160,349 760,425 580,690 538,752 543,847 592,902 623,934 665,958 706,974", lp="651,663"];
+	Movimenti_Quote -> Soci [style=filled, label=socio, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1510,1708 1539,1654 1535,1667 1530,1679 1523,1690 1521,1693 1519,1697 1516,1700", lp="1547,1681"];
+	Soci -> Organizzazioni [style=filled, label=dati_organizzazione, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1364,1962 1346,1908 1347,1920 1349,1933 1354,1944 1356,1947 1357,1950 1359,1953", lp="1424,1935"];
+	Soci -> Consumatori [style=filled, label=dati_consumatore, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1607,635 1549,1775 1618,1753 1689,1716 1730,1654 1778,1579 1740,1542 1730,1454 1712,1307 1672,1277 1653,1132 1626,937 1707,873\
+ 1638,690 1632,674 1623,658 1613,644", lp="1714,1123"];
+	Soci -> Cooperative [style=filled, label=di_cooperativa, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,961,1023 1344,1708 1343,1702 1342,1696 1341,1690 1320,1578 1323,1549 1318,1436 1317,1428 1313,1424 1318,1418 1335,1395 1362,14\
+22 1380,1400 1413,1355 1413,1193 1380,1150 1330,1086 1115,1045 971,1024", lp="1368,1427"];
+	Soci -> Movimenti_Quote [style=filled, label="movimenti_quote*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1403,1654 1376,1708 1380,1695 1384,1683 1391,1672 1393,1669 1395,1666 1397,1662", lp="1455,1681"];
+	Soci -> Libretti [style=filled, label="risparmio*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1201,1654 1250,1708 1244,1702 1238,1696 1232,1690 1223,1681 1215,1672 1207,1662", lp="1267,1681"];
+	CondizioniLibretto -> Cooperative [style=filled, label=inverse_of_condizioni_libretti, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,878,1095 891,1175 890,1154 887,1133 883,1114 883,1111 882,1108 881,1105", lp="985,1123"];
+	CondizioniLibretto -> Libretti [style=filled, label="inverse_of_tipo_libretto*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,971,1527 828,1375 823,1396 823,1418 836,1436 865,1479 913,1506 961,1524", lp="921,1427"];
+	Libretti -> Movimenti_Libretti [style=filled, label="movimenti*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1142,1400 1129,1454 1130,1442 1132,1429 1136,1418 1137,1415 1138,1412 1139,1410", lp="1176,1427"];
+	Libretti -> CondizioniLibretto [style=filled, label=tipo_libretto, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,976,1375 1044,1454 1024,1431 1003,1406 982,1383", lp="1065,1427"];
+	Libretti -> Soci [style=filled, label=dati_socio, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1198,1743 1128,1654 1131,1667 1136,1679 1143,1690 1155,1708 1172,1724 1190,1737", lp="1177,1681"];
+	Movimenti_Libretti -> Libretti [style=filled, label=libretto, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1209,1454 1224,1400 1223,1412 1220,1425 1216,1436 1215,1439 1214,1442 1213,1444", lp="1244,1427"];
+	RegolamentoPrestito -> Cooperative [style=filled, label=inverse_of_regolamento_prestito, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,961,986 1107,865 1105,878 1100,891 1093,902 1064,942 1017,967 971,983", lp="1213,893"];
+	Newsletter -> Cooperative [style=filled, label=newsletter_coop, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,961,997 1517,865 1518,878 1515,891 1506,902 1472,942 1156,978 971,996", lp="1569,893"];
+	Organizzazioni -> Soci [style=filled, label=dati_associazione, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1485,1908 1499,1962 1500,1950 1499,1937 1494,1926 1493,1923 1491,1920 1490,1917", lp="1557,1935"];
+	Organizzazioni -> Tag [style=filled, label="i_tag_relativi*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1000,2277 1355,2137 1335,2151 1314,2163 1293,2174 1203,2217 1098,2251 1010,2274", lp="1371,2165"];
+	Organizzazioni -> Botteghe [style=filled, label=di_bottega, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1663,343 1597,2034 1726,2010 1907,1951 1907,1808 1907,1808 1907,1808 1907,548 1907,433 1782,375 1673,346", lp="1943,1123"];
+	Consumatori -> Soci [style=filled, label=associazione, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1549,1775 1650,598 1722,635 1798,694 1798,778 1798,1554 1798,1554 1798,1554 1798,1674 1673,1737 1559,1772", lp="1841,1123"];
+	Consumatori -> Tag [style=filled, label="consumatori_tags*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1000,2299 1650,570 1829,604 2127,676 2127,778 2127,2050 2127,2050 2127,2050 2127,2162 1369,2258 1010,2298", lp="2191,1427"];
+	Consumatori -> Iniziative [style=filled, label="ha_partecipato_a*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,874,694 1391,561 1274,575 1097,603 951,654 921,664 913,672 883,689", lp="1014,663"];
+	Consumatori -> Botteghe [style=filled, label=consumatori_bottega, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1551,405 1555,460 1556,448 1557,436 1555,424 1555,421 1554,418 1553,415", lp="1628,433"];
+	Prodotti -> Botteghe [style=filled, label=prodotti_bottega, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1572,230 1577,175 1580,187 1581,200 1578,212 1577,215 1576,218 1575,220", lp="1637,203"];
+	Cooperative -> Tag [style=filled, label="tag_coop*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,813,2254 748,1095 736,1112 726,1131 720,1150 662,1357 772,2021 811,2244", lp="764,1681"];
+	Cooperative -> Soci [style=filled, label="i_soci*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1361,1708 961,1018 1115,1033 1364,1070 1404,1150 1527,1401 1426,1423 1418,1436 1406,1453 1385,1436 1374,1454 1348,1493 1353,16\
+09 1360,1698", lp="1459,1427"];
+	Cooperative -> Botteghe [style=filled, label="botteghe*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1376,329 716,973 670,956 618,933 577,902 477,825 391,771 437,654 482,543 516,515 621,460 747,393 1144,349 1366,330", lp="472,663"];
+	Cooperative -> RegolamentoPrestito [style=filled, label=regolamento_prestito, color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,963,865 906,920 917,907 929,895 941,884 946,880 950,876 955,871", lp="1015,893"];
+	Cooperative -> CondizioniLibretto [style=filled, label="condizioni_libretti*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,774,1175 749,1095 745,1107 744,1119 749,1132 754,1144 761,1155 768,1167", lp="814,1123"];
+	Cooperative -> Newsletter [style=filled, label="newsletter_di_coop*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,1381,865 961,998 1064,986 1212,959 1330,902 1340,897 1355,886 1373,872", lp="1421,893"];
+	Cooperative -> Iniziative [style=filled, label="cooperativa_iniziative*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", pos="e,597,865 716,982 672,967 627,942 601,902 595,893 593,884 594,875", lp="680,893"];
+}

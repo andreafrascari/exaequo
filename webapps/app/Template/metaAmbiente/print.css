@@ -1,0 +1,407 @@
+
+/*  ridefinisco tutti i tipi di inserto rintracciabili */
+#content .inserto {display:none; }
+#content UL#toolbar {display:none; }
+.inserto {display:none; }
+#toolbar {display:none; }
+
+#nav {display:none; }
+#sidebarwrap {display:none; }
+#head {display:block;
+height:auto;
+background-color:#FFC938;}
+#wrap {
+display:block;
+float:left;
+width:100%;
+}
+
+#head H1 STRONG {
+display:none;
+}
+
+#head H1 SPAN {display:block;background-color:#FFC938;}
+
+
+/* IMPOSTAZIONI GENERALI
+------------------------------------------------------------------------ */
+
+body { background: #FFF none repeat-x top; font-family: "Trebuchet MS"; color:#4A364E; padding-left:2%;}
+P {font-size:0.9em;line-height:1.2em;color:#000;}
+A { color:#692B35; font-weight:bold;text-decoration:none; }
+A:hover { color:#F60; }
+H1,H2,H3,H4,H5,H6 {text-align:left;font-family: "Trebuchet MS";}
+H2 {font-size:1.5em;}
+H3 {clear: both;}
+UL, LI { list-style-type:square;list-style-position: inside;margin:3px 2px;padding:2px;}
+
+/* LAYOUT GENERALE - DEFINIZIONE STRUTTURA 
+----------------------------------------------------------------------- */
+
+#splash {width:100%;padding:0;line-height:1.5em; background:transparent none no-repeat 100% 50%; color:#fff; border-top:1px solid #4A364E;display:block;clear:both;margin-bottom:20px;}
+
+#main {margin-bottom:15px; padding:0px 5px 0 5px;width:auto;}
+
+#content { padding:0px;width:94%;margin:0 0 0 15px;}
+
+/* NAVIGAZIONE: BREADCRUMBS  (trails) --------- */
+
+#trails {font-size:0.8em;padding:0px;float:left;}
+#trails A {}
+#trails A:hover {}
+
+/* CONTENT
+------------------------------------------------------------------------- */
+
+H4 {
+	font-size:1em;
+	font-weight:bold;
+	padding:0 0 1px 5px;
+	color:#770C29;
+}
+
+#content UL {  }
+#content UL LI {}
+
+#content div.elements P { text-align:justify;margin: 0px 0px 8px;}
+#content A:hover {}
+
+div.form-container .bottone {border:none; color:#692B35; font-size:0.8em; font-weight:bold;float:right;width:10%;margin-right:5%}
+.avviso {font-size:1em; text-transform:uppercase; text-align:center; margin:15% 5px; line-height:2em;}
+
+/* CONTENT: SPLASH (INTESTAZIONI)*/
+
+
+#content #splash H2 {display:block;background:#4A364E;color:#fff;float:left;margin:0 20px 15px 0;padding:2px 15px 2px 15px;width:32%;font-size:1.3em;line-height:1.5em;}
+#content #splash P {font-size:0.8em;}
+#splash UL LI {color:#000}
+#content #splash H3 { color:#692B35;font-weight:normal;margin:5px 0;padding:8px 0 5px;}
+#content #splash IMG {float:right; margin:0.8em 0.8em 0 0}
+#contentwrap #splash li IMG {float:none;}
+
+#content #splash A {border-top:4px solid #770C29; line-height:1.1em;color:#770C29; float:left;width:12%; font-weight:bold; margin:0 5px; padding:0; text-decoration:none;} 
+
+/* object: defaults */
+
+/* LISTE - elementi generali */
+div.elements {margin:0px 0px 10px;float:left;width:100%;display:block;}
+div.elements H3{float:left;width:75%;margin:0px 0px;clear:none;}
+div.elements P{float:left;width:75%;}
+div.col_dx {float:right;width:20%;font-size:0.9em;}
+
+/* NEWSLETTER*/
+
+div.newsletter .elements {margin:0px 0px 10px;float:left;width:75%;display:block;}
+div.newsletter .elements H2{color:#FF7700;float:left;width:45%;margin:0px;clear:none;}
+div.newsletter .elements H3{color:#FF7700;float:left;text-align:right;width:45%;margin:0px;clear:none;font-size:1.4em;}
+div.newsletter .elements H2 A{color:#FF7700;text-align:left;}
+div.newsletter .elements P{float:left;width:100%;border-top:2px dotted #FF7700;padding-top:15px;}
+div.newsletter .col_dx {float:right;width:20%;font-weight:bold;}
+div.newsletter .col_dx A{margin-top:15px;display:block}
+div.newsletter .col_dx P{font-weight:normal;text-align:left;}
+
+#newsletter_list .elements {border-bottom:2px dotted #FF7700;}
+
+/* NEWS HOME PRIVATA*/
+
+#news_home {color:#4A364E; }
+#news_home #splash H2{text-transform:none;width:24%;float:none;}
+#news_home div.home_row_2 {float:left; width:32%;margin:0 0 20px 0;border-top:1px solid;}
+#news_home H2 {margin:3px 10px 3px 0px;font-size:1.2em;color:#4A364E ;line-height:1em;}
+#news_home H3 {margin:3px 10px 3px 0px;font-size:1.1em;color:#4A364E ;line-height:1em;clear:none;}
+#news_home A {color:#4A364E ;}
+#news_home div.categoria H2 {border-top:4px solid;width:70%;text-transform:uppercase;margin:0px;padding:0 0 5px;}
+#news_home div.home_row_1 {float:left; width:100%; margin:5px 0 ;}
+#news_home div.home_row_1 H3{width:68%; float:right;margin:5px 0px;}
+#news_home div.home_row_1 P{width:68%; float:right;margin:3px 0px;}
+#news_home P {margin:3px 10px 3px 0px;text-align:left;}
+#news_home div.home_row_1 IMG {float:left;margin:5px 10px;}
+
+/* NEWS list */
+#news_list A{text-decoration:none;}
+#news_list div.news {clear:both;width:100%;border-bottom:2px dotted #4A364E;}
+#news_list div.news H3 {margin:10px 6px 8px;font-size:1.3em;line-height:1.1em;}
+#news_list div.news P {margin:3px 6px 8px;font-size:1.1em;line-height:1.1em;}
+#news_list IMG {margin:10px;}
+
+/* NEWS DETAIL */
+
+#news_detail H2 {margin:3px 0px 1px; font-size:1.3em;color:#4A364E;line-height:1em;}
+#news_detail H3 {margin:3px 0px 8px;font-size:1.2em;color:#4A364E;line-height:1em;font-weight:normal;}
+#news_detail IMG {float:right;margin:5px;}
+#news_detail P {margin:0px 0px 6px;}
+#news_detail A.attachment {float:right;margin:5px;}
+
+/* document DETAIL */
+
+#document_detail H2 {margin:3px 0px 8px; font-size:1.2em;color:#4A364E;line-height:1em;}
+#document_detail H3 {margin:3px 0px 8px;font-size:1em;color:#4A364E;line-height:1em;font-weight:normal;}
+#document_detail IMG {float:right; width:100%}
+#document_detail P {margin:0px 0px 6px;}
+#document_detail A.attachment {float:right;margin:5px;}
+
+/* FORM STYLES
+-------------------------------------------------------------------------- */
+.button {color:#770C29;border: none; font-weight: bold; font-size: 1em; cursor: pointer; background-color:transparent;}
+
+/* BOX DEI FORM DI RICHIESTA */
+
+div.form-container input, 
+div.detail-edit input 
+{
+font-size:0.9em;
+}
+
+div.form-container label, 
+div.detail-edit label 
+{
+	text-transform:capitalize;
+}
+
+div.form-container form fieldset {border-top:1px solid #770C29;
+border-bottom:0px solid #770C29;
+border-left:0px solid #770C29;
+border-right:0px solid #770C29;}
+
+div.form-container form legend {color:#770C29;}
+
+div.form-container select {
+    letter-spacing: -0.03em;
+}
+
+div.form-container .object-section {
+background:#43C571 none repeat scroll 0 0;
+color:#FFFFFF;
+padding:4px;
+text-transform:uppercase;
+}
+
+div.form-container .object-link {
+border:0px dashed #D8D8D8;
+margin:0 10px 0 0px;
+display:inline;
+}
+
+/* COLORI SFONDO AREE SPECIALI */
+
+.filtered_linkN-M {background-color:#FFFCD4;}
+.detail-edit-system {background:#FFFCD4 none repeat scroll 0 0;}
+.detail-edit .form-container {background:#FFE698 none repeat scroll 0 0;padding:8px 0;margin:0;}
+.detail-edit H3 {background-color:#DD0000;color:#FFF;padding:5px 15px;margin:2px 0 0;}
+
+.detail-rel {margin:5px;}
+
+/* LISTA RISULTATI - TABELLA- */
+#list TABLE {border:1px solid #730829;margin:0px;font-size:0.85em;clear:both; }
+#list TH {background:transparent;  border:none;padding:2px;}
+#list TH A { color:#770C29;}
+#list TD A { color:#770C29; font-weight:normal;border-bottom:0px dashed #555555;}
+#list TD A:hover { color:#555555; font-weight:normal;border-bottom:0px dashed #555555;}
+#list TD {background:#FFFFFF none repeat scroll 0 0;border-top:1px solid #4A364E; border-right:0px solid #4A364E;border-left:0px solid #4A364E; color:#555555; font-weight:normal;text-transform:uppercase;padding:2px 4px;}
+#list TD.valutazione {text-align:center; color:#fff;}
+#list TD.val-ok	{background:url(../img/val-ok.gif) no-repeat left center; padding-left:15px; } 
+#list .pagine {border-top:0px solid #CCCCCC;margin-top:1em;padding-top:0px;}
+#list H3 {clear:both;}
+
+/* DETTAGLIO RISULTATO - OGGETTO/ELEMENTO - TABELLA */
+
+.object-title {
+clear:both;
+display:block;
+margin-top:10px;
+width:100%;
+}
+
+
+.object-title table td {
+    font-size: 1em;
+}
+#object-body 
+{
+    margin-top: 0px;
+    float:left;
+    width:75%;
+    display:block;
+}
+#object-body .tabella_dati TABLE {border-bottom:0px solid #770C29; border-top:0px solid #770C29; }
+#object-body .tabella_dati TD A:hover { }
+
+#object-body td.tabsezione {
+background:#770C29 none repeat scroll 0 0;
+color:#fff;
+font-size:1em;
+font-weight:bold;
+padding:8px 4px 4px;
+text-transform:uppercase;
+border-bottom:1 solid #ddd;
+}
+
+#object-body TABLE 
+{
+	background: none 1% 3% no-repeat transparent;
+	margin: 0px 5px;
+	border-bottom:1px solid #770C29;
+	border-top:1px solid #770C29;
+	padding:2px 0px;
+}
+#object-body td,
+#object-body th
+{
+	border-bottom:1px solid #ddd;
+	border-right:0px solid;
+	padding:1px 0px;
+	text-align:justify;
+}
+#object-body TD A:hover { }
+#news_detail IMG {float:right;width:100%}
+
+/* DETTAGLIO RISULTATO - DATI DI SISTEMA - TABELLA */
+
+#object-system {
+    margin-top: 0px;    
+    float:left;
+    width:75%;
+    display:block;
+}
+#object-system TD A:hover { color:#770C29;}
+#object-system TABLE {
+    background: none 1% 3% no-repeat transparent;
+}
+#object-system td {
+border:medium none;
+font-size:0.9em;
+padding:0 5px;
+vertical-align:top;
+}
+#object-system th {
+font-weight:normal;
+text-transform:capitalize;
+}
+
+/* DETTAGLIO RISULTATO - DATI SPECIFICI */
+
+#object-body-links {
+    margin-top: 0px;
+    float:right;
+    width:22%;
+    display:block;
+}
+
+#object-body-links H2{
+    background-color:#770C29;
+	color:#FFF;
+	font-weight:bold;
+	font-size:1.3em;
+    display:block;
+    padding:2px 5px;
+}
+
+#object-body-links A {
+    
+    margin:5px 0px;
+}
+
+#object-body-links H4 {
+    
+    margin:5px 0px;
+}
+
+#object-body-links TABLE {
+    padding-top: 0px;
+    background: none 1% 3% no-repeat transparent;
+    width:100%
+}
+
+#object-body-links TH {
+    font-size: 0.9em;
+    font-weight: bolder;
+    vertical-align: top;
+    padding: 2px 5px;
+    width: 20%;
+    border-bottom: 1px solid #ddd;
+    text-transform:capitalize;
+}
+
+#object-body-links TH A {
+    color: #666;
+    text-decoration: none;
+}
+
+#object-body-links TH A:hover {
+    color: #fff;
+}
+
+#object-body-links TD {
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.8em;
+    vertical-align: top;
+}
+
+#object-body-links TD.tabsezione {
+    background: #770C29;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 6px 2px 2px 2px;
+}
+
+#object-body-links TD A {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #555;
+    
+}
+
+#object-body-links TD A:hover {
+    color: #f60;
+}
+
+
+/* OBJECT-BODY-LINKS CLASS=NO_TH */
+#object-body-links.no_th TH{
+    
+    display:none;
+}
+#object-body-links.no_th EM {
+    
+    display:none;
+}
+
+#object-body-links.no_th TD {
+    padding: 0;
+    border-bottom: 0px solid #ddd;
+    font-size: 1em;
+    vertical-align: top;
+}
+#object-body-links.no_th TD A {
+    text-decoration: none;
+    font-weight: bold;
+    color:#770C29;
+    text-transform:capitalize;
+}
+
+/* DETTAGLIO RISULTATO - ALLEGATI */
+
+
+/* FOOTER
+--------------------------------------------------------------------- */
+
+#footer {background:transparent; margin:0 0 0 15px;padding:0;width:95%;color:#000; font-size:0.8em; border-top:1px solid #4A364E;}
+
+/* FOOTER:FORM */
+#footer FORM {float:left; text-align:right; line-height:2em; margin:0 0 0 20px;}
+* html #footer FORM {margin:0 0 0 15px;}
+#footer FORM INPUT.campo {border:1px solid #aaa;background:#fafafa; color:#333; padding:2px; width:100px; height:10px;}
+#footer FORM INPUT.bottone {border:none; background:#FE8700; color:#fff; font-weight:bold; font-size:0.9em;}
+
+/* FOOTER:QUICKMENU */
+#footer UL {margin-top:2px;}
+#footer UL LI {float:left; margin:0 0 0 10px;}
+#footer UL LI UL LI {float:none; line-height:1.5em;}
+#footer UL LI UL LI A {text-decoration:none; color:#333;}
+#footer UL LI UL LI A:hover {color:#f60;}
+
+/* FOOTER:CREDITS */
+P#credits {float:left;color:#000;padding:5px 10px 6px 10px;font-size:0.9em; }
+#footer IMG {float:right; text-align:right; margin:5px 10px 2px;}
+

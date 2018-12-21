@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lists>
+  <list>
+    <name>libretti</name>
+    <subscribers>
+      <subscriber>
+        <name>Andrea Frascari</name>
+        <email>frasca@frasca.it</email>
+      </subscriber>
+      <subscriber>
+        <name>Pinco Pallino</name>
+        <email>pincopallino@email.it</email>
+      </subscriber>
+    </subscribers>
+  </list>
+</lists>
